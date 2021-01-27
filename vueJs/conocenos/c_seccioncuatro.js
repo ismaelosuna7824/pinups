@@ -52,7 +52,7 @@ Vue.component('c_seccioncuatro', {
             .then(response=>{
                 //console.log(response);
                 this.img1 = response.data.datos[0].img; 
-                this.img2 = response.data.datos[0].img; 
+                this.img2 = response.data.datos[1].img; 
                 response.data.datos.forEach((item) => {
                     if(item.id == 1 || item.id == 2){
      
