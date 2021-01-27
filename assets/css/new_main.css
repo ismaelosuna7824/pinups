@@ -1,0 +1,16 @@
+body{background: whitesmoke!important;}
+
+.header {
+  font-family: "Roboto Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 700;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1030; }
+  .header.scrolled {
+    position: fixed;
+    animation: menu .15s linear;
+    box-shadow: 0 3px 8px rgba(52, 58, 64, 0.25); }
+  .header .nav-link {
+    text-transform: uppercase; }
