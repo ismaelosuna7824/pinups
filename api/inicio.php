@@ -64,6 +64,49 @@
                 $res['error'] = true;
             endif;
         break;
+        case 'secciondosActualizar':
+            $id = $data->id;
+            $titulo = $data->titulo;
+            $descripcion = $data->descripcion;
+
+            $id2 = $data->id2;
+            $titulo2 = $data->titulo2;
+            $descripcion2 = $data->descripcion2;
+
+            $id3 = $data->id3;
+            $titulo3 = $data->titulo3;
+            $descripcion3 = $data->descripcion3;
+
+            $id4 = $data->id4;
+            $titulo4 = $data->titulo4;
+            $descripcion4 = $data->descripcion4;
+
+         $datos = "UPDATE i_secciondos SET titulo = (CASE WHEN  id = $id THEN '$titulo'  WHEN  id = $id2 THEN '$titulo2'  WHEN  id = $id3 THEN '$titulo3'  WHEN  id = $id4 THEN '$titulo4' END),  subtitulo = (CASE WHEN id = $id THEN '$descripcion' WHEN id = $id2 THEN '$descripcion2'  WHEN id = $id3 THEN '$descripcion3' WHEN id = $id4 THEN '$descripcion4' END)";  
+         $r = $user->actualizar($datos);
+     
+         if($r == true):
+             $res['mensaje'] = $r;   
+         
+         else:
+          $res['mensaje'] = "error";
+          $res['error'] = true; 
+         endif;
+        break;
+        case 'secciondosActualizarTitulo':
+            $id = $data->id;
+            $titulo = $data->titulo;
+
+         $datos = "UPDATE titulos SET titulo = '$titulo' WHERE id = $id";  
+         $r = $user->actualizar($datos);
+     
+         if($r == true):
+             $res['mensaje'] = $r;   
+         
+         else:
+          $res['mensaje'] = "error";
+          $res['error'] = true; 
+         endif;
+        break;
         case 'secciontres':
             $idioma = $data->ide;
             $u = $user->cargarDatos("SELECT * FROM i_secciontres"); 
@@ -74,6 +117,21 @@
                 $res['mensaje'] = "Aun no hay registros";
                 $res['error'] = true;
             endif;
+        break;
+        case 'secciontresActualizarVideo':
+            $id = $data->id;
+            $url = $data->url;
+
+         $datos = "UPDATE i_secciontres SET url = '$url' WHERE id = $id";  
+         $r = $user->actualizar($datos);
+     
+         if($r == true):
+             $res['mensaje'] = $r;   
+         
+         else:
+          $res['mensaje'] = "error";
+          $res['error'] = true; 
+         endif;
         break;
         case 'seccioncinco':
             $idioma = $data->ide;

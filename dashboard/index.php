@@ -78,6 +78,8 @@
                 <div id="collapseThree" class="collapse" aria-labelledby="collapseThree" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="imagenesHeader.php">Imagenes de Header</a>
+                        <a class="collapse-item" href="inicioseccion2.php">Seccion 2</a>
+                        <a class="collapse-item" href="inicioseccion3.php">Seccion 3</a>
                     </div>
                 </div>
             </li>
