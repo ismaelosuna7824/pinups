@@ -9,7 +9,7 @@ Vue.component('c_seccionuno', {
                     </div>
                     
                     <div>
-                        <img class="img-fluid mt-md-n3 vertical" src="assets/images/conocenos/vertical.png">
+                        
                         <p class="gracias" v-html="agradecimiento"></p>
                     </div>
 
