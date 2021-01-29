@@ -96,16 +96,38 @@
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label for="inputEmail4">Título</label>
-                                    <input type="text" class="form-control" id="inputEmail4" v-model="titulo">
+                                    <input type="text" class="form-control" id="inputEmail4" v-model="tituloes" >
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label for="inputPassword4">Descripción</label>
-                                    <input type="text" class="form-control" id="inputPassword4" v-model="desc">
+                                    <label for="inputPassword4">Título Ingles</label>
+                                    <input type="text" class="form-control" id="inputPassword4" v-model="tituloen" >
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="inputAddress">Imagen Url</label>
-                                <input type="text" class="form-control" id="inputAddress" v-model="img">
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="inputEmail4">Texto</label>
+                                    <input type="text" class="form-control" id="inputEmail4" v-model="textoes">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="inputPassword4">Texto Ingles</label>
+                                    <input type="text" class="form-control" id="inputPassword4" v-model="textoen" >
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="inputEmail4">Texto Botón</label>
+                                    <input type="text" class="form-control" id="inputEmail4" v-model="botones" >
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="inputPassword4">Texto Botón Ingles</label>
+                                    <input type="text" class="form-control" id="inputPassword4" v-model="botonen">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="inputEmail4">Url Video</label>
+                                    <textarea name=""  class="form-control" id="" cols="10" rows="5" v-model="url"></textarea>
+                                </div>
                             </div>
                             <button type="buttom" class="btn btn-primary" @click="guardar()">Guardar</button>
 
@@ -113,39 +135,7 @@
                     </div>
 
                     <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>Título</th>
-                                            <th>Descripción</th>
-                                            <th>Imagen Url</th>
-                                            <th>Eliminar</th>
-                                        </tr>
-                                    </thead>
-
-                                    <tbody>
-                                        <tr v-for="dts in imagenes">
-                                            <td>{{dts.titulo}}</td>
-                                            <td>{{dts.descrip}}</td>
-                                            <td>{{dts.img}}</td>
-                                            <td> <button class="btn btn-danger mr-1" data-trigger="hover"
-                                                    data-toggle="tooltip" data-placement="top" data-title="Eliminar"
-                                                    @click="eliminar(dts.id)">
-                                                    Eliminar
-                                                </button></td>
-                                        </tr>
-
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
+                    
 
                 </div>
                 <!-- /.container-fluid -->
@@ -217,23 +207,34 @@
     let app = new Vue({
         el: "#app",
         data: {
-            nombre: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample91.jpg',
-            titulo: '',
-            desc: '',
-            img: '',
-            imagenes: []
+            tituloes: '',
+            textoes: '',
+            botones: '',
+            ides: '',
+            tituloen: '',
+            textoen: '',
+            botonen: '',
+            iden: '',
+            url: ''
         },
         mounted: function() {
-            this.cargarImagenes()
+         this.cargarDatos()
         },
         methods: {
             guardar: function() {
 
                 if (this.titulo != '') {
-                    axios.post("../api/eventos.php?accion=insertar", {
-                        titulo: this.titulo,
-                        desc: this.desc,
-                        img: this.img
+                    //console.log(app.iden)
+                    axios.post("../api/franquicias.php?accion=updateuno", {
+                        tituloes: this.tituloes,
+                        textoes:  this.textoes,
+                        botones:  this.botones,
+                        ides: this.ides,
+                        tituloen: this.tituloen,
+                        textoen:  this.textoen,
+                        botonen:  this.botonen,
+                        iden: this.iden,
+                        url: this.url
 
                     }).then(function(response) {
                         //console.log(response.data);
@@ -242,7 +243,7 @@
                             Swal.fire({
 
                                 type: 'success',
-                                title: 'Imagen Registrada Correctamente',
+                                title: 'Dato Actualizados Correctamente',
                                 showConfirmButton: false,
                                 timer: 3000
                             })
@@ -268,47 +269,55 @@
 
 
             },
-            cargarImagenes: function() {
-                axios.get("../api/eventos.php?accion=imgEventos")
+            cargarDatos: function() {
+                axios.post("../api/franquicias.php?accion=dseccionuno")
                     .then(function(response) {
-                        app.imagenes = response.data.datos;
-
+                        //app.imagenes = response.data.datos;
+                        app.ides = response.data.datos[0].id;
+                        app.iden = response.data.datos[1].id;
+                        app.tituloes = response.data.datos[0].titulo;
+                        app.tituloen = response.data.datos[1].titulo;
+                        app.textoes =  response.data.datos[0].texto;
+                        app.textoen =  response.data.datos[1].texto;
+                        app.botones =  response.data.datos[0].boton;
+                        app.botonen =  response.data.datos[1].boton;
+                        app.url =  response.data.datos[0].url;
                         //console.log(response);
                     })
             },
-            eliminar: function(id) {
-                Swal.fire({
-                    title: '¿Desea Eliminar Esta Imagen?',
-                    type: 'warning',
-                    showCancelButton: true,
-                    confirmButtonColor: '#3085d6',
-                    cancelButtonColor: '#d33',
-                    confirmButtonText: 'Si, Eliminar!'
-                }).then(function(result) {
-                    if (result.value) {
-                        axios.post("../api/eventos.php?accion=eliminar", {
-                            ide: id
-                        }).then(function(response) {
-                            //console.log(response.data);
-                            if (response.status == '200') {
+            // eliminar: function(id) {
+            //     Swal.fire({
+            //         title: '¿Desea Eliminar Esta Imagen?',
+            //         type: 'warning',
+            //         showCancelButton: true,
+            //         confirmButtonColor: '#3085d6',
+            //         cancelButtonColor: '#d33',
+            //         confirmButtonText: 'Si, Eliminar!'
+            //     }).then(function(result) {
+            //         if (result.value) {
+            //             axios.post("../api/eventos.php?accion=eliminar", {
+            //                 ide: id
+            //             }).then(function(response) {
+            //                 //console.log(response.data);
+            //                 if (response.status == '200') {
 
-                                Swal.fire({
+            //                     Swal.fire({
 
-                                    type: 'success',
-                                    title: 'Imagen Eliminado',
-                                    showConfirmButton: false,
-                                    timer: 3000
-                                })
-                            }
+            //                         type: 'success',
+            //                         title: 'Imagen Eliminado',
+            //                         showConfirmButton: false,
+            //                         timer: 3000
+            //                     })
+            //                 }
 
-                            setTimeout(function() {
-                                location.reload()
-                            }, 3000, "JavaScript");
-                        })
-                    }
-                })
+            //                 setTimeout(function() {
+            //                     location.reload()
+            //                 }, 3000, "JavaScript");
+            //             })
+            //         }
+            //     })
 
-            }
+            // }
         }
     })
     </script>

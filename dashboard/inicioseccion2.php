@@ -31,46 +31,46 @@
         <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-        <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-            <div class="sidebar-brand-icon rotate-n-15">
-                <i class="fas fa-laugh-wink"></i>
-            </div>
-            <div class="sidebar-brand-text mx-3">Pinups<sup></sup></div>
-        </a>
-
-        <!-- Divider -->
-        <hr class="sidebar-divider my-0">
-
-        <!-- Nav Item - Dashboard -->
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne"
-                aria-expanded="true" aria-controls="collapseOne">
-                <i class="fas fa-fw fa-cog"></i>
-                <span>Eventos</span>
-            </a>
-            <div id="collapseOne" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="calendario.php">Calendario</a>
-                    <a class="collapse-item" href="index.php">Imagenes de Bandas</a>
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
                 </div>
-            </div>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                aria-expanded="true" aria-controls="collapseTwo">
-                <i class="fas fa-fw fa-cog"></i>
-                <span>Imagenes</span>
+                <div class="sidebar-brand-text mx-3">Pinups<sup></sup></div>
             </a>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="imagenes.php">imagenes banners</a>
-                    <a class="collapse-item" href="imagenesHeader.php">Imagenes de Header</a>
-                    <a class="collapse-item" href="imagenes_conocenos.php">Imagenes de Conocenos</a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne"
+                    aria-expanded="true" aria-controls="collapseOne">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Eventos</span>
+                </a>
+                <div id="collapseOne" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="calendario.php">Calendario</a>
+                        <a class="collapse-item" href="index.php">Imagenes de Bandas</a>
+                    </div>
                 </div>
-            </div>
-        </li>
-</ul>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Imagenes</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="imagenes.php">imagenes banners</a>
+                        <a class="collapse-item" href="imagenesHeader.php">Imagenes de Header</a>
+                        <a class="collapse-item" href="imagenes_conocenos.php">Imagenes de Conocenos</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
@@ -90,16 +90,16 @@
                     </form>
 
                     <!-- Topbar Search -->
-                   
+
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
 
                         <!-- Nav Item - Alerts -->
-                        
+
 
                         <!-- Nav Item - Messages -->
-                        
+
 
                         <div class="topbar-divider d-none d-sm-block"></div>
 
@@ -108,14 +108,13 @@
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Administrador</span>
-                                <img class="img-profile rounded-circle"
-                                    src="img/undraw_profile.svg">
+                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                
-                                
+
+
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Cerrar Sesión
@@ -133,16 +132,18 @@
                     <!-- Page Heading -->
                     <div class="card shadow mb-4">
                         <div style="padding-left: 50px; padding-right: 50px; padding-top: 60px; padding-bottom: 50px;">
-                                <div class="form-row">
-                                  <div class="form-group col-md-4 ">
+                            <div class="form-row">
+                                <div class="form-group col-md-4 ">
                                     <label for="inputEmail4">Titulo</label>
-                                    <input type="text" class="form-control" v-model="titulo1"  >
-                                    <button type="buttom" class="btn btn-primary margen"  @click="actualizarTitulo()">Guardar Titulo</button>
-                                  </div>
+                                    <input type="text" class="form-control" v-model="titulo1">
+                                    <button type="buttom" class="btn btn-primary margen"
+                                        @click="actualizarTitulo()">Guardar Titulo</button>
                                 </div>
-                                <div class="form-row">
-                                  <div class="form-group col-md-3">
-                                    <img class="margen img-fluid rounded-circle flex-grow-0 mr-2 shadow"  v-bind:src="'../' + iuno">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-3">
+                                    <img class="margen img-fluid rounded-circle flex-grow-0 mr-2 shadow"
+                                        v-bind:src="'../' + iuno">
                                     <form enctype="multipart/form-data" action="../api/imgS1.php" method="POST">
                                         <div class="divFile">
                                             <p class="filetext">Seleccionar Imagen</p>
@@ -150,61 +151,64 @@
                                             <input type="hidden" name="img1" id="img1" value="1">
                                         </div>
                                         <input type="submit" value="Modificar" class="btn btn-info margen sub"></input>
-                                    </form> 
-                                    
+                                    </form>
+
                                     <label for="inputEmail4">Titulo columna 1</label>
                                     <input type="text" class="form-control" id="inputEmail4" v-model="tuno">
-                                    <label class="margen" for="inputEmail4"  >descripcion</label>
+                                    <label class="margen" for="inputEmail4">descripcion</label>
                                     <textarea name="mensaje" class="form-control" v-model="puno"></textarea>
-                                  </div>
-                                  <div class="form-group col-md-3">
-                                  <img class="margen img-fluid rounded-circle flex-grow-0 mr-2 shadow" v-bind:src="'../' + idos">
-                                  <form enctype="multipart/form-data" action="../api/imgS1.php" method="POST">
-                                        <div class="divFile">
-                                            <p class="filetext">Seleccionar Imagen</p>
-                                            <input id="fileImg1" name="nfileImg" class="btnenviar" type="file">
-                                            <input type="hidden" name="img1"  value="2">
-                                        </div>
-                                        <input type="submit" value="Modificar" class="btn btn-info margen sub"></input>
-                                    </form> 
-                                    <label for="inputEmail4">Titulo columna 2</label>
-                                    <input type="text" class="form-control" id="inputEmail4" v-model="tdos" >
-                                    <label class="margen" for="inputEmail4">descripcion</label>
-                                    <textarea name="mensaje" class="form-control" v-model="pdos" ></textarea>
-                                  </div>
-                                  <div class="form-group col-md-3">
-                                    <img class="margen img-fluid rounded-circle flex-grow-0 mr-2 shadow" v-bind:src="'../' + itres">
-                                    <form enctype="multipart/form-data" action="../api/imgS1.php" method="POST">
-                                        <div class="divFile">
-                                            <p class="filetext">Seleccionar Imagen</p>
-                                            <input id="fileImg1" name="nfileImg" class="btnenviar" type="file">
-                                            <input type="hidden" name="img1"  value="3">
-                                        </div>
-                                        <input type="submit" value="Modificar" class="btn btn-info margen sub"></input>
-                                    </form> 
-                                    <label for="inputEmail4">Titulo columna 3</label>
-                                    <input type="text" class="form-control" id="inputEmail4" v-model="ttres" >
-                                    <label class="margen" for="inputEmail4">descripcion</label>
-                                    <textarea name="mensaje" class="form-control" v-model="ptres" ></textarea>
-                                  </div>
-                                  <div class="form-group col-md-3">
-                                    <img class="margen img-fluid rounded-circle flex-grow-0 mr-2 shadow" v-bind:src="'../' + icuatro">
-                                    <form enctype="multipart/form-data" action="../api/imgS1.php" method="POST">
-                                        <div class="divFile">
-                                            <p class="filetext">Seleccionar Imagen</p>
-                                            <input id="fileImg1" name="nfileImg" class="btnenviar" type="file">
-                                            <input type="hidden" name="img1"  value="4">
-                                        </div>
-                                        <input type="submit" value="Modificar" class="btn btn-info margen sub"></input>
-                                    </form> 
-                                    <label for="inputEmail4">Titulo columna 4</label>
-                                    <input type="text" class="form-control" id="inputEmail4" v-model="tcuatro" >
-                                    <label class="margen" for="inputEmail4">descripcion</label>
-                                    <textarea name="mensaje" class="form-control" v-model="pcuatro"  ></textarea>
-                                  </div>
                                 </div>
+                                <div class="form-group col-md-3">
+                                    <img class="margen img-fluid rounded-circle flex-grow-0 mr-2 shadow"
+                                        v-bind:src="'../' + idos">
+                                    <form enctype="multipart/form-data" action="../api/imgS1.php" method="POST">
+                                        <div class="divFile">
+                                            <p class="filetext">Seleccionar Imagen</p>
+                                            <input id="fileImg1" name="nfileImg" class="btnenviar" type="file">
+                                            <input type="hidden" name="img1" value="2">
+                                        </div>
+                                        <input type="submit" value="Modificar" class="btn btn-info margen sub"></input>
+                                    </form>
+                                    <label for="inputEmail4">Titulo columna 2</label>
+                                    <input type="text" class="form-control" id="inputEmail4" v-model="tdos">
+                                    <label class="margen" for="inputEmail4">descripcion</label>
+                                    <textarea name="mensaje" class="form-control" v-model="pdos"></textarea>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <img class="margen img-fluid rounded-circle flex-grow-0 mr-2 shadow"
+                                        v-bind:src="'../' + itres">
+                                    <form enctype="multipart/form-data" action="../api/imgS1.php" method="POST">
+                                        <div class="divFile">
+                                            <p class="filetext">Seleccionar Imagen</p>
+                                            <input id="fileImg1" name="nfileImg" class="btnenviar" type="file">
+                                            <input type="hidden" name="img1" value="3">
+                                        </div>
+                                        <input type="submit" value="Modificar" class="btn btn-info margen sub"></input>
+                                    </form>
+                                    <label for="inputEmail4">Titulo columna 3</label>
+                                    <input type="text" class="form-control" id="inputEmail4" v-model="ttres">
+                                    <label class="margen" for="inputEmail4">descripcion</label>
+                                    <textarea name="mensaje" class="form-control" v-model="ptres"></textarea>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <img class="margen img-fluid rounded-circle flex-grow-0 mr-2 shadow"
+                                        v-bind:src="'../' + icuatro">
+                                    <form enctype="multipart/form-data" action="../api/imgS1.php" method="POST">
+                                        <div class="divFile">
+                                            <p class="filetext">Seleccionar Imagen</p>
+                                            <input id="fileImg1" name="nfileImg" class="btnenviar" type="file">
+                                            <input type="hidden" name="img1" value="4">
+                                        </div>
+                                        <input type="submit" value="Modificar" class="btn btn-info margen sub"></input>
+                                    </form>
+                                    <label for="inputEmail4">Titulo columna 4</label>
+                                    <input type="text" class="form-control" id="inputEmail4" v-model="tcuatro">
+                                    <label class="margen" for="inputEmail4">descripcion</label>
+                                    <textarea name="mensaje" class="form-control" v-model="pcuatro"></textarea>
+                                </div>
+                            </div>
 
-                                <button type="buttom" class="btn btn-primary"  @click="actualizarc1()">Guardar</button>
+                            <button type="buttom" class="btn btn-primary" @click="actualizarc1()">Guardar</button>
                         </div>
                     </div>
                 </div>
@@ -273,49 +277,49 @@
     <script src="../vueJs/axios.min.js"></script>
     <script src="../vueJs/vue.js"></script>
     <script>
-        let app =	new Vue({
-           el: "#app",
-           data: {
-               tuno:'',
-               tdos:'',
-               ttres:'',
-               tcuatro:'',
-               puno:'',
-               pdos:'',
-               ptres:'',
-               pcuatro:'',
-               iuno:'',
-               idos:'',
-               itres:'',
-               icuatro:'',
-               titulo1:''
+    let app = new Vue({
+        el: "#app",
+        data: {
+            tuno: '',
+            tdos: '',
+            ttres: '',
+            tcuatro: '',
+            puno: '',
+            pdos: '',
+            ptres: '',
+            pcuatro: '',
+            iuno: '',
+            idos: '',
+            itres: '',
+            icuatro: '',
+            titulo1: ''
 
 
-           },
-           mounted: function(){
+        },
+        mounted: function() {
             this.cargar()
             this.cargarTitulo()
-           },
-           methods: {
-            async cargar(){
-            await axios.post("../api/inicio.php?accion=secciondos", {
-                ide:  "es"
-            })
-            .then(response=>{
-                this.tuno = response.data.datos[0].titulo;
-                this.tdos = response.data.datos[1].titulo;
-                this.ttres = response.data.datos[2].titulo;
-                this.tcuatro = response.data.datos[3].titulo;
-                this.puno = response.data.datos[0].subtitulo;
-                this.pdos = response.data.datos[1].subtitulo;
-                this.ptres = response.data.datos[2].subtitulo;
-                this.pcuatro = response.data.datos[3].subtitulo;
-                this.iuno = response.data.datos[0].img;
-                this.idos = response.data.datos[1].img;
-                this.itres = response.data.datos[2].img;
-                this.icuatro = response.data.datos[3].img;
-            });
-          
+        },
+        methods: {
+            async cargar() {
+                await axios.post("../api/inicio.php?accion=secciondos", {
+                        ide: "es"
+                    })
+                    .then(response => {
+                        this.tuno = response.data.datos[0].titulo;
+                        this.tdos = response.data.datos[1].titulo;
+                        this.ttres = response.data.datos[2].titulo;
+                        this.tcuatro = response.data.datos[3].titulo;
+                        this.puno = response.data.datos[0].subtitulo;
+                        this.pdos = response.data.datos[1].subtitulo;
+                        this.ptres = response.data.datos[2].subtitulo;
+                        this.pcuatro = response.data.datos[3].subtitulo;
+                        this.iuno = response.data.datos[0].img;
+                        this.idos = response.data.datos[1].img;
+                        this.itres = response.data.datos[2].img;
+                        this.icuatro = response.data.datos[3].img;
+                    });
+
             },
             cargarTitulo: function() {
                 axios.post("../api/inicio.php?accion=titulos", {
@@ -325,56 +329,53 @@
                         app.titulo1 = response.data.datos[0].titulo;
                     })
             },
-            actualizarc1: function(){
-                    axios.post("../api/inicio.php?accion=secciondosActualizar",
-                {
+            actualizarc1: function() {
+                axios.post("../api/inicio.php?accion=secciondosActualizar", {
                     id: 1,
-                    titulo : this.tuno, 
-                    descripcion : this.puno,
+                    titulo: this.tuno,
+                    descripcion: this.puno,
                     id2: 2,
-                    titulo2 : this.tdos, 
-                    descripcion2 : this.pdos, 
+                    titulo2: this.tdos,
+                    descripcion2: this.pdos,
                     id3: 3,
-                    titulo3 : this.ttres, 
-                    descripcion3 : this.ptres,
+                    titulo3: this.ttres,
+                    descripcion3: this.ptres,
                     id4: 4,
-                    titulo4 : this.tcuatro, 
-                    descripcion4 : this.pcuatro,   
-                }).then(function(response){
+                    titulo4: this.tcuatro,
+                    descripcion4: this.pcuatro,
+                }).then(function(response) {
                     //console.log(response.data);
-                    if(response.status == '200'){
+                    if (response.status == '200') {
                         Swal.fire({
-                        type: 'success',
-                        title: 'Actualizado Correctamente',
-                        showConfirmButton: false,
-                        timer: 3000
+                            type: 'success',
+                            title: 'Actualizado Correctamente',
+                            showConfirmButton: false,
+                            timer: 3000
                         })
                     }
 
                 })
-                },
-                actualizarTitulo: function(){
-                    axios.post("../api/inicio.php?accion=secciondosActualizarTitulo",
-                {
+            },
+            actualizarTitulo: function() {
+                axios.post("../api/inicio.php?accion=secciondosActualizarTitulo", {
                     id: 1,
-                    titulo : this.titulo1, 
-                }).then(function(response){
+                    titulo: this.titulo1,
+                }).then(function(response) {
                     //console.log(response.data);
-                    if(response.status == '200'){
+                    if (response.status == '200') {
                         Swal.fire({
-                        type: 'success',
-                        title: 'Titulo Actualizada Correctamente',
-                        showConfirmButton: false,
-                        timer: 3000
+                            type: 'success',
+                            title: 'Titulo Actualizada Correctamente',
+                            showConfirmButton: false,
+                            timer: 3000
                         })
                     }
 
                 })
-                },
+            },
         }
     });
-   </script>
+    </script>
 </body>
 
 </html>
-
