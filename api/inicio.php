@@ -166,6 +166,26 @@
                 $res['error'] = true;
             endif;
         break;
+        case 'seccioncincoActualizarTitulo':
+            //$idioma = $data->ide;
+            $ttitulo1 = $data->ttitulo1;
+            $ttitulo1E= $data->ttitulo1E;
+            $descripcion = $data->descripcion;
+            $descripcionE = $data->descripcionE;
+           
+            $u = $user->actualizar("UPDATE titulos SET titulo = '$ttitulo1' WHERE id = 3");
+            $u = $user->actualizar("UPDATE titulos SET titulo = '$ttitulo1E' WHERE id = 4");
+            $u = $user->actualizar("UPDATE titulos SET titulo = '$descripcion' WHERE id = 7");
+            $u = $user->actualizar("UPDATE titulos SET titulo = '$descripcionE' WHERE id = 8");
+            
+            if($u):
+                $res['datos'] = $u;
+                $res['mensaje'] = "exito";   
+            else:
+                $res['mensaje'] = "Aun no hay registros";
+                $res['error'] = true;
+            endif;
+        break;
         
         
         
