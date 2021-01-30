@@ -6,8 +6,7 @@ Vue.component('seccionseis', {
             <div>
                 <div>
                     <div>
-                        <center><a href="#"><img v-bind:src="img1" width="90%"
-                                    height="300"></a></center>
+                        <center><a href="#"><img v-bind:src="img1" width="100%" height="100%"></a></center>
                     </div>
                 </div>
             </div>
@@ -16,7 +15,7 @@ Vue.component('seccionseis', {
             <div>
                 <div>
                     <center>
-                        <a href="#"><img v-bind:src="img2" width="90%" height="300"></a>
+                        <a href="#"><img v-bind:src="img2" width="100%" height="100%"></a>
                     </center>
                 </div>
             </div>
@@ -28,8 +27,7 @@ Vue.component('seccionseis', {
             <div>
                 <div>
                     <div>
-                        <center><a href="#"><img v-bind:src="img3" width="90%"
-                                    height="300"></a></center>
+                        <center><a href="#"><img v-bind:src="img3" width="100%" height="100%"></a></center>
                     </div>
                 </div>
             </div>
@@ -38,7 +36,7 @@ Vue.component('seccionseis', {
             <div>
                 <div>
                     <center>
-                        <a href="#"><img v-bind:src="img4" width="90%" height="300"></a>
+                        <a href="#"><img v-bind:src="img4" width="100%" height="100%"></a>
                     </center>
                 </div>
             </div>

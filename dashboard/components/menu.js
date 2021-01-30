@@ -56,6 +56,22 @@ Vue.component('menu-component', {
                 </div>
             </li>
             <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFive"
+                    aria-expanded="true" aria-controls="collapseFive">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Conocenos</span>
+                </a>
+                <div id="collapseFive" class="collapse" aria-labelledby="collapseFive" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="conocenosseccionuno">Seccion 1</a>
+                        <a class="collapse-item" href="conocenossecciondos">Seccion 2</a>
+                        <a class="collapse-item" href="conocenossecciontres">Seccion 3</a>
+                        <a class="collapse-item" href="conocenosseccioncuatro">Seccion 4</a>
+                        
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFour"
                     aria-expanded="true" aria-controls="collapseFour">
                     <i class="fas fa-fw fa-cog"></i>

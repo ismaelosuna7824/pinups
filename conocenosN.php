@@ -376,7 +376,7 @@
         <!--galeria-->
         <c_seccioncuatro></c_seccioncuatro>
         <c_seccioncinco></c_seccioncinco>
-        <c_seccionseis></c_seccionseis>
+       <!-- <c_seccionseis></c_seccionseis>-->
                     <!--
                         -->
             <!--apoyo-->
