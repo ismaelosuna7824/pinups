@@ -144,6 +144,17 @@
                 $res['error'] = true;
             endif;
         break;
+        case 'seccioncincoTodos':
+            $idioma = $data->ide;
+            $u = $user->cargarDatos("SELECT * FROM i_seccioncinco "); 
+            if($u):
+                $res['datos'] = $u;
+                $res['mensaje'] = "exito";   
+            else:
+                $res['mensaje'] = "Aun no hay registros";
+                $res['error'] = true;
+            endif;
+        break;
         case 'seccionseis':
             $idioma = $data->ide;
             $u = $user->cargarDatos("SELECT * FROM i_seccionseis"); 
@@ -178,6 +189,53 @@
             $u = $user->actualizar("UPDATE titulos SET titulo = '$descripcion' WHERE id = 7");
             $u = $user->actualizar("UPDATE titulos SET titulo = '$descripcionE' WHERE id = 8");
             
+            if($u):
+                $res['datos'] = $u;
+                $res['mensaje'] = "exito";   
+            else:
+                $res['mensaje'] = "Aun no hay registros";
+                $res['error'] = true;
+            endif;
+        break;
+        case 'seccioncincoActualizarTextos':
+            //$idioma = $data->ide;
+
+            $titulo1 = $data->titulo1;
+            $titulo2 = $data->titulo2;
+            $titulo3 = $data->titulo3;
+
+            $texto11 = $data->texto11;
+            $texto12 = $data->texto12;
+            $texto13 = $data->texto13;
+
+            $texto21 = $data->texto21;
+            $texto22 = $data->texto22;
+            $texto23 = $data->texto23;
+            //ingles
+            $titulo1E = $data->titulo1E;
+            $titulo2E = $data->titulo2E;
+            $titulo3E = $data->titulo3E;
+
+            $texto11E = $data->texto11E;
+            $texto12E = $data->texto12E;
+            $texto13E = $data->texto13E;
+
+            $texto21E = $data->texto21E;
+            $texto22E = $data->texto22E;
+            $texto23E = $data->texto23E;
+            $URL1 = $data->URL1;
+            
+
+            //$datos = "UPDATE titulos SET titulo = '$titulo' WHERE id = $id";
+            $u = $user->actualizar("UPDATE i_seccioncinco SET titulo = '$titulo1' , texto1 = '$texto11' , texto2 = '$texto21', url ='$URL1'  WHERE id = 1");   
+            $u = $user->actualizar("UPDATE i_seccioncinco SET titulo = '$titulo2' , texto1 = '$texto12' , texto2 = '$texto22'  WHERE id = 2"); 
+            $u = $user->actualizar("UPDATE i_seccioncinco SET titulo = '$titulo3' , texto1 = '$texto13' , texto2 = '$texto23'  WHERE id = 3"); 
+            
+            $u = $user->actualizar("UPDATE i_seccioncinco SET titulo = '$titulo1E' , texto1 = '$texto11E' , texto2 = '$texto21E'  WHERE id = 4");   
+            $u = $user->actualizar("UPDATE i_seccioncinco SET titulo = '$titulo2E' , texto1 = '$texto12E' , texto2 = '$texto22E'  WHERE id = 5"); 
+            $u = $user->actualizar("UPDATE i_seccioncinco SET titulo = '$titulo3E' , texto1 = '$texto13E' , texto2 = '$texto23E'  WHERE id = 6"); 
+
+            //echo $u;
             if($u):
                 $res['datos'] = $u;
                 $res['mensaje'] = "exito";   

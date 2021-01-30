@@ -127,11 +127,13 @@
                                     <label class="margen" for="inputEmail4"  >Texto 2</label>
                                     <textarea name="mensaje" class="form-control" v-model="texto21"></textarea>
                                     <label class="margen" for="inputEmail4">Titulo Ingles columna 1</label>
-                                    <input type="text" class="form-control" id="inputEmail4" v-model="titulo1">
+                                    <input type="text" class="form-control" id="inputEmail4" v-model="titulo1E">
                                     <label class="margen" for="inputEmail4"  >Texto Ingles 1</label>
-                                    <textarea name="mensaje" class="form-control" v-model="texto11"></textarea>
+                                    <textarea name="mensaje" class="form-control" v-model="texto11E"></textarea>
                                     <label class="margen" for="inputEmail4"  >Texto Ingles 2</label>
-                                    <textarea name="mensaje" class="form-control" v-model="texto21"></textarea>
+                                    <textarea name="mensaje" class="form-control" v-model="texto21E"></textarea>
+                                    <label class="margen" for="inputEmail4"  >URL</label>
+                                    <textarea name="mensaje" class="form-control" v-model="URL1"></textarea>
                                   </div>
                                   <div class="form-group col-md-4">
                                     <img class=" imgs5 margen img-fluid rounded-circle flex-grow-0 mr-2 shadow"  v-bind:src="'../' + img2">
@@ -150,11 +152,11 @@
                                     <label class="margen" for="inputEmail4"  >Texto 2</label>
                                     <textarea name="mensaje" class="form-control" v-model="texto22"></textarea>
                                     <label class="margen" for="inputEmail4">Titulo Ingles columna 2</label>
-                                    <input type="text" class="form-control" id="inputEmail4" v-model="titulo1">
+                                    <input type="text" class="form-control" id="inputEmail4" v-model="titulo2E">
                                     <label class="margen" for="inputEmail4"  >Texto Ingles 1</label>
-                                    <textarea name="mensaje" class="form-control" v-model="texto11"></textarea>
+                                    <textarea name="mensaje" class="form-control" v-model="texto12E"></textarea>
                                     <label class="margen" for="inputEmail4"  >Texto Ingles 2</label>
-                                    <textarea name="mensaje" class="form-control" v-model="texto21"></textarea>
+                                    <textarea name="mensaje" class="form-control" v-model="texto22E"></textarea>
                                   </div>
                                   <div class="form-group col-md-4">
                                     <img class="imgs5 margen img-fluid rounded-circle flex-grow-0 mr-2 shadow"  v-bind:src="'../' + img3">
@@ -173,16 +175,16 @@
                                     <label class="margen" for="inputEmail4"  >Texto 2</label>
                                     <textarea name="mensaje" class="form-control" v-model="texto23"></textarea>
                                     <label class="margen" for="inputEmail4">Titulo Ingles columna 3</label>
-                                    <input type="text" class="form-control" id="inputEmail4" v-model="titulo1">
+                                    <input type="text" class="form-control" id="inputEmail4" v-model="titulo3E">
                                     <label class="margen" for="inputEmail4"  >Texto Ingles 1</label>
-                                    <textarea name="mensaje" class="form-control" v-model="texto11"></textarea>
+                                    <textarea name="mensaje" class="form-control" v-model="texto13E"></textarea>
                                     <label class="margen" for="inputEmail4"  >Texto Ingles 2</label>
-                                    <textarea name="mensaje" class="form-control" v-model="texto21"></textarea>
+                                    <textarea name="mensaje" class="form-control" v-model="texto23E"></textarea>
                                   </div>
 
 
                                 </div>
-                                <button type="buttom" class="btn btn-primary"  @click="actualizarc1()">Guardar</button>
+                                <button type="buttom" class="btn btn-primary"  @click="guardar()">Guardar</button>
                         </div>
                     </div>
                 </div>
@@ -280,7 +282,7 @@
             texto21E: '',
             texto22E: '',
             texto23E: '',
-
+            URL1: '',
 
            },
            mounted: function(){
@@ -291,7 +293,7 @@
            },
            methods: {
             async cargar(){
-            await axios.post("../api/inicio.php?accion=seccioncinco", {
+            await axios.post("../api/inicio.php?accion=seccioncincoTodos", {
                 ide:  "es"
             })
             .then(response=>{
@@ -304,9 +306,22 @@
                 this.texto21  = response.data.datos[0].texto2;
                 this.texto22  = response.data.datos[1].texto2;
                 this.texto23  = response.data.datos[2].texto2;
+
+                this.titulo1E = response.data.datos[3].titulo;
+                this.titulo2E = response.data.datos[4].titulo;
+                this.titulo3E = response.data.datos[5].titulo;
+                this.texto11E  = response.data.datos[3].texto1;
+                this.texto12E  = response.data.datos[4].texto1;
+                this.texto13E  = response.data.datos[5].texto1;
+                this.texto21E  = response.data.datos[3].texto2;
+                this.texto22E  = response.data.datos[4].texto2;
+                this.texto23E  = response.data.datos[5].texto2;
+
                 this.img1 = response.data.datos[0].img;
                 this.img2 = response.data.datos[1].img;
                 this.img3 = response.data.datos[2].img;
+                this.URL1 = response.data.datos[0].url;
+                
                 
                 //console.log(response);
                 //console.log(response)
@@ -349,6 +364,54 @@
                     }
 
                 })
+            },
+            guardar: function() {
+                if (this.titulo != '') {
+                    axios.post("../api/inicio.php?accion=seccioncincoActualizarTextos", {
+                        titulo1: this.titulo1,
+                        titulo2: this.titulo2,
+                        titulo3: this.titulo3,
+                        texto11: this.texto11,
+                        texto12: this.texto12,
+                        texto13: this.texto13,
+                        texto21: this.texto21,
+                        texto22: this.texto22,
+                        texto23: this.texto23,
+                        titulo1E: this.titulo1E,
+                        titulo2E: this.titulo2E,
+                        titulo3E: this.titulo3E,
+                        texto11E: this.texto11E,
+                        texto12E: this.texto12E,
+                        texto13E: this.texto13E,
+                        texto21E: this.texto21E,
+                        texto22E: this.texto22E,
+                        texto23E: this.texto23E,
+                        URL1: this.URL1
+
+                    }).then(function(response) {
+                        //console.log(response.data);
+                        if (response.status == '200') {
+
+                            Swal.fire({
+                                type: 'success',
+                                title: 'Dato Actualizados Correctamente',
+                                showConfirmButton: false,
+                                timer: 3000
+                            })
+                        }
+                    })
+                } else {
+                    Swal.fire({
+                        type: 'info',
+                        title: 'Faltan Campos por llenar',
+                        showConfirmButton: false,
+                        timer: 3000
+                    })
+                    if (this.nombre == '') {
+                        document.getElementById("ciudad").style.borderColor = "red";
+                    }
+                }
+
             },
 
                
