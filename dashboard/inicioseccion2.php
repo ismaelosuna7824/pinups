@@ -24,53 +24,12 @@
 </head>
 
 <body id="page-top">
-
+<div id="app">
     <!-- Page Wrapper -->
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
-            <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
-                </div>
-                <div class="sidebar-brand-text mx-3">Pinups<sup></sup></div>
-            </a>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider my-0">
-
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne"
-                    aria-expanded="true" aria-controls="collapseOne">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Eventos</span>
-                </a>
-                <div id="collapseOne" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="calendario.php">Calendario</a>
-                        <a class="collapse-item" href="index.php">Imagenes de Bandas</a>
-                    </div>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Imagenes</span>
-                </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="imagenes.php">imagenes banners</a>
-                        <a class="collapse-item" href="imagenesHeader.php">Imagenes de Header</a>
-                        <a class="collapse-item" href="imagenes_conocenos.php">Imagenes de Conocenos</a>
-                    </div>
-                </div>
-            </li>
-        </ul>
+        <menu-component></menu-component>
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
@@ -136,6 +95,8 @@
                                 <div class="form-group col-md-4 ">
                                     <label for="inputEmail4">Titulo</label>
                                     <input type="text" class="form-control" v-model="titulo1">
+                                    <label for="inputEmail4">Titulo Ingles</label>
+                                    <input type="text" class="form-control" v-model="titulo1E">
                                     <button type="buttom" class="btn btn-primary margen"
                                         @click="actualizarTitulo()">Guardar Titulo</button>
                                 </div>
@@ -157,6 +118,10 @@
                                     <input type="text" class="form-control" id="inputEmail4" v-model="tuno">
                                     <label class="margen" for="inputEmail4">descripcion</label>
                                     <textarea name="mensaje" class="form-control" v-model="puno"></textarea>
+                                    <label class="margen" for="inputEmail4">Titulo Ingles columna 1</label>
+                                    <input type="text" class="form-control" id="inputEmail4" v-model="tunoE">
+                                    <label class="margen" for="inputEmail4">descripcion Ingles</label>
+                                    <textarea name="mensaje" class="form-control" v-model="punoE"></textarea>
                                 </div>
                                 <div class="form-group col-md-3">
                                     <img class="margen img-fluid rounded-circle flex-grow-0 mr-2 shadow"
@@ -173,6 +138,10 @@
                                     <input type="text" class="form-control" id="inputEmail4" v-model="tdos">
                                     <label class="margen" for="inputEmail4">descripcion</label>
                                     <textarea name="mensaje" class="form-control" v-model="pdos"></textarea>
+                                    <label class="margen" for="inputEmail4">Titulo Ingles columna 2</label>
+                                    <input type="text" class="form-control" id="inputEmail4" v-model="tdosE">
+                                    <label class="margen" for="inputEmail4">descripcion Ingles</label>
+                                    <textarea name="mensaje" class="form-control" v-model="pdosE"></textarea>
                                 </div>
                                 <div class="form-group col-md-3">
                                     <img class="margen img-fluid rounded-circle flex-grow-0 mr-2 shadow"
@@ -189,6 +158,10 @@
                                     <input type="text" class="form-control" id="inputEmail4" v-model="ttres">
                                     <label class="margen" for="inputEmail4">descripcion</label>
                                     <textarea name="mensaje" class="form-control" v-model="ptres"></textarea>
+                                    <label class="margen" for="inputEmail4">Titulo Ingles columna 3</label>
+                                    <input type="text" class="form-control" id="inputEmail4" v-model="ttresE">
+                                    <label class="margen" for="inputEmail4">descripcion Ingles</label>
+                                    <textarea name="mensaje" class="form-control" v-model="ptresE"></textarea>
                                 </div>
                                 <div class="form-group col-md-3">
                                     <img class="margen img-fluid rounded-circle flex-grow-0 mr-2 shadow"
@@ -205,6 +178,10 @@
                                     <input type="text" class="form-control" id="inputEmail4" v-model="tcuatro">
                                     <label class="margen" for="inputEmail4">descripcion</label>
                                     <textarea name="mensaje" class="form-control" v-model="pcuatro"></textarea>
+                                    <label class="margen">Titulo ingles columna 4</label>
+                                    <input type="text" class="form-control" id="inputEmail4" v-model="tcuatroE">
+                                    <label class="margen" for="inputEmail4">descripcion ingles</label>
+                                    <textarea name="mensaje" class="form-control" v-model="pcuatroE"></textarea>
                                 </div>
                             </div>
 
@@ -257,7 +234,7 @@
             </div>
         </div>
     </div>
-
+</div>
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -276,6 +253,7 @@
     <script src="js/demo/chart-pie-demo.js"></script>
     <script src="../vueJs/axios.min.js"></script>
     <script src="../vueJs/vue.js"></script>
+    <script src="components/menu.js"></script>
     <script>
     let app = new Vue({
         el: "#app",
@@ -292,13 +270,26 @@
             idos: '',
             itres: '',
             icuatro: '',
-            titulo1: ''
+            titulo1: '',
+
+            titulo1E: '',
+            tunoE: '',
+            tdosE: '',
+            ttresE: '',
+            tcuatroE: '',
+            punoE: '',
+            pdosE: '',
+            ptresE: '',
+            pcuatroE: '',
 
 
         },
         mounted: function() {
             this.cargar()
             this.cargarTitulo()
+
+            this.cargarE()
+            this.cargarTituloE()
         },
         methods: {
             async cargar() {
@@ -314,6 +305,8 @@
                         this.pdos = response.data.datos[1].subtitulo;
                         this.ptres = response.data.datos[2].subtitulo;
                         this.pcuatro = response.data.datos[3].subtitulo;
+
+
                         this.iuno = response.data.datos[0].img;
                         this.idos = response.data.datos[1].img;
                         this.itres = response.data.datos[2].img;
@@ -327,6 +320,32 @@
                     })
                     .then(function(response) {
                         app.titulo1 = response.data.datos[0].titulo;
+                    })
+            },
+            async cargarE() {
+                await axios.post("../api/inicio.php?accion=secciondos", {
+                        ide: "en"
+                    })
+                    .then(response => {
+                        this.tunoE = response.data.datos[0].titulo;
+                        this.tdosE = response.data.datos[1].titulo;
+                        this.ttresE = response.data.datos[2].titulo;
+                        this.tcuatroE = response.data.datos[3].titulo;
+                        this.punoE = response.data.datos[0].subtitulo;
+                        this.pdosE = response.data.datos[1].subtitulo;
+                        this.ptresE = response.data.datos[2].subtitulo;
+                        this.pcuatroE = response.data.datos[3].subtitulo;
+
+
+                    });
+
+            },
+            cargarTituloE: function() {
+                axios.post("../api/inicio.php?accion=titulos", {
+                        ide: "en"
+                    })
+                    .then(function(response) {
+                        app.titulo1E = response.data.datos[0].titulo;
                     })
             },
             actualizarc1: function() {
@@ -343,6 +362,16 @@
                     id4: 4,
                     titulo4: this.tcuatro,
                     descripcion4: this.pcuatro,
+
+                    tituloE: this.tunoE,
+                    descripcionE: this.punoE,
+                    titulo2E: this.tdosE,
+                    descripcion2E: this.pdosE,
+                    titulo3E: this.ttresE,
+                    descripcion3E: this.ptresE,
+                    titulo4E: this.tcuatroE,
+                    descripcion4E: this.pcuatroE,
+
                 }).then(function(response) {
                     //console.log(response.data);
                     if (response.status == '200') {
@@ -360,6 +389,7 @@
                 axios.post("../api/inicio.php?accion=secciondosActualizarTitulo", {
                     id: 1,
                     titulo: this.titulo1,
+                    tituloE: this.titulo1E,
                 }).then(function(response) {
                     //console.log(response.data);
                     if (response.status == '200') {

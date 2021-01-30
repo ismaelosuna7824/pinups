@@ -81,9 +81,33 @@
             $titulo4 = $data->titulo4;
             $descripcion4 = $data->descripcion4;
 
-         $datos = "UPDATE i_secciondos SET titulo = (CASE WHEN  id = $id THEN '$titulo'  WHEN  id = $id2 THEN '$titulo2'  WHEN  id = $id3 THEN '$titulo3'  WHEN  id = $id4 THEN '$titulo4' END),  subtitulo = (CASE WHEN id = $id THEN '$descripcion' WHEN id = $id2 THEN '$descripcion2'  WHEN id = $id3 THEN '$descripcion3' WHEN id = $id4 THEN '$descripcion4' END)";  
-         $r = $user->actualizar($datos);
+            $tituloE = $data->tituloE;
+            $descripcionE = $data->descripcionE;
+
+            $titulo2E = $data->titulo2E;
+            $descripcion2E = $data->descripcion2E;
+
+            $titulo3E = $data->titulo3E;
+            $descripcion3E = $data->descripcion3E;
+
+            $titulo4E = $data->titulo4E;
+            $descripcion4E = $data->descripcion4E;
+
+         //$datos = "UPDATE i_secciondos SET titulo = (CASE WHEN  id = $id THEN '$titulo'  WHEN  id = $id2 THEN '$titulo2'  WHEN  id = $id3 THEN '$titulo3'  WHEN  id = $id4 THEN '$titulo4' END),  subtitulo = (CASE WHEN id = $id THEN '$descripcion' WHEN id = $id2 THEN '$descripcion2'  WHEN id = $id3 THEN '$descripcion3' WHEN id = $id4 THEN '$descripcion4' END)";  
+         //$r = $user->actualizar($datos);
      
+         //$u = $user->actualizar("UPDATE i_secciondos SET titulo = (CASE WHEN  id = 5 THEN '$tituloE'  WHEN  id = 6 THEN '$titulo2E'  WHEN  id = 7 THEN '$titulo3E'  WHEN  id = 8 THEN '$titulo4E' END),  subtitulo = (CASE WHEN id = 5 THEN '$descripcionE' WHEN id = 6 THEN '$descripcion2E'  WHEN id = 7 THEN '$descripcion3E' WHEN id = 8 THEN '$descripcion4E' END)");
+
+         $r = $user->actualizar("UPDATE i_secciondos SET titulo = '$titulo',subtitulo ='$descripcion' WHERE id = 1");
+         $r = $user->actualizar("UPDATE i_secciondos SET titulo = '$titulo2',subtitulo ='$descripcion2' WHERE id = 2");
+         $r = $user->actualizar("UPDATE i_secciondos SET titulo = '$titulo3',subtitulo ='$descripcion3' WHERE id = 3");
+         $r = $user->actualizar("UPDATE i_secciondos SET titulo = '$titulo4',subtitulo ='$descripcion4' WHERE id = 4");
+
+         $r = $user->actualizar("UPDATE i_secciondos SET titulo = '$tituloE',subtitulo ='$descripcionE' WHERE id = 5");
+         $r = $user->actualizar("UPDATE i_secciondos SET titulo = '$titulo2E',subtitulo ='$descripcion2E' WHERE id = 6");
+         $r = $user->actualizar("UPDATE i_secciondos SET titulo = '$titulo3E',subtitulo ='$descripcion3E' WHERE id = 7");
+         $r = $user->actualizar("UPDATE i_secciondos SET titulo = '$titulo4E',subtitulo ='$descripcion4E' WHERE id = 8");
+
          if($r == true):
              $res['mensaje'] = $r;   
          
@@ -95,9 +119,11 @@
         case 'secciondosActualizarTitulo':
             $id = $data->id;
             $titulo = $data->titulo;
+            $tituloE = $data->tituloE;
 
          $datos = "UPDATE titulos SET titulo = '$titulo' WHERE id = $id";  
          $r = $user->actualizar($datos);
+         $r = $user->actualizar("UPDATE titulos SET titulo = '$tituloE' WHERE id = 2");
      
          if($r == true):
              $res['mensaje'] = $r;   
