@@ -52,6 +52,12 @@ table, td {
         right:  0;
         bottom: 0;
     }
+    .horarios{
+      display: block;
+    }
+    .horarioMobil{
+      display: none;
+    }
 }
 
 @media (max-width: 1680px) { 
@@ -65,6 +71,12 @@ table, td {
     .tabler{
         padding-left: 100px;
         padding-right: 100px;
+    }
+    .horarios{
+      display: block;
+    }
+    .horarioMobil{
+      display: none;
     }
 }
 
@@ -91,6 +103,12 @@ table, td {
     .tabler{
         padding-left: 100px;
         padding-right: 100px;
+    }
+    .horarios{
+      display: block;
+    }
+    .horarioMobil{
+      display: none;
     }
 }
 
@@ -120,6 +138,25 @@ table, td {
         padding-left: 100px;
         padding-right: 100px;
     }
+    .horarios{
+      display: block;
+    }
+    .horarioMobil{
+      display: none;
+    }
+}
+
+@media (max-width: 768px) { 
+  .tabler{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .horarios{
+    display: none;
+  }
+  .horarioMobil{
+    display: block;
+  }
 }
 
 .images{

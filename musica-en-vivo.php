@@ -36,7 +36,7 @@
     <!-- nueva fuente /DESCARGAR/ -->
     <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/new-style.css">
-   
+
 
 
 </head>
@@ -270,6 +270,137 @@
         margin-right: 10px !important;
     }
 
+    td {
+        padding: 10px;
+    }
+
+
+
+
+
+    .light {
+        background-color: #fff;
+    }
+
+    .dark {
+        
+    }
+
+    .calendar {
+        width: 100%;
+        box-shadow: 0px 0px 35px -16px rgba(0, 0, 0, 0.75);
+        font-family: "Roboto", sans-serif;
+       padding: 10px;
+        color: #363b41;
+        display: inline-block;
+    }
+
+    .calendar_header {
+        border-bottom: 2px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .header_copy {
+        color: #a39d9e;
+        font-size: 20px;
+    }
+
+    .calendar_plan {
+        margin: 20px 0 40px;
+    }
+
+    .cl_plan {
+        width: 100%;
+        height: 80px;
+        background-image: linear-gradient(-222deg, #D7263D , #D7263D );
+        box-shadow: 0px 0px 52px -18px rgba(0, 0, 0, 0.75);
+        padding: 20px;
+        color: #fff;
+    }
+
+    .cl_copy {
+        font-size: 20px;
+        margin: 20px 0;
+        display: inline-block;
+    }
+
+    .cl_add {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #fff;
+        cursor: pointer;
+        margin: 0 0 0 65px;
+        color: #c2c2c2;
+        padding: 11px 13px;
+    }
+
+    .calendar_events {
+        color: #a39d9e;
+    }
+
+    .ce_title {
+        font-size: 20px;
+    }
+
+    .event_item {
+        margin: 18px 0;
+        padding: 5px;
+        cursor: pointer;
+    }
+
+    .event_item:hover {
+        background-image: linear-gradient(-222deg, #D7263D, #D7263D);
+        box-shadow: 0px 0px 52px -18px rgba(0, 0, 0, 0.75);
+    }
+
+    .event_item:hover .ei_Dot {
+        background-color: #fff;
+    }
+
+    .event_item:hover .ei_Copy,
+    .event_item:hover .ei_Title {
+        color: #fff;
+    }
+
+    .ei_Dot,
+    .ei_Title {
+        display: inline-block;
+    }
+
+    .ei_Dot {
+        border-radius: 50%;
+        width: 10px;
+        height: 10px;
+        background-color: #a39d9e;
+        box-shadow: 0px 0px 52px -18px rgba(0, 0, 0, 0.75);
+    }
+
+    .dot_active {
+        background-color: #ff8494;
+    }
+
+    .ei_Title {
+        margin-left: 10px;
+        color: #363b41;
+    }
+
+    .ei_Copy {
+        font-size: 15px;
+        margin-left: 27px;
+    }
+
+    .dark {
+        background-image: linear-gradient(-222deg, #646464, #454545);
+        color: #fff;
+    }
+
+    .dark .header_title,
+    .dark .ei_Title,
+    .dark .ce_title {
+        color: #fff;
+    }
+
     /* end round elements style */
     </style>
     <div id="app">
@@ -284,7 +415,7 @@
                                 <span style="color: red;">GRUPOS</span></div></span>
                     </div>
 
-                   
+
                 </div>
 
             </div>
@@ -304,55 +435,111 @@
 
             <!-- Rex Unplugged -->
 
-            <div class="table-responsive tabler">
-                <table class="table  " style="text-align: center; padding-left: 13px;">
-                    <thead class="col">
-                        <tr>
-                            <th scope="col" class="table-horario">HORARIOS</th>
-                            <th scope="col" class="table-horarios">LUNES</th>
-                            <th scope="col" class="table-horarios">MARTES</th>
-                            <th scope="col" class="table-horarios">MIÉRCOLES</th>
-                            <th scope="col" class="table-horarios">JUEVES</th>
-                            <th scope="col" class="table-horarios">VIERNES</th>
-                            <th scope="col" class="table-horarios">SÁBADO</th>
-                            <th scope="col" class="table-horarios">DOMINGO</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr v-for="dts in registros">
+            <div class="horarios">
+                <div class="table-responsive tabler">
+                    <table class="table  " style="text-align: center; padding-left: 13px;">
+                        <thead class="col">
+                            <tr>
+                                <th scope="col" class="table-horario">HORARIOS</th>
+                                <th scope="col" class="table-horarios">LUNES</th>
+                                <th scope="col" class="table-horarios">MARTES</th>
+                                <th scope="col" class="table-horarios">MIÉRCOLES</th>
+                                <th scope="col" class="table-horarios">JUEVES</th>
+                                <th scope="col" class="table-horarios">VIERNES</th>
+                                <th scope="col" class="table-horarios">SÁBADO</th>
+                                <th scope="col" class="table-horarios">DOMINGO</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="dts in registros">
 
-                            <td>
-                                <h5>{{dts.horarios}}</h5>
-                            </td>
-                            <td>
-                                <h5>{{dts.lunes}}</h5>
-                            </td>
-                            <td>
-                                <h5>{{dts.martes}}</h5>
-                            </td>
-                            <td>
-                                <h5>{{dts.miercoles}}</h5>
-                            </td>
-                            <td>
-                                <h5>{{dts.jueves}}</h5>
-                            </td>
-                            <td>
-                                <h5>{{dts.viernes}}</h5>
-                            </td>
-                            <td>
-                                <h5>{{dts.sabado}}</h5>
-                            </td>
-                            <td>
-                                <h5>{{dts.domingo}}</h5>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                                <td>
+                                    <h5>{{dts.horarios}}</h5>
+                                </td>
+                                <td>
+                                    <h5>{{dts.lunes}}</h5>
+                                </td>
+                                <td>
+                                    <h5>{{dts.martes}}</h5>
+                                </td>
+                                <td>
+                                    <h5>{{dts.miercoles}}</h5>
+                                </td>
+                                <td>
+                                    <h5>{{dts.jueves}}</h5>
+                                </td>
+                                <td>
+                                    <h5>{{dts.viernes}}</h5>
+                                </td>
+                                <td>
+                                    <h5>{{dts.sabado}}</h5>
+                                </td>
+                                <td>
+                                    <h5>{{dts.domingo}}</h5>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-                <br><br>
-            <div class="row tabler ">
+            <div class="horarioMobil">
+                <div class="">
 
-                <div class="col-lg-4 col-md-12 mb-4" style="background-color: red;" v-for="dts in imagenes"
+                    <div class="calendar dark">
+                
+                        <div class="calendar_plan">
+                            <div class="cl_plan">
+                            <div class="h1 text-uppercase mb-2 title_icon "><span class=" section-title " style="color:white;">HORARIOS</div></span>
+                               
+                            </div>
+                        </div>
+                        <div class="calendar_events"  v-for="dts in registros">
+                            <p class="ce_title">{{dts.horarios}}</p>
+                            <div class="event_item">
+                                <div class="ei_Dot"></div>
+                                <div class="ei_Title">{{dts.lunes}}</div>
+                                <div class="ei_Copy">Lunes</div>
+                            </div>
+                            <div class="event_item">
+                                <div class="ei_Dot"></div>
+                                <div class="ei_Title">{{dts.martes}}</div>
+                                <div class="ei_Copy">Martes</div>
+                            </div>
+                            <div class="event_item">
+                                <div class="ei_Dot"></div>
+                                <div class="ei_Title">{{dts.miercoles}}</div>
+                                <div class="ei_Copy">Miercoles</div>
+                            </div>
+                            <div class="event_item">
+                                <div class="ei_Dot"></div>
+                                <div class="ei_Title">{{dts.jueves}}</div>
+                                <div class="ei_Copy">Jueves</div>
+                            </div>
+                            <div class="event_item">
+                                <div class="ei_Dot"></div>
+                                <div class="ei_Title">{{dts.viernes}}</div>
+                                <div class="ei_Copy">Viernes</div>
+                            </div>
+                            <div class="event_item">
+                                <div class="ei_Dot"></div>
+                                <div class="ei_Title">{{dts.sabado}}</div>
+                                <div class="ei_Copy">Sabado</div>
+                            </div>
+                            <div class="event_item">
+                                <div class="ei_Dot"></div>
+                                <div class="ei_Title">{{dts.domingo}}</div>
+                                <div class="ei_Copy">Domingo</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <br><br>
+            <div class="row tabler">
+
+                <div class="col-lg-4 col-md-12" style="background-color: red;" v-for="dts in imagenes"
                     :style="{ backgroundImage: `url(${dts.img})`, backgroundSize: 'cover', opacity: 0.9  }">
                     <figure class="snip1477" style="height: 300px; ">
                         <div class="title">
@@ -364,7 +551,7 @@
                         <figcaption>
                             <p>{{dts.descrip}}</p>
                         </figcaption>
-                        <a ></a>
+                        <a></a>
                     </figure>
                 </div>
             </div>
@@ -376,7 +563,7 @@
 
 
         <!-- footer -->
-       
+
         <div class="footer bg-dark text-white py-4 py-lg-5" style="height: 300px;">
             <div class="container">
                 <div class="row">
