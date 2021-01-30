@@ -53,6 +53,8 @@ Vue.component('menu-component', {
                         <a class="collapse-item" href="inicioseccion2.php">Seccion 2</a>
                         <a class="collapse-item" href="inicioseccion3.php">Seccion 3 y 4</a>
                         <a class="collapse-item" href="inicioseccion5.php">Seccion 5</a>
+                        <a class="collapse-item" href="inicioseccion6.php">Seccion 6</a>
+                        <a class="collapse-item" href="inicioseccion7.php">Seccion 7</a>
                     </div>
                 </div>
             </li>
