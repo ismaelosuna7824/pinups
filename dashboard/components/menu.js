@@ -15,6 +15,18 @@ Vue.component('menu-component', {
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseZero"
+                    aria-expanded="true" aria-controls="collapseZero">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Navegacion</span>
+                </a>
+                <div id="collapseZero" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="menus.php">Menus</a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne"
                     aria-expanded="true" aria-controls="collapseOne">
                     <i class="fas fa-fw fa-cog"></i>
