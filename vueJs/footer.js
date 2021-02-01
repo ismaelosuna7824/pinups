@@ -12,7 +12,7 @@ Vue.component('pie', {
                         <li><a href="{{music}}">Música en vivo</a></li>
                         <li><a href="tienda.html">{{store}}</a></li>
                         <li><a href="franquicias.html">{{pinups}}</a></li>
-                        <li><a href="privacy.html">{{privacy}}</a></li>
+                        <li><a href="privacy.php">{{privacy}}</a></li>
                     </ul>
                 </div>
                 <div class="col-12 col-md-7 col-lg-5 col-xl-4 mt-3 mt-md-0">
