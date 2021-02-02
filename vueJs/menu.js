@@ -12,11 +12,11 @@ Vue.component('menu-component', {
 				<div class="navbar-text d-flex align-items-center nav-icon-1">
 					<svg class="icon mr-1">
 						<use href="#icon-phone" xlink:href="#icon-pin"></use>
-					</svg><a href="tel:6692506360">669 2506360</a>
+					</svg><a v-bind:href="'tel:' + telefono">{{telefono}}</a>
 				</div>
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item"><a class="nav-link nav-link-franquicias"
-							href="franquicias_new">Franquicias</a></li>
+							href="franquicias">{{pinups}}</a></li>
 				</ul>
 				<ul class="nav nav-social">
 					<li class="nav-item"><a class="nav-link nav-link-social"
@@ -44,11 +44,11 @@ Vue.component('menu-component', {
 						src="assets/images/logo-pinups-new.png"></a>
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item"><a class="nav-link active" href="index">{{home}}</a></li>
-					<li class="nav-item"><a class="nav-link" href="menu.html">{{menu}}</a></li>
-					<li class="nav-item"><a class="nav-link" href="conocenosN">{{about}}</a></li>
+					<li class="nav-item"><a class="nav-link" href="menu">{{menu}}</a></li>
+					<li class="nav-item"><a class="nav-link" href="conocenos">{{about}}</a></li>
 					<li class="nav-item"><a class="nav-link" href="musica-en-vivo">{{music}}</a></li>
-					<li class="nav-item"><a class="nav-link" href="tienda.html">{{store}}</a></li>
-					<li class="nav-item"><a class="nav-link" href="franquicias_new" style="background-color: black; border-radius: 7px;">{{pinups}}</a></li>
+					<li class="nav-item"><a class="nav-link" href="tienda">{{store}}</a></li>
+					<li class="nav-item"><a class="nav-link" href="franquicias" style="background-color: black; border-radius: 7px;">{{pinups}}</a></li>
 				</ul>
 				<ul class="navbar-nav">
 					<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbarDropdown" href="#"
@@ -65,10 +65,11 @@ Vue.component('menu-component', {
 				<div class="collapse navbar-collapse justify-content-center text-center" id="navbarMobile">
 					<ul class="navbar-nav">
 					<li class="nav-item"><a class="nav-link active" href="index">{{home}}</a></li>
-					<li class="nav-item"><a class="nav-link" href="menu.html">{{menu}}</a></li>
-					<li class="nav-item"><a class="nav-link" href="conocenosN">{{about}}</a></li>
+					<li class="nav-item"><a class="nav-link" href="menu">{{menu}}</a></li>
+					<li class="nav-item"><a class="nav-link" href="conocenos">{{about}}</a></li>
 					<li class="nav-item"><a class="nav-link" href="musica-en-vivo">{{music}}</a></li>
-					<li class="nav-item"><a class="nav-link" href="tienda.html">{{store}}</a></li>
+					<li class="nav-item"><a class="nav-link" href="tienda">{{store}}</a></li>
+					<li class="nav-item"><a class="nav-link" href="franquicias" style="background-color: black; border-radius: 7px;">{{pinups}}</a></li>
 					</ul>
 					<ul class="nav nav-social justify-content-center mt-3">
 						<li class="nav-item"><a class="nav-link" href="https://www.facebook.com/Pinupsfungrill/"
@@ -101,7 +102,8 @@ Vue.component('menu-component', {
         about: '',
         music: '',
 		store: '',
-		pinups: ''
+		pinups: '',
+		telefono: ''
     }
     },
     mounted: function(){
@@ -119,6 +121,7 @@ Vue.component('menu-component', {
                 this.music = response.data.datos[3].nombre;
 				this.store = response.data.datos[4].nombre;
 				this.pinups = response.data.datos[5].nombre;
+				this.telefono = response.data.datos[7].nombre;
                 //console.log(response)
             });
           

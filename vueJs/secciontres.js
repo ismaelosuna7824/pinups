@@ -2,7 +2,9 @@ Vue.component('secciontres', {
     template: `
     <div class="row" style="margin-left: 0px; margin-right: 0px;">
 		<div class="col-12 video-container" v-bind:style="{ backgroundImage: 'url(' + img + ')' }">
-			<div v-html="url"></div>
+        <center>
+        <div v-html="url" class="videos"></div>
+        </center>
 		</div>
 	</div>
    `,

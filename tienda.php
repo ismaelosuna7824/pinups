@@ -153,7 +153,7 @@
     <br><br><br>
     <t_secciondos></t_secciondos>
     
-   
+    <pie></pie>
     
     <!-- footer -->
     
@@ -166,6 +166,7 @@
     <script src="vueJs/menu.js"></script>
     <script src="vueJs/tienda/t_seccionuno.js"></script>
     <script src="vueJs/tienda/t_secciondos.js"></script>
+    <script src="vueJs/footer.js"></script>
     
     <script>
     let app = new Vue({

@@ -310,8 +310,11 @@
     .no-margin-bottom {
         margin-bottom: 32px;
     }
+    .videos{
+        width: 30%
+    }
 
-    @media (min-width: 768px) {
+    @media (max-width: 768px) {
         .mano-container {
             background-image: url('assets/images/mano-01.png');
             background-position: center;
@@ -325,6 +328,9 @@
         .no-margin-bottom {
             margin-bottom: 0px !important;
         }
+        .videos{
+            width: 100%
+        }
     }
 
     @media (min-width: 1200px) {
@@ -336,6 +342,10 @@
             width: 40%;
             padding: 50px 0px;
         }
+        .videos{
+        width: 30%
+    }
+
     }
 
     @media (min-width: 1440px) {
@@ -347,20 +357,24 @@
             width: 30%;
             padding: 50px 0px;
         }
+        .videos{
+        width: 30%
+    }
+
     }
     </style>
     <div id="app">
 
         <menu-component></menu-component>
 
-
+    <!--[index == 0 ? 'carousel-item active' : 'carousel-item' ]-->
+ 
         <div class="hero">
             <div class="carousel slide" id="carousel" data-ride="carousel" data-interval="5000" data-keyboard="false"
                 data-pause="false">
                 <div class="carousel-inner">
 
-                    <div v-bind:class="[index == 0 ? 'carousel-item active' : 'carousel-item' ]"
-                        v-for="(item, index) in imgHeader" :key="item.img">
+                    <div v-for="(item, index) in imgHeader" :key="item.id" :class="[ index == 0 ? 'carousel-item active' : 'carousel-item' ]">
                         <picture>
 
                             <img class="w-100" v-bind:src="item.img" alt="Obsesionados con la calidad">

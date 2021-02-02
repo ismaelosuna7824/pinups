@@ -106,7 +106,7 @@
                                                         <input id="fileImg1" name="nfileImg" class="btnenviar"
                                                             type="file">
                                                         <input type="hidden" name="img1" id="img1" v-bind:value="ides">
-                                                       
+
                                                     </div>
                                                     <input type="submit" value="Modificar"
                                                         class="btn btn-info margen sub" style="width: 200px"></input>
@@ -115,14 +115,14 @@
                                             <div class="form-group col-md-4">
                                                 <img class="margen img-fluid flex-grow-0 mr-2 shadow"
                                                     v-bind:src="'../' + imges" style="width: 200px">
-                                                <form enctype="multipart/form-data" action="../api/conocenosS1imgEspa.php"
-                                                    method="POST">
+                                                <form enctype="multipart/form-data"
+                                                    action="../api/conocenosS1imgEspa.php" method="POST">
                                                     <div class="divFile" style="width: 200px">
                                                         <p class="filetext">Seleccionar Imagen</p>
                                                         <input id="fileImg1" name="nfileImg" class="btnenviar"
                                                             type="file">
                                                         <input type="hidden" name="img1" id="img1" v-bind:value="ides">
-                                                      
+
                                                     </div>
                                                     <input type="submit" value="Modificar"
                                                         class="btn btn-info margen sub" style="width: 200px"></input>
@@ -138,7 +138,7 @@
                                                         <input id="fileImg1" name="nfileImg" class="btnenviar"
                                                             type="file">
                                                         <input type="hidden" name="img1" id="img1" v-bind:value="iden">
-                                                       
+
                                                     </div>
                                                     <input type="submit" value="Modificar"
                                                         class="btn btn-info margen sub" style="width: 200px"></input>
@@ -330,7 +330,7 @@
                         app.img = response.data.datos[0].img2;
                         app.imges = response.data.datos[0].img1;
                         app.imgen = response.data.datos[1].img1;
-                        app.url =  response.data.datos[0].url;
+                        app.url = response.data.datos[0].url;
                         console.log(response);
                     })
             },

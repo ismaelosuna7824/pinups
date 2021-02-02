@@ -105,7 +105,8 @@
                                                         <p class="filetext">Seleccionar Imagen</p>
                                                         <input id="fileImg1" name="nfileImg" class="btnenviar"
                                                             type="file">
-                                                        <input type="hidden" name="img1" id="img1" v-bind:value="idtituloes">
+                                                        <input type="hidden" name="img1" id="img1"
+                                                            v-bind:value="idtituloes">
 
                                                     </div>
                                                     <input type="submit" value="Modificar"
@@ -122,7 +123,7 @@
                                                         <p class="filetext">Seleccionar Imagen</p>
                                                         <input id="fileImg1" name="nfileImg" class="btnenviar"
                                                             type="file">
-                                                        <input type="hidden" name="img1" id="img1"  value="2">
+                                                        <input type="hidden" name="img1" id="img1" value="2">
 
                                                     </div>
                                                     <input type="submit" value="Modificar"
@@ -139,7 +140,7 @@
                                                         <p class="filetext">Seleccionar Imagen</p>
                                                         <input id="fileImg1" name="nfileImg" class="btnenviar"
                                                             type="file">
-                                                        <input type="hidden" name="img1" id="img1"  value="3">
+                                                        <input type="hidden" name="img1" id="img1" value="3">
 
                                                     </div>
                                                     <input type="submit" value="Modificar"
@@ -155,126 +156,129 @@
                                                         <p class="filetext">Seleccionar Imagen</p>
                                                         <input id="fileImg1" name="nfileImg" class="btnenviar"
                                                             type="file">
-                                                        <input type="hidden" name="img1" id="img1"  value="4">
+                                                        <input type="hidden" name="img1" id="img1" value="4">
 
                                                     </div>
                                                     <input type="submit" value="Modificar"
                                                         class="btn btn-info margen sub" style="width: 200px"></input>
                                                 </form>
                                             </div>
-                                            
+
                                         </div>
                                         <!--------Fomulario------->
-                                            <div class="form-group col-md-3">
-                                               
-                                               
-                                                    
-                                                    <form enctype="multipart/form-data" action="../api/conocenosS4Col.php" method="POST" class="col-md-6">
-                                                        <p>Upload your file</p>
-                                                        <div class="divFile" style="width: 200px">
-                                                        <p class="filetext">Seleccionar Imagen</p>
-                                                        <input id="fileImg1" name="uploaded_file" class="btnenviar"
-                                                            type="file">
-                                                        <input type="hidden" name="img1" id="img1" v-bind:value="idtituloes">
+                                        <div class="form-group col-md-3">
 
-                                                    </div>
-                                                       
-                                                    <input type="submit" value="Upload"
-                                                        class="btn btn-info margen sub"></input>
-                                                    </form>
-                                                    
-                                               
 
-                                            </div><br>
 
-                                            </div>
-                                            <div class="card-body col-md-12" >
-                                                <div class="table-responsive">
-                                                    <table class="table table-bordered" id="dataTable" width="100%"
-                                                        cellspacing="0">
-                                                        <thead>
-                                                            <tr>
-                                                                <th>imagen</th>
-                                                               
-                                                            </tr>
-                                                        </thead>
+                                            <form enctype="multipart/form-data" action="../api/conocenosS4Col.php"
+                                                method="POST" class="col-md-6">
+                                                <p>Upload your file</p>
+                                                <div class="divFile" style="width: 200px">
+                                                    <p class="filetext">Seleccionar Imagen</p>
+                                                    <input id="fileImg1" name="uploaded_file" class="btnenviar"
+                                                        type="file">
+                                                    <input type="hidden" name="img1" id="img1"
+                                                        v-bind:value="idtituloes">
 
-                                                        <tbody>
-                                                            <tr v-for="dts in datos">
-                                                                <td><img v-bind:src="'../' + dts.img" style="width: 100px;"/> </td>
-                                                                <td> <button class="btn btn-primary mr-1"
-                                                                        data-trigger="hover" data-toggle="tooltip"
-                                                                        data-placement="top" data-title="Modificar"
-                                                                        @click="pasar(dts.img, dts.id)">
-                                                                        Eliminar
-                                                                    </button></td>
-                                                            </tr>
-
-                                                        </tbody>
-                                                    </table>
                                                 </div>
-                                            </div>
+
+                                                <input type="submit" value="Upload"
+                                                    class="btn btn-info margen sub"></input>
+                                            </form>
+
+
+
                                         </div>
+                                        <br>
 
                                     </div>
+                                    <div class="card-body col-md-12">
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered" id="dataTable" width="100%"
+                                                cellspacing="0">
+                                                <thead>
+                                                    <tr>
+                                                        <th>imagen</th>
 
+                                                    </tr>
+                                                </thead>
 
+                                                <tbody>
+                                                    <tr v-for="dts in datos">
+                                                        <td><img v-bind:src="'../' + dts.img" style="width: 100px;" />
+                                                        </td>
+                                                        <td> <button class="btn btn-primary mr-1" data-trigger="hover"
+                                                                data-toggle="tooltip" data-placement="top"
+                                                                data-title="Modificar" @click="pasar(dts.img, dts.id)">
+                                                                Eliminar
+                                                            </button></td>
+                                                    </tr>
 
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
                                 </div>
 
-                               <br><br><br>
                             </div>
+
+
+
                         </div>
 
-                        <!-- DataTales Example -->
-
-
-                    </div>
-                    <!-- /.container-fluid -->
-
-                </div>
-                <!-- End of Main Content -->
-
-                <!-- Footer -->
-                <footer class="sticky-footer bg-white">
-                    <div class="container my-auto">
-                        <div class="copyright text-center my-auto">
-                            <span>Copyright &copy; Your Website 2020</span>
-                        </div>
-                    </div>
-                </footer>
-                <!-- End of Footer -->
-
-            </div>
-            <!-- End of Content Wrapper -->
-
-        </div>
-        <!-- End of Page Wrapper -->
-
-        <!-- Scroll to Top Button-->
-        <a class="scroll-to-top rounded" href="#page-top">
-            <i class="fas fa-angle-up"></i>
-        </a>
-
-        <!-- Logout Modal-->
-        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">×</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                    <div class="modal-footer">
-                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                        <a class="btn btn-primary" href="login.html">Logout</a>
+                        <br><br><br>
                     </div>
                 </div>
+
+                <!-- DataTales Example -->
+
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    <span>Copyright &copy; Your Website 2020</span>
+                </div>
+            </div>
+        </footer>
+        <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
             </div>
         </div>
+    </div>
     </div>
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
@@ -323,48 +327,48 @@
                         app.imgen = response.data.datos[1].img;
                         app.img2es = response.data.datos[2].img;
                         app.img2en = response.data.datos[3].img;
-                        
+
                         app.idtituloes = response.data.datos[0].id;
                         app.datos = response.data.datos;
                     })
             },
-            pasar: function(img, id){
+            pasar: function(img, id) {
 
                 Swal.fire({
-                title: '¿Desea Eliminar Este Evento?',
-                type: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Si, Eliminar!'
+                    title: '¿Desea Eliminar Este Evento?',
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Si, Eliminar!'
                 }).then(function(result) {
                     if (result.value) {
                         axios.post("../api/conocenos.php?accion=dseccioncuatroEliminarImagen", {
-                                    ide: id,
-                                    path: img,
+                            ide: id,
+                            path: img,
 
-                                }).then(function(response) {
-                                    //console.log(response.data);
-                                    if (response.status == '200') {
+                        }).then(function(response) {
+                            //console.log(response.data);
+                            if (response.status == '200') {
 
-                                        Swal.fire({
+                                Swal.fire({
 
-                                            type: 'success',
-                                            title: 'Dato Actualizados Correctamente',
-                                            showConfirmButton: false,
-                                            timer: 3000
-                                        })
-                                    }
-
-                                    setTimeout(function() {
-                                        location.reload()
-                                    }, 3000, "JavaScript");
+                                    type: 'success',
+                                    title: 'Dato Actualizados Correctamente',
+                                    showConfirmButton: false,
+                                    timer: 3000
                                 })
+                            }
+
+                            setTimeout(function() {
+                                location.reload()
+                            }, 3000, "JavaScript");
+                        })
                     }
                 })
-                
-                        
-               
+
+
+
                 //console.log(img, id)
             }
         }

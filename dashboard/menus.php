@@ -110,6 +110,8 @@
                                         <input type="text" class="form-control" v-model="pinups">
                                         <label for="inputEmail4">Privacidad</label>
                                         <input type="text" class="form-control" v-model="privacy">
+                                        <label for="inputEmail4">Teléfono</label>
+                                        <input type="text" class="form-control" v-model="telefono">
                                         <button type="buttom" class="btn btn-primary margen"  @click="actualizar()">Guardar</button>
                                     </div>
                                     <div class="form-group col-md-6 ">
@@ -216,6 +218,7 @@
             storeE: '',
             pinupsE: '',
             privacyE:'',
+            telefono: '',
             
 
            },
@@ -237,6 +240,7 @@
                     this.store = response.data.datos[4].nombre;
                     this.pinups = response.data.datos[5].nombre;
                     this.privacy = response.data.datos[6].nombre;
+                    this.telefono = response.data.datos[7].nombre;
                     //console.log(response)
                 });
             
@@ -266,6 +270,7 @@
                     store: this.store,
                     pinups: this.pinups,
                     privacy: this.privacy,
+                    telefono: this.telefono,
 
                     homeE: this.homeE,
                     menuE: this.menuE,
@@ -280,12 +285,14 @@
                     if (response.status == '200') {
                         Swal.fire({
                             type: 'success',
-                            title: 'Titulo Actualizada Correctamente',
+                            title: 'Datos Actualizados Correctamente',
                             showConfirmButton: false,
                             timer: 3000
                         })
                     }
-
+                    setTimeout(function() {
+                            location.reload()
+                        }, 3000, "JavaScript");
                 })
             },
             

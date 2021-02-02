@@ -36,7 +36,8 @@
             $storeE = $data->storeE;
             $pinupsE = $data->pinupsE;
             $privacyE = $data->privacyE;
-
+            
+            $telefono = $data->telefono;
            
             $u = $user->actualizar("UPDATE menu SET nombre = '$home' WHERE id = 1");
             $u = $user->actualizar("UPDATE menu SET nombre = '$homeE' WHERE id = 2");
@@ -60,6 +61,10 @@
 
             $u = $user->actualizar("UPDATE menu SET nombre = '$privacy' WHERE id = 13");
             $u = $user->actualizar("UPDATE menu SET nombre = '$privacyE' WHERE id = 14");
+
+            $u = $user->actualizar("UPDATE menu SET nombre = '$telefono' WHERE id = 15");
+            $u = $user->actualizar("UPDATE menu SET nombre = '$telefono' WHERE id = 16");
+            
             
             if($u):
                 $res['datos'] = $u;

@@ -35,7 +35,7 @@ Vue.component('seccionsiete', {
             })
             .then(response=>{
                 this.registros = response.data.datos;
-               console.log(response); 
+               //console.log(response); 
                 //console.log(response)
             });
           
