@@ -41,7 +41,7 @@ Vue.component('f_seccioncuatro', {
     methods: {
        async cargaMenu(){
             await axios.post("api/franquicias.php?accion=seccioncuatro", {
-                ide:  "es"
+                ide:  localStorage.getItem('idioma')
             })
             .then(response=>{
                 this.img = response.data.datos[0].img;

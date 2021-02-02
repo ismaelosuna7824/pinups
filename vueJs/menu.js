@@ -112,7 +112,7 @@ Vue.component('menu-component', {
     methods: {
        async cargaMenu(){
             await axios.post("api/menu.php?accion=menu", {
-                ide:  "es"
+                ide:  localStorage.getItem('idioma')
             })
             .then(response=>{
                 this.home =  response.data.datos[0].nombre;

@@ -41,7 +41,7 @@ Vue.component('f_seccionuno', {
     methods: {
        async cargaMenu(){
             await axios.post("api/franquicias.php?accion=seccionuno", {
-                ide:  "es"
+                ide:  localStorage.getItem('idioma')
             })
             .then(response=>{
                 this.titulo = response.data.datos[0].titulo;

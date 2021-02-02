@@ -21,7 +21,8 @@
             //  $newPathUnlik = substr($idpat,18);
             //  unlink("../dashboard/uploads/{$newPathUnlik}");
             //echo $newPathUnlik;
-            header("Location: ../dashboard/conocenosseccionuno.php");
+           // header("Location: ../dashboard/conocenosseccionuno.php");
+            echo "<script>location='../dashboard/conocenosseccionuno.php'</script>";
         }
       } else{
           echo "There was an error uploading the file, please try again!";

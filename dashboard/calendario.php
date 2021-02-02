@@ -23,53 +23,12 @@
 </head>
 
 <body id="page-top">
-
+<div id="app">
     <!-- Page Wrapper -->
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
-            <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
-                </div>
-                <div class="sidebar-brand-text mx-3">Pinups<sup></sup></div>
-            </a>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider my-0">
-
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne"
-                    aria-expanded="true" aria-controls="collapseOne">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Eventos</span>
-                </a>
-                <div id="collapseOne" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="calendario.php">Calendario</a>
-                        <a class="collapse-item" href="index.php">Imagenes de Bandas</a>
-                    </div>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Imagenes</span>
-                </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="imagenes.php">imagenes banners</a>
-                        <a class="collapse-item" href="imagenesHeader.php">Imagenes de Header</a>
-                        <a class="collapse-item" href="imagenes_conocenos.php">Imagenes de Conocenos</a>
-                    </div>
-                </div>
-            </li>
-        </ul>
+         <menu-component></menu-component>
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
@@ -128,7 +87,7 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                <div class="container-fluid" id="app">
+                <div class="container-fluid" >
                     <!-- Page Heading -->
                     <div class="card shadow mb-4">
                         <div style="padding-left: 50px; padding-right: 50px; padding-top: 60px; padding-bottom: 50px;">
@@ -267,7 +226,7 @@
             </div>
         </div>
     </div>
-
+</div>
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -286,6 +245,7 @@
     <script src="js/demo/chart-pie-demo.js"></script>
     <script src="../vueJs/axios.min.js"></script>
     <script src="../vueJs/vue.js"></script>
+    <script src="components/menu.js"></script>
     <script>
         let app =	new Vue({
            el: "#app",

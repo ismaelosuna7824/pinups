@@ -417,7 +417,7 @@
             methods: {
                 cargarDatos: function() {
                     axios.post("api/menuComida.php?accion=seccionuno", {
-                        ide:  "es"
+                        ide:  localStorage.getItem('idioma')
                          })
                         .then(function(response) {
                             app.imgHeader = response.data.datos[0].img1;

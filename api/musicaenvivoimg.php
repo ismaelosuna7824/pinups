@@ -22,7 +22,8 @@
         echo "The file ".  basename( $_FILES['uploaded_file']['name']). 
         " has been uploaded";
         if($r[0] == true){
-            header("Location: ../dashboard/index.php");
+            //header("Location: ../dashboard/index.php");
+            echo "<script>location='../dashboard/index.php'</script>";
         }
       } else{
           echo "There was an error uploading the file, please try again!";

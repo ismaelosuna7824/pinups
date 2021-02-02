@@ -414,7 +414,7 @@
             <br>
             <h4 class="alinearC" >¿Qué pasa si tengo preguntas o inquietudes?</h4>
             <p>
-                Si tienes preguntas o inquietudes respecto de la privacidad al utilizar el Servicio, envíanos un mensaje detallado a: PinupsbarGrill@gmail.com Haremos todo lo posible para resolver tus inquietudes.
+                Si tienes preguntas o inquietudes respecto de la privacidad al utilizar el Servicio, envíanos un mensaje detallado a:  <a href = "mailto: PinupsbarGrill@gmail.com">PinupsbarGrill@gmail.com</a> Haremos todo lo posible para resolver tus inquietudes.
             </p>
 
         </div>

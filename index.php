@@ -40,6 +40,7 @@
         href="https://pinupsfungrill.com/index.html?ckcachebust=dad298f3fab6b4b26cbdb3d323044cd9">
 
     <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    <link href="assets/css/modal.css" rel="stylesheet">
 </head>
 
 <body>
@@ -310,7 +311,8 @@
     .no-margin-bottom {
         margin-bottom: 32px;
     }
-    .videos{
+
+    .videos {
         width: 30%
     }
 
@@ -328,7 +330,8 @@
         .no-margin-bottom {
             margin-bottom: 0px !important;
         }
-        .videos{
+
+        .videos {
             width: 100%
         }
     }
@@ -342,9 +345,10 @@
             width: 40%;
             padding: 50px 0px;
         }
-        .videos{
-        width: 30%
-    }
+
+        .videos {
+            width: 30%
+        }
 
     }
 
@@ -357,27 +361,41 @@
             width: 30%;
             padding: 50px 0px;
         }
-        .videos{
-        width: 30%
-    }
+
+        .videos {
+            width: 30%
+        }
 
     }
     </style>
     <div id="app">
 
-        <menu-component></menu-component>
+        <div id="myModal" class="modal" v-bind:style="{display: modal }">
 
-    <!--[index == 0 ? 'carousel-item active' : 'carousel-item' ]-->
- 
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>Some text in the Modal..</p>
+            </div>
+
+        </div>
+
+        <menu-component></menu-component> 
+
+        <!--[index == 0 ? 'carousel-item active' : 'carousel-item' ]-->
+
         <div class="hero">
             <div class="carousel slide" id="carousel" data-ride="carousel" data-interval="5000" data-keyboard="false"
                 data-pause="false">
                 <div class="carousel-inner">
 
-                    <div v-for="(item, index) in imgHeader" :key="item.id" :class="[ index == 0 ? 'carousel-item active' : 'carousel-item' ]">
+                    <div v-for="(item, index) in imgHeader" :key="item.id"
+                        :class="[ index == 0 ? 'carousel-item active' : 'carousel-item' ]">
                         <picture>
 
-                            <img class="w-100" v-bind:src="item.img" alt="Obsesionados con la calidad">
+                            <a v-bind:href="item.url" target="_blank">
+                                <img class="w-100" v-bind:src="item.img" alt="Obsesionados con la calidad">
+                            </a>
                         </picture>
                     </div>
                 </div><a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev"><span
@@ -410,9 +428,7 @@
 
             <seccioncinco></seccioncinco>
 
-            <div class="row">
-                <div class="col-12 text-center"><a class="btn btn-primary" href="conocenosN">Más información </a></div>
-            </div>
+           
         </div>
         <seccionseis></seccionseis>
         <div class="container my-lg-5 py-4">
@@ -506,6 +522,7 @@
             titulo2: '',
             titulo3: '',
             titulo4: '',
+            modal: 'none'
         },
         mounted: function() {
             this.initIdioma()
@@ -525,15 +542,29 @@
                     .then(function(response) {
 
                         app.imgHeader = response.data.datos;
+                        //console.log(response);
 
                     })
             },
             initIdioma: function() {
-                localStorage.setItem('idioma', 'en');
+                
+                var idm = localStorage.getItem('idioma');
+                if (idm == null) {
+                    localStorage.setItem('idioma', 'es');
+                    setTimeout(function() {
+                            location.reload()
+                        }, 1000, "JavaScript");
+                    //app.modal = 'block';
+                } else {
+                    // app.modal = 'none';
+                    // console.log('el idioma si esta')
+                }
+                //app.modal = 'none';
+
             },
             cargaTitulos: function() {
                 axios.post("api/inicio.php?accion=titulos", {
-                        ide: "es"
+                        ide: localStorage.getItem('idioma')
                     })
                     .then(function(response) {
                         app.titulo1 = response.data.datos[0].titulo;

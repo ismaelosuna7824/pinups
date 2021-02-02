@@ -27,33 +27,6 @@ Vue.component('menu-component', {
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne"
-                    aria-expanded="true" aria-controls="collapseOne">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Eventos</span>
-                </a>
-                <div id="collapseOne" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="calendario.php">Calendario</a>
-                        <a class="collapse-item" href="index.php">Imagenes de Bandas</a>
-                    </div>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Imagenes</span>
-                </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="imagenes.php">imagenes banners</a>
-                        <a class="collapse-item" href="imagenesHeader.php">Imagenes de Header</a>
-                        <a class="collapse-item" href="imagenes_conocenos.php">Imagenes de Conocenos</a>
-                    </div>
-                </div>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree"
                     aria-expanded="true" aria-controls="collapseThree">
                     <i class="fas fa-fw fa-cog"></i>
@@ -71,21 +44,49 @@ Vue.component('menu-component', {
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFive"
-                    aria-expanded="true" aria-controls="collapseFive">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSeven"
+                    aria-expanded="true" aria-controls="collapseSeven">
                     <i class="fas fa-fw fa-cog"></i>
-                    <span>Conocenos</span>
+                    <span>Menu</span>
                 </a>
-                <div id="collapseFive" class="collapse" aria-labelledby="collapseFive" data-parent="#accordionSidebar">
+                <div id="collapseSeven" class="collapse" aria-labelledby="collapseSeven" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="conocenosseccionuno">Seccion 1</a>
-                        <a class="collapse-item" href="conocenossecciondos">Seccion 2</a>
-                        <a class="collapse-item" href="conocenossecciontres">Seccion 3</a>
-                        <a class="collapse-item" href="conocenosseccioncuatro">Seccion 4</a>
-                        
+                        <a class="collapse-item" href="menuComida.php">Menu</a>
+                       
                     </div>
                 </div>
             </li>
+            <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFive"
+                aria-expanded="true" aria-controls="collapseFive">
+                <i class="fas fa-fw fa-cog"></i>
+                <span>Conocenos</span>
+            </a>
+            <div id="collapseFive" class="collapse" aria-labelledby="collapseFive" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item" href="conocenosseccionuno">Seccion 1</a>
+                    <a class="collapse-item" href="conocenossecciondos">Seccion 2</a>
+                    <a class="collapse-item" href="conocenossecciontres">Seccion 3</a>
+                    <a class="collapse-item" href="conocenosseccioncuatro">Seccion 4</a>
+                    
+                </div>
+            </div>
+        </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne"
+                    aria-expanded="true" aria-controls="collapseOne">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Musica en vivo</span>
+                </a>
+                <div id="collapseOne" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="calendario.php">Calendario</a>
+                        <a class="collapse-item" href="index.php">Imagenes de Bandas</a>
+                    </div>
+                </div>
+            </li>
+            
+           
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSix"
                     aria-expanded="true" aria-controls="collapseSix">

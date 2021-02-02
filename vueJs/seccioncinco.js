@@ -37,11 +37,12 @@ Vue.component('seccioncinco', {
     },
     mounted: function(){
         this.cargaMenu()
+        this.cargaImg()
     },
     methods: {
        async cargaMenu(){
             await axios.post("api/inicio.php?accion=seccioncinco", {
-                ide:  "es"
+                ide: localStorage.getItem('idioma')
             })
             .then(response=>{
                 this.titulo1 = response.data.datos[0].titulo;
@@ -53,6 +54,20 @@ Vue.component('seccioncinco', {
                 this.texto21  = response.data.datos[0].texto2;
                 this.texto22  = response.data.datos[1].texto2;
                 this.texto23  = response.data.datos[2].texto2;
+                // this.img1 = response.data.datos[0].img;
+                // this.img2 = response.data.datos[1].img;
+                // this.img3 = response.data.datos[2].img;
+                
+                //console.log(response);
+                //console.log(response)
+            });
+          
+        },
+        async cargaImg(){
+            await axios.post("api/inicio.php?accion=seccioncinco", {
+                ide: 'en'
+            })
+            .then(response=>{
                 this.img1 = response.data.datos[0].img;
                 this.img2 = response.data.datos[1].img;
                 this.img3 = response.data.datos[2].img;

@@ -77,7 +77,7 @@ Vue.component('f_secciontres', {
     methods: {
        async cargaMenu(){
             await axios.post("api/franquicias.php?accion=secciontrestitulo", {
-                ide:  "es"
+                ide:  localStorage.getItem('idioma')
             })
             .then(response=>{
                 //console.log(response);

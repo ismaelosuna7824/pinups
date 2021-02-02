@@ -6,7 +6,7 @@ Vue.component('seccionseis', {
             <div>
                 <div>
                     <div>
-                        <center><a href="#"><img v-bind:src="img1" width="100%" height="100%"></a></center>
+                        <center><a v-bind:href="url1" target="_blank"><img v-bind:src="img1" width="100%" height="100%"></a></center>
                     </div>
                 </div>
             </div>
@@ -15,7 +15,7 @@ Vue.component('seccionseis', {
             <div>
                 <div>
                     <center>
-                        <a href="#"><img v-bind:src="img2" width="100%" height="100%"></a>
+                        <a v-bind:href="url2" target="_blank"><img v-bind:src="img2" width="100%" height="100%"></a>
                     </center>
                 </div>
             </div>
@@ -27,7 +27,7 @@ Vue.component('seccionseis', {
             <div>
                 <div>
                     <div>
-                        <center><a href="#"><img v-bind:src="img3" width="100%" height="100%"></a></center>
+                        <center><a v-bind:href="url3" target="_blank"><img v-bind:src="img3" width="100%" height="100%"></a></center>
                     </div>
                 </div>
             </div>
@@ -36,7 +36,7 @@ Vue.component('seccionseis', {
             <div>
                 <div>
                     <center>
-                        <a href="#"><img v-bind:src="img4" width="100%" height="100%"></a>
+                        <a v-bind:href="url4" target="_blank"><img v-bind:src="img4" width="100%" height="100%"></a>
                     </center>
                 </div>
             </div>
@@ -49,7 +49,11 @@ Vue.component('seccionseis', {
         img1: '',
         img2: '',
         img3: '',
-        img4: ''
+        img4: '',
+        url1: '',
+        url2: '',
+        url3: '',
+        url4: ''
     }
     },
     mounted: function(){
@@ -62,9 +66,16 @@ Vue.component('seccionseis', {
             })
             .then(response=>{
                 this.img1 = response.data.datos[0].img;
+                this.url1 = response.data.datos[0].url;
+
                 this.img2 = response.data.datos[1].img;
+                this.url2 = response.data.datos[1].url;
+
                 this.img3 = response.data.datos[2].img;
-                this.img4 = response.data.datos[3].img; 
+                this.url3 = response.data.datos[2].url;
+
+                this.img4 = response.data.datos[3].img;
+                this.url4 = response.data.datos[3].url; 
                 //console.log(response)
             });
           

@@ -75,7 +75,7 @@ Vue.component('f_secciondos', {
     methods: {
        async cargaMenu(){
             await axios.post("api/franquicias.php?accion=secciodostitulo", {
-                ide:  "es"
+                ide:  localStorage.getItem('idioma')
             })
             .then(response=>{
                 this.titulo = response.data.datos[0].titulo;
@@ -88,7 +88,7 @@ Vue.component('f_secciondos', {
         },
         async cargaCol(){
             await axios.post("api/franquicias.php?accion=secciodoscol", {
-                ide:  "es"
+                ide: localStorage.getItem('idioma')
             })
             .then(response=>{
                 this.titulo1 = response.data.datos[0].titulo;

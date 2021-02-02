@@ -2,7 +2,7 @@ Vue.component('seccioncuatro', {
     template: `
     <div>
 		<div>
-			<a href="###"><img  v-bind:src="img" width="100%" height="100%" alt="" /></a>
+			<a v-bind:href="url2" target="_blank"><img  v-bind:src="img" width="100%" height="100%" alt="" /></a>
 
 		</div>
 	</div>
@@ -11,6 +11,7 @@ Vue.component('seccioncuatro', {
     return {
         img: '',
         url: '',
+        url2: ''
     }
     },
     mounted: function(){
@@ -24,6 +25,7 @@ Vue.component('seccioncuatro', {
             .then(response=>{
                 this.url = response.data.datos[0].url;
                 this.img = response.data.datos[1].image;
+                this.url2 = response.data.datos[1].url;
                 //console.log(response)
             });
           

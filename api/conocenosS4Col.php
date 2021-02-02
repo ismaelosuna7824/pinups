@@ -14,7 +14,8 @@
         echo "The file ".  basename( $_FILES['uploaded_file']['name']). 
         " has been uploaded";
         if($r[0] == true){
-            header("Location: ../dashboard/conocenosseccioncuatro.php");
+            //header("Location: ../dashboard/conocenosseccioncuatro.php");
+            echo "<script>location='../dashboard/conocenosseccioncuatro.php'</script>";
         }
       } else{
           echo "There was an error uploading the file, please try again!";

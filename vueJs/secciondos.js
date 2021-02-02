@@ -31,10 +31,7 @@ Vue.component('secciondos', {
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-12 text-center mt-4 mt-lg-5"><a class="btn btn-primary" href="menu.html">Ver menú
-                completo</a></div>
-    </div>
+    
 </div>`,
     data() {
     return {
@@ -54,11 +51,12 @@ Vue.component('secciondos', {
     },
     mounted: function(){
         this.cargaMenu()
+        this.cargaImg()
     },
     methods: {
        async cargaMenu(){
             await axios.post("api/inicio.php?accion=secciondos", {
-                ide:  "es"
+                ide:  localStorage.getItem('idioma')
             })
             .then(response=>{
                 this.tuno = response.data.datos[0].titulo;
@@ -69,6 +67,15 @@ Vue.component('secciondos', {
                 this.pdos = response.data.datos[1].subtitulo;
                 this.ptres = response.data.datos[2].subtitulo;
                 this.pcuatro = response.data.datos[3].subtitulo;
+               
+            });
+          
+        },
+        async cargaImg(){
+            await axios.post("api/inicio.php?accion=secciondos", {
+                ide:  "en"
+            })
+            .then(response=>{
                 this.iuno = response.data.datos[0].img;
                 this.idos = response.data.datos[1].img;
                 this.itres = response.data.datos[2].img;

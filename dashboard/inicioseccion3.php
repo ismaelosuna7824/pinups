@@ -122,6 +122,8 @@
                                             <input id="fileImg1" name="nfileImg" class="btnenviar" type="file">
                                             <input type="hidden" name="img1" id="img1" value="2">
                                         </div>
+                                        <label for="inputPassword4">Url</label>
+                                        <input type="text" class="form-control" id="inputPassword4" name="url" v-bind:value="url2" > <br>
                                         <input type="submit" value="Modificar" class="btn btn-info  sub"></input>
                                     </form> 
                                   </div>
@@ -204,6 +206,7 @@
                url:'',
                img:'',
                imgi:'',
+               url2: ''
 
            },
            mounted: function(){
@@ -218,6 +221,7 @@
                 this.url = response.data.datos[0].url;
                 this.img = response.data.datos[0].image;
                 this.imgi = response.data.datos[1].image;
+                this.url2 =  response.data.datos[1].url;
                 //console.log(response)
             });
           

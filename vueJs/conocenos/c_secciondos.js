@@ -66,7 +66,7 @@ Vue.component('c_secciondos', {
     methods: {
        async cargaMenu(){
             await axios.post("api/conocenos.php?accion=secciondos", {
-                ide:  "es"
+                ide:  localStorage.getItem('idioma')
             })
             .then(response=>{
                //console.log(response);
@@ -94,7 +94,13 @@ Vue.component('c_secciondos', {
             })
             .then(response=>{
             //console.log(response);
-            this.imgT = response.data.datos[0].img1;
+            const idioma = localStorage.getItem('idioma');
+            if(idioma == 'es' ){
+                this.imgT = response.data.datos[0].img1;
+            }else{
+                this.imgT = response.data.datos[1].img1;
+            }
+            
             this.imgback = response.data.datos[0].img2;
             //    this.img1 = response.data.datos[0].img;
             //    this.titulo1 = response.data.datos[0].titulo;

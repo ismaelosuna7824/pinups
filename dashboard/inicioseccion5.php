@@ -323,7 +323,7 @@
                 this.URL1 = response.data.datos[0].url;
                 
                 
-                //console.log(response);
+                console.log(response);
                 //console.log(response)
             });
         },

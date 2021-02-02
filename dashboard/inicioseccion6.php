@@ -102,7 +102,10 @@
                                             <p class="filetext">Seleccionar Imagen</p>
                                             <input id="fileImg1" name="nfileImg" class="btnenviar" type="file">
                                             <input type="hidden" name="img1" id="img1" value="1">
+                                           
                                         </div>
+                                        <label for="inputPassword4">Url</label>
+                                        <input type="text" class="form-control" id="inputPassword4" name="url" v-bind:value="url1" > <br>
                                         <input type="submit" value="Modificar" class="btn btn-info sub"></input>
                                     </form> 
                                   </div>
@@ -115,6 +118,8 @@
                                             <input id="fileImg1" name="nfileImg" class="btnenviar" type="file">
                                             <input type="hidden" name="img1" id="img1" value="2">
                                         </div>
+                                        <label for="inputPassword4">Url</label>
+                                        <input type="text" class="form-control" id="inputPassword4" name="url" v-bind:value="url2" > <br>
                                         <input type="submit" value="Modificar" class="btn btn-info  sub"></input>
                                     </form> 
                                   </div>
@@ -131,6 +136,8 @@
                                             <input id="fileImg1" name="nfileImg" class="btnenviar" type="file">
                                             <input type="hidden" name="img1" id="img1" value="3">
                                         </div>
+                                        <label for="inputPassword4">Url</label>
+                                        <input type="text" class="form-control" id="inputPassword4" name="url" v-bind:value="url3" > <br>
                                         <input type="submit" value="Modificar" class="btn btn-info sub"></input>
                                     </form> 
                                   </div>
@@ -143,6 +150,8 @@
                                             <input id="fileImg1" name="nfileImg" class="btnenviar" type="file">
                                             <input type="hidden" name="img1" id="img1" value="4">
                                         </div>
+                                        <label for="inputPassword4">Url</label>
+                                        <input type="text" class="form-control" id="inputPassword4" name="url" v-bind:value="url4" > <br>
                                         <input type="submit" value="Modificar" class="btn btn-info  sub"></input>
                                     </form> 
                                   </div>
@@ -226,7 +235,11 @@
                img2:'',
                img3:'',
                img4:'',
-
+               url: '',
+               url1: '',
+               url2: '',
+               url3: '',
+               url4: ''
            },
            mounted: function(){
             this.cargar()
@@ -238,9 +251,16 @@
             })
             .then(response=>{
                 this.img1 = response.data.datos[0].img;
+                this.url1 = response.data.datos[0].url;
+
                 this.img2 = response.data.datos[1].img;
+                this.url2 = response.data.datos[1].url;
+
                 this.img3 = response.data.datos[2].img;
+                this.url3 = response.data.datos[2].url;
+
                 this.img4 = response.data.datos[3].img; 
+                this.url4 = response.data.datos[3].url;
                 //console.log(response)
             });
           
