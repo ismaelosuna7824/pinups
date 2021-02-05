@@ -51,10 +51,17 @@ Vue.component('menu-component', {
 					<li class="nav-item"><a class="nav-link" href="franquicias" style="background-color: black; border-radius: 7px;">{{pinups}}</a></li>
 				</ul>
 				<ul class="navbar-nav">
-					<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbarDropdown" href="#"
-							role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Español</a>
-
-					</li>
+				<div class="dropdown show" >
+				<a class="btn btn-secondary dropdown-toggle"  style="background-color: #D7263D ; border:none" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				  Idioma
+				</a>
+			  
+				<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+				  <a class="dropdown-item" href="" @click="changeIdioma(1)">Español</a>
+				  <a class="dropdown-item" href="" @click="changeIdioma(2)">English</a>
+				</div>
+			  </div>
+					
 				</ul>
 			</div>
 			<div class="container navbar-mobile d-lg-none"><a class="navbar-brand" href="index.html"><img
@@ -125,6 +132,15 @@ Vue.component('menu-component', {
                 //console.log(response)
             });
           
-        }
+		},
+		changeIdioma(parm){
+			if(parm == 1){
+				localStorage.setItem('idioma', 'es');
+				location.reload();
+			}else{
+				localStorage.setItem('idioma', 'en');
+				location.reload();
+			}
+		}
     },
 });

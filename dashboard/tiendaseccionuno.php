@@ -93,6 +93,7 @@
                         <div class="card shadow mb-8">
                             <div
                                 style="padding-left: 50px; padding-right: 50px; padding-top: 60px; padding-bottom: 50px;">
+                                <h1>Página de tienda </h1><br>
                                 <div class="form-row">
                                     <div class="form-group col-md-12">
 
@@ -129,7 +130,7 @@
 
                                         <form enctype="multipart/form-data" action="../api/tiendaS1Col.php"
                                             method="POST" class="col-md-6">
-                                            <p>Upload your file</p>
+                                            <p>Tamaño (382x321)</p>
                                             <div class="divFile" style="width: 200px">
                                                 <p class="filetext">Seleccionar Imagen</p>
                                                 <input id="fileImg1" name="uploaded_file" class="btnenviar" type="file">
@@ -158,6 +159,22 @@
                                             <tbody>
                                                 <tr v-for="dts in datos">
                                                     <td><img v-bind:src="'../' + dts.img" style="width: 100px;" /> </td>
+                                                    <td>
+                                                    <form enctype="multipart/form-data"
+                                                        action="../api/editarImagenes.php" method="POST">
+                                                        <div class="">
+                                                            <p class="filetext">Seleccionar Imagen</p>
+                                                            <input id="fileImg1" name="nfileImg" class="" type="file">
+                                                            <input type="text" hidden name="tabla" value="tiendaimg">
+                                                            <input type="text" hidden name="campo" value="img">
+                                                            <input type="text" hidden name="pagina" value="tiendaseccionuno">
+                                                            <input type="text" hidden name="img1" v-bind:value="dts.id">
+                                                        </div>
+ 
+                                                        <input type="submit" value="Upload"
+                                                            class="btn btn-info margen sub" style="width: 100px"></input>
+                                                    </form>
+                                                    </td>
                                                     <td> <button class="btn btn-primary mr-1" data-trigger="hover"
                                                             data-toggle="tooltip" data-placement="top"
                                                             data-title="Modificar" @click="pasar(dts.img, dts.id)">

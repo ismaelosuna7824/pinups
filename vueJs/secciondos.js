@@ -73,9 +73,10 @@ Vue.component('secciondos', {
         },
         async cargaImg(){
             await axios.post("api/inicio.php?accion=secciondos", {
-                ide:  "en"
+                ide:  "es"
             })
             .then(response=>{
+                console.log(response);
                 this.iuno = response.data.datos[0].img;
                 this.idos = response.data.datos[1].img;
                 this.itres = response.data.datos[2].img;

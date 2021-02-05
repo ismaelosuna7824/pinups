@@ -292,6 +292,9 @@
             color: red; font-size: 40px;
 
         }
+        .coldMobile{
+            display:none;
+        }
         @media (max-width: 576px) { 
             .imgHeader{
                 width: 100%;
@@ -299,11 +302,15 @@
                 
             }
             .colds{
-            width: 100%;
+                display: none;
             }
             .telefono{
             color: red; font-size: 30px;
 
+            }
+            .coldMobile{
+            width: 60%;
+            display:block;
         }
         }
 
@@ -342,12 +349,25 @@
                         </a>
                     </div>
                 </div>
+                <div class="row coldMobile" >
+                    <div class="col" style="padding-left: 0px; padding-right: 0px; height: 100px;">
+                    <a v-bind:href="url1" target ="_blank">
+                        <img v-bind:src="img2" alt="" style="width: 100%; height: 100%;">
+                    </a>
+                    </div>
+                    <h2 style="padding-left: 10px; padding-right: 10px; padding-top: 0px; margin-top: 10px;">Ó</h2>
+                    <div class="col" style="padding-left: 0px; padding-right: 0px; height: 100px;">
+                        <a v-bind:href="url2" target ="_blank">
+                        <img v-bind:src="img3" alt="" style="width: 100%; height: 100%;">
+                        </a>
+                    </div>
+                </div>
             </center><br>
             <p class="text-center" style="font-size: 20px;" v-html="texto3">
 
             </p>
             <div>
-                <h2 class="linea" style="font-size: 18px; color: #373636;"> <img v-bind:src="img4" alt=""> </h2>
+                <h2 class="linea" style="font-size: 18px; color: #373636;"> <img v-bind:src="img4"  alt=""> </h2>
             </div>
             <br>
             <center>

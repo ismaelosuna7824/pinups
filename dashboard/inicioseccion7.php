@@ -24,156 +24,212 @@
 </head>
 
 <body id="page-top">
-<div id="app">
-    <!-- Page Wrapper -->
-    <div id="wrapper">
+    <div id="app">
+        <!-- Page Wrapper -->
+        <div id="wrapper">
 
-        <!-- Sidebar -->
-        <menu-component></menu-component>
-        <!-- End of Sidebar -->
+            <!-- Sidebar -->
+            <menu-component></menu-component>
+            <!-- End of Sidebar -->
 
-        <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
+            <!-- Content Wrapper -->
+            <div id="content-wrapper" class="d-flex flex-column">
 
-            <!-- Main Content -->
-            <div id="content">
+                <!-- Main Content -->
+                <div id="content">
 
-                <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                    <!-- Topbar -->
+                    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-                    <!-- Sidebar Toggle (Topbar) -->
-                    <form class="form-inline">
-                        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                            <i class="fa fa-bars"></i>
-                        </button>
-                    </form>
+                        <!-- Sidebar Toggle (Topbar) -->
+                        <form class="form-inline">
+                            <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                        </form>
 
-                    <!-- Topbar Search -->
-
-
-                    <!-- Topbar Navbar -->
-                    <ul class="navbar-nav ml-auto">
-
-                        <!-- Nav Item - Alerts -->
+                        <!-- Topbar Search -->
 
 
-                        <!-- Nav Item - Messages -->
+                        <!-- Topbar Navbar -->
+                        <ul class="navbar-nav ml-auto">
+
+                            <!-- Nav Item - Alerts -->
 
 
-                        <div class="topbar-divider d-none d-sm-block"></div>
-
-                        <!-- Nav Item - User Information -->
-                        <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Administrador</span>
-                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
-                            </a>
-                            <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="userDropdown">
+                            <!-- Nav Item - Messages -->
 
 
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Cerrar Sesión
+                            <div class="topbar-divider d-none d-sm-block"></div>
+
+                            <!-- Nav Item - User Information -->
+                            <li class="nav-item dropdown no-arrow">
+                                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">Administrador</span>
+                                    <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
                                 </a>
-                            </div>
-                        </li>
+                                <!-- Dropdown - User Information -->
+                                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                    aria-labelledby="userDropdown">
 
-                    </ul>
 
-                </nav>
-                <!-- End of Topbar -->
+                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        Cerrar Sesión
+                                    </a>
+                                </div>
+                            </li>
 
-                <!-- Begin Page Content -->
-                <div class="container-fluid" id="app">
-                    <!-- Page Heading -->
-                    <div class="card shadow mb-4">
-                        <div style="padding-left: 50px; padding-right: 50px; padding-top: 60px; padding-bottom: 50px;">
+                        </ul>
+
+                    </nav>
+                    <!-- End of Topbar -->
+
+                    <!-- Begin Page Content -->
+                    <div class="container-fluid" id="app">
+                   
+                        <!-- Page Heading -->
+                        <div class="card shadow mb-8">
+                            <br>
+                            <div class="container">
+                            <h1>Seccion siete de Página de inicio</h1><br>
                             <div class="form-row">
-                                <div class="form-group col-md-4" v-for="data in registros">
-                                    <img class="margen img-fluid  flex-grow-0 mr-2 shadow" v-bind:src="'../' + data.img" >
-                                    <form enctype="multipart/form-data" action="../api/imgS7.php" method="POST">
-                                        <div class="divFile">
-                                            <p class="filetext">Seleccionar Imagen</p>
-                                            <input id="fileImg1" name="nfileImg" class="btnenviar" type="file">
-                                            <input type="hidden" name="img1" id="img1"  v-model="data.id">
-                                        </div>
-                                        <input type="submit" value="Modificar" class="btn btn-info margen sub"></input>
-                                    </form>
-                                    <form enctype="multipart/form-data" action="../api/inicioSeccion7.php" method="POST">
-                                        <label for="inputEmail4">Texto</label>
-                                        <textarea name="texto" class="form-control" v-model="data.texto"></textarea>
-                                        <label class="margen" for="inputEmail4">Nombre</label>
-                                        <input name="nombre" type="text" class="form-control" id="inputEmail4" v-model="data.nombre">
-                                        <input name="id" type="hidden" class="form-control" id="inputEmail4" v-model="data.id">
-                                        <label class="margen" for="inputEmail4">URL</label>
-                                        <textarea name="url" class="form-control" v-model="data.url"></textarea>
-                                        <input name="accion"  type="submit" value="Guardar" class="btn btn-primary margen sub"></input>
-                                        <input name="accion"  type="submit" value="Eliminar" class="btn btn-danger margen sub"></input>
-                                    </form>
+
+                            <img class="margen img-fluid  flex-grow-0 mr-2 shadow"
+                                        v-bind:src="'../' + logo">
+                                        <form enctype="multipart/form-data"
+                                                        action="../api/editarImagenes.php" method="POST">
+                                                        <p>Tamaño(152x124)</p>
+                                                        <div class="divFile">
+                                                       
+                                                            <p class="filetext">Seleccionar Imagen</p>
+                                                           
+                                                            <input id="fileImg1" name="nfileImg" class="btnenviar" type="file">
+                                                            <input type="text" hidden name="tabla" value="titulos">
+                                                            <input type="text" hidden name="campo" value="titulo">
+                                                            <input type="text" hidden name="pagina" value="inicioseccion7">
+                                                            <input type="text" hidden name="img1" v-bind:value="9">
+                                                        </div>
+ 
+                                                        <input type="submit" value="Upload"
+                                                            class="btn btn-info margen sub"></input>
+                                                    </form>
+                                </div>
+                                <div class="form-row">
+
+                                    <div class="form-group col-md-4">
+
+                                        <label for="inputEmail4">Titulo Español</label>
+                                        <input type="text" class="form-control" id="inputEmail4" v-model="tituloEs">
+
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="inputEmail4">Titulo Ingles</label>
+                                        <input type="text" class="form-control" id="inputEmail4" v-model="tituloEn">
+
+                                    </div>
+                                </div>
+                                <button type="buttom" class="btn btn-primary" @click="editarTitu()">Guardar</button>
+                              
+                            </div>
+                            <div
+                                style="padding-left: 50px; padding-right: 50px; padding-top: 60px; padding-bottom: 50px;">
+                                <br>
+                                <p>Tamaños (420x276)</p>
+                                <div class="form-row">
+                                
+                                    <div class="form-group col-md-4" v-for="data in registros">
+                                        <img class="margen img-fluid  flex-grow-0 mr-2 shadow"
+                                            v-bind:src="'../' + data.img">
+                                        <form enctype="multipart/form-data" action="../api/imgS7.php" method="POST">
+                                            <div class="divFile">
+                                                <p class="filetext">Seleccionar Imagen</p>
+                                                <input id="fileImg1" name="nfileImg" class="btnenviar" type="file">
+                                                <input type="hidden" name="img1" id="img1" v-model="data.id">
+                                            </div>
+                                            <input type="submit" value="Modificar"
+                                                class="btn btn-info margen sub"></input>
+                                        </form>
+                                        <form enctype="multipart/form-data" action="../api/inicioSeccion7.php"
+                                            method="POST">
+                                            <label for="inputEmail4">Texto</label>
+                                            <textarea name="texto" class="form-control" v-model="data.texto"></textarea>
+                                            <label class="margen" for="inputEmail4">Nombre</label>
+                                            <input name="nombre" type="text" class="form-control" id="inputEmail4"
+                                                v-model="data.nombre">
+                                            <input name="id" type="hidden" class="form-control" id="inputEmail4"
+                                                v-model="data.id">
+                                            <label class="margen" for="inputEmail4">URL</label>
+                                            <textarea name="url" class="form-control" v-model="data.url"></textarea>
+                                            <input name="accion" type="submit" value="Guardar"
+                                                class="btn btn-primary margen sub"></input>
+                                            <input name="accion" type="submit" value="Eliminar"
+                                                class="btn btn-danger margen sub"></input>
+                                        </form>
+                                    </div>
+
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-5">
+                                        <form enctype="multipart/form-data" action="../api/inicioSeccion7.php"
+                                            method="POST">
+                                            <input name="accion" type="submit" value="Insertar"
+                                                class="btn btn-success margen sub"></input>
+                                        </form>
+                                    </div>
                                 </div>
 
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-5" >
-                                    <form enctype="multipart/form-data" action="../api/inicioSeccion7.php" method="POST">
-                                        <input name="accion"  type="submit" value="Insertar" class="btn btn-success margen sub"></input>
-                                    </form>
-                                </div>
-                            </div>
 
-                            
+                            </div>
                         </div>
                     </div>
+                    <!-- /.container-fluid -->
+
                 </div>
-                <!-- /.container-fluid -->
+                <!-- End of Main Content -->
+
+                <!-- Footer -->
+                <footer class="sticky-footer bg-white">
+                    <div class="container my-auto">
+                        <div class="copyright text-center my-auto">
+                            <span>Copyright &copy; Your Website 2020</span>
+                        </div>
+                    </div>
+                </footer>
+                <!-- End of Footer -->
 
             </div>
-            <!-- End of Main Content -->
+            <!-- End of Content Wrapper -->
 
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2020</span>
+        </div>
+        <!-- End of Page Wrapper -->
+
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
+
+        <!-- Logout Modal-->
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                        <a class="btn btn-primary" href="login.html">Logout</a>
                     </div>
                 </div>
-            </footer>
-            <!-- End of Footer -->
-
-        </div>
-        <!-- End of Content Wrapper -->
-
-    </div>
-    <!-- End of Page Wrapper -->
-
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
-
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
-                </div>
             </div>
         </div>
     </div>
-</div>
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -221,7 +277,11 @@
             ptresE: '',
             pcuatroE: '',
 
-            registros: []
+            registros: [],
+
+            tituloEs: '',
+            tituloEn: '',
+            logo: ''
         },
         mounted: function() {
             this.cargar()
@@ -230,29 +290,19 @@
         },
         methods: {
             async cargar() {
-                await axios.post("../api/inicio.php?accion=secciondos", {
+                await axios.post("../api/inicio.php?accion=titulosiete", {
                         ide: "es"
                     })
                     .then(response => {
-                        this.tuno = response.data.datos[0].titulo;
-                        this.tdos = response.data.datos[1].titulo;
-                        this.ttres = response.data.datos[2].titulo;
-                        this.tcuatro = response.data.datos[3].titulo;
-                        this.puno = response.data.datos[0].subtitulo;
-                        this.pdos = response.data.datos[1].subtitulo;
-                        this.ptres = response.data.datos[2].subtitulo;
-                        this.pcuatro = response.data.datos[3].subtitulo;
-
-
-                        this.iuno = response.data.datos[0].img;
-                        this.idos = response.data.datos[1].img;
-                        this.itres = response.data.datos[2].img;
-                        this.icuatro = response.data.datos[3].img;
+                        console.log(response);
+                        this.tituloEs = response.data.datos[0].titulo;
+                        this.tituloEn = response.data.datos[1].titulo;
+                        this.logo = response.data.datos[2].titulo;
                     });
 
             },
 
-           
+
             actualizarc1: function() {
                 axios.post("../api/inicio.php?accion=secciondosActualizar", {
                     id: 1,
@@ -290,16 +340,32 @@
 
                 })
             },
-            async cargaMenu(){
-            await axios.post("../api/inicio.php?accion=seccionsiete", {
-                ide:  "es"
-            })
-            .then(response=>{
-                this.registros = response.data.datos;
-               console.log(response); 
-                //console.log(response)
-            });
-          
+            async cargaMenu() {
+                await axios.post("../api/inicio.php?accion=seccionsiete", {
+                        ide: "es"
+                    })
+                    .then(response => {
+                        this.registros = response.data.datos;
+                        //console.log(response); 
+                        //console.log(response)
+                    });
+
+            },
+            async editarTitu(){
+                await axios.post("../api/inicio.php?accion=editarsiete", {
+                        tituloes: this.tituloEs,
+                        tituloen: this.tituloEn
+                    })
+                    .then(response => {
+                        if (response.status == '200') {
+                            Swal.fire({
+                                type: 'success',
+                                title: 'Actualizado Correctamente',
+                                showConfirmButton: false,
+                                timer: 3000
+                            })
+                        }
+                    });
             }
         }
     });

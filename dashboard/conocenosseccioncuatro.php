@@ -93,6 +93,7 @@
                         <div class="card shadow mb-8">
                             <div
                                 style="padding-left: 50px; padding-right: 50px; padding-top: 60px; padding-bottom: 50px;">
+                                <h1>Sección cuatro página conocenos</h1><br>
                                 <div class="form-row">
                                     <div class="form-group col-md-12">
                                         <div class="form-row">
@@ -101,6 +102,7 @@
                                                     v-bind:src="'../' + img" style="width: 200px">
                                                 <form enctype="multipart/form-data" action="../api/conocenosS4titu.php"
                                                     method="POST">
+                                                    <p>Tamaño (519x141)</p>
                                                     <div class="divFile" style="width: 200px">
                                                         <p class="filetext">Seleccionar Imagen</p>
                                                         <input id="fileImg1" name="nfileImg" class="btnenviar"
@@ -119,6 +121,7 @@
                                                     v-bind:src="'../' + imgen" style="width: 200px">
                                                 <form enctype="multipart/form-data" action="../api/conocenosS4titu.php"
                                                     method="POST">
+                                                    <p>Tamaño (519x141)</p>
                                                     <div class="divFile" style="width: 200px">
                                                         <p class="filetext">Seleccionar Imagen</p>
                                                         <input id="fileImg1" name="nfileImg" class="btnenviar"
@@ -136,6 +139,7 @@
                                                     v-bind:src="'../' + img2es" style="width: 200px">
                                                 <form enctype="multipart/form-data" action="../api/conocenosS4titu.php"
                                                     method="POST">
+                                                    <p>Tamaño (867x77)</p>
                                                     <div class="divFile" style="width: 200px">
                                                         <p class="filetext">Seleccionar Imagen</p>
                                                         <input id="fileImg1" name="nfileImg" class="btnenviar"
@@ -152,6 +156,7 @@
                                                     v-bind:src="'../' + img2en" style="width: 200px">
                                                 <form enctype="multipart/form-data" action="../api/conocenosS4titu.php"
                                                     method="POST">
+                                                    <p>Tamaño (867x77)</p>
                                                     <div class="divFile" style="width: 200px">
                                                         <p class="filetext">Seleccionar Imagen</p>
                                                         <input id="fileImg1" name="nfileImg" class="btnenviar"
@@ -168,11 +173,10 @@
                                         <!--------Fomulario------->
                                         <div class="form-group col-md-3">
 
-
+                                            <p>Tamaño imagen de galeria (1671x1083)</p>
 
                                             <form enctype="multipart/form-data" action="../api/conocenosS4Col.php"
                                                 method="POST" class="col-md-6">
-                                                <p>Upload your file</p>
                                                 <div class="divFile" style="width: 200px">
                                                     <p class="filetext">Seleccionar Imagen</p>
                                                     <input id="fileImg1" name="uploaded_file" class="btnenviar"
@@ -204,10 +208,26 @@
                                                 </thead>
 
                                                 <tbody>
-                                                    <tr v-for="dts in datos">
-                                                        <td><img v-bind:src="'../' + dts.img" style="width: 100px;" />
+                                                    <tr v-for="(dts, index) in datos">
+                                                        <td v-if="index > 3"><img v-bind:src="'../' + dts.img" style="width: 100px;" />
                                                         </td>
-                                                        <td> <button class="btn btn-primary mr-1" data-trigger="hover"
+                                                        <td v-if="index > 3">
+                                                        <form enctype="multipart/form-data" v-if="index > 3"
+                                                        action="../api/editarImagenes.php" method="POST">
+                                                        <div class="">
+                                                            <p class="filetext">Seleccionar Imagen</p>
+                                                            <input id="fileImg1" name="nfileImg" class="" type="file">
+                                                            <input type="text" hidden name="tabla" value="c_seccioncuatro">
+                                                            <input type="text" hidden name="campo" value="img">
+                                                            <input type="text" hidden name="pagina" value="conocenosseccioncuatro">
+                                                            <input type="text" hidden name="img1" v-bind:value="dts.id">
+                                                        </div>
+ 
+                                                        <input type="submit" value="Upload"
+                                                            class="btn btn-info margen" style="width: 100px"></input>
+                                                    </form>
+                                                        </td>
+                                                        <td v-if="index > 3"> <button class="btn btn-danger mr-1" data-trigger="hover"
                                                                 data-toggle="tooltip" data-placement="top"
                                                                 data-title="Modificar" @click="pasar(dts.img, dts.id)">
                                                                 Eliminar

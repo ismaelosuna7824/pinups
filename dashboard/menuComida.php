@@ -92,7 +92,7 @@
                         <div class="card shadow mb-4">
                             <div
                                 style="padding-left: 50px; padding-right: 50px; padding-top: 60px; padding-bottom: 50px;">
-
+                                <h1>Página del menú</h1><br>
                                 <div class="form-row">
                                     <div class="form-group col-md-12">
                                         <div class="form-row">
@@ -103,7 +103,7 @@
                                                 <form enctype="multipart/form-data" action="../api/menuComidaImg.php"
                                                     method="POST">
                                                     <div class="divFile" style="width: 200px">
-                                                        <p class="filetext">Seleccionar Título</p>
+                                                        <p class="filetext">Seleccionar Título tamaño (780x132)</p>
                                                         <input id="fileImg1" name="nfileImg" class="btnenviar"
                                                             type="file">
                                                         <input type="hidden" name="img1" id="img1" value="1">
@@ -121,7 +121,7 @@
                                                 <form enctype="multipart/form-data" action="../api/menuComidaImg.php"
                                                     method="POST">
                                                     <div class="divFile" style="width: 200px">
-                                                        <p class="filetext">Seleccionar Título Ingles</p>
+                                                        <p class="filetext">Seleccionar Título Ingles  tamaño (780x132)</p>
                                                         <input id="fileImg1" name="nfileImg" class="btnenviar"
                                                             type="file">
                                                         <input type="hidden" name="img1" id="img1" value="2">
@@ -181,7 +181,7 @@
                                         <form enctype="multipart/form-data" action="../api/menuComidaImg2.php"
                                             method="POST">
                                             <div class="divFile" style="width: 200px">
-                                                <p class="filetext">Imagen tienda</p>
+                                                <p class="filetext">Imagen tienda tamaño (186x86)</p>
                                                 <input id="fileImg1" name="nfileImg" class="btnenviar" type="file">
                                                 <input type="hidden" name="img1" id="img1" value="1">
                                                 <input type="hidden" name="campo" id="img1" value="img2">
@@ -202,7 +202,7 @@
                                         <form enctype="multipart/form-data" action="../api/menuComidaImg2.php"
                                             method="POST">
                                             <div class="divFile" style="width: 200px">
-                                                <p class="filetext">Imagen whatsapp</p>
+                                                <p class="filetext">Imagen whatsapp tamaño (186x86)</p>
                                                 <input id="fileImg1" name="nfileImg" class="btnenviar" type="file">
                                                 <input type="hidden" name="img1" id="img1" value="2">
                                                 <input type="hidden" name="campo" id="img1" value="img3">
@@ -239,7 +239,7 @@
                                         <form enctype="multipart/form-data" action="../api/menuComidaImg2.php"
                                             method="POST">
                                             <div class="divFile" style="width: 200px">
-                                                <p class="filetext">Imagen pagos</p>
+                                                <p class="filetext">Imagen pagos tamaño (319x55)</p>
                                                 <input id="fileImg1" name="nfileImg" class="btnenviar" type="file">
                                                 <input type="hidden" name="img1" id="img1" value="1">
                                                 <input type="hidden" name="campo" id="img1" value="img4">
@@ -275,14 +275,15 @@
 
                                     <form enctype="multipart/form-data" action="../api/menuImagenes.php" method="POST"
                                         class="col-md-6">
-                                        <p>Upload your file</p>
+                                        
                                         <div class="divFile" style="width: 200px">
-                                            <p class="filetext">Seleccionar Imagen</p>
+                                            <p class="filetext">Seleccionar Imagen,  tamaño (915x1200)</p>
                                             <input id="fileImg1" name="uploaded_file" class="btnenviar" type="file">
+                                            <br>
                                             <input type="hidden" name="img1" id="img1" v-bind:value="idtituloes">
 
                                         </div>
-
+                                        <br>
                                         <input type="submit" value="Upload" class="btn btn-info margen sub"></input>
                                     </form>
 
@@ -303,8 +304,24 @@
                                             <tbody>
                                                 <tr v-for="dts in imagenes">
                                                     <td><img v-bind:src="'../' + dts.img" style="width: 100px;" />
+                                                    <td>
+                                                    <form enctype="multipart/form-data"
+                                                        action="../api/editarImagenes.php" method="POST">
+                                                        <div class="divFile">
+                                                            <p class="filetext">Seleccionar Imagen</p>
+                                                            <input id="fileImg1" name="nfileImg" class="btnenviar" type="file">
+                                                            <input type="text" hidden name="tabla" value="menuimagenes">
+                                                            <input type="text" hidden name="campo" value="img">
+                                                            <input type="text" hidden name="pagina" value="menuComida">
+                                                            <input type="text" hidden name="img1" v-bind:value="dts.id">
+                                                        </div>
+ 
+                                                        <input type="submit" value="Upload"
+                                                            class="btn btn-info margen sub"></input>
+                                                    </form>
                                                     </td>
-                                                    <td> <button class="btn btn-primary mr-1" data-trigger="hover"
+                                                    </td>
+                                                    <td> <button class="btn btn-danger mr-1" data-trigger="hover"
                                                             data-toggle="tooltip" data-placement="top"
                                                             data-title="Modificar" @click="pasar(dts.img, dts.id)">
                                                             Eliminar

@@ -93,16 +93,17 @@
                     <!-- Page Heading -->
                     <div class="card shadow mb-4">
                         <div style="padding-left: 50px; padding-right: 50px; padding-top: 60px; padding-bottom: 50px;">
+                        <h1>Sección tres Página de inicio</h1><br>
                                 <div class="form-row">
                                   <div class="form-group col-md-6 ">
-                                    <label for="inputEmail4">Video</label>
+                                    <label for="inputEmail4">Video (editar width por 100%)</label>
                                     <input type="text" class="form-control" v-model="url" >
                                     <button type="buttom" class="margen btn btn-primary"  @click="actualizarTitulo()">Guardar</button>
                                   </div>
                                 </div>
                                 <div class="form-row">
                                   <div class="centrarT form-group col-md-6">
-                                    <h2  >Fondo Superior</h2>
+                                    <h2  >Fondo Superior tamaño (2274x850)</h2>
                                     <img class="maxImg margen img-fluid  flex-grow-0 mr-2 shadow"  v-bind:src="'../' + img">
                                     <form enctype="multipart/form-data" action="../api/imgS3.php" method="POST">
                                         <div class="divFile">
@@ -114,7 +115,7 @@
                                     </form> 
                                   </div>
                                   <div class=" centrarT form-group col-md-6">
-                                  <h2 >Fondo Inferior</h2>
+                                  <h2 >Fondo Inferior tamaño (2099x833)</h2>
                                     <img class=" maxImg margen img-fluid  flex-grow-0 mr-2 shadow"  v-bind:src="'../' + imgi">
                                     <form enctype="multipart/form-data" action="../api/imgS3.php" method="POST">
                                         <div class="divFile">

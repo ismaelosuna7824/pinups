@@ -93,6 +93,8 @@
                     <!-- Page Heading -->
                     <div class="card shadow mb-4">
                         <div style="padding-left: 50px; padding-right: 50px; padding-top: 60px; padding-bottom: 50px;">
+                        <h1>Sección Seis Página de inicio</h1><br>
+                        <h4>tamaños (886x300)</h4><br>
                                 <div class="form-row">
                                   <div class="centrarT form-group col-md-6">
                                     <h2  >Imagen izquierda Superior</h2>

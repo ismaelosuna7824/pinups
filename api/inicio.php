@@ -270,7 +270,29 @@
                 $res['error'] = true;
             endif;
         break;
-        
+        case 'titulosiete':
+            $u = $user->cargarDatos("SELECT * FROM ( SELECT * FROM titulos WHERE id = 5 UNION ALL SELECT * FROM titulos WHERE id = 6 UNION ALL SELECT * FROM titulos WHERE id = 9 ) titulos "); 
+            if($u):
+                $res['datos'] = $u;
+                $res['mensaje'] = "exito";   
+            else:
+                $res['mensaje'] = "Aun no hay registros";
+                $res['error'] = true;
+            endif;
+        break;
+        case 'editarsiete':
+            $titulo1 = $data->tituloes;
+            $titulo2 = $data->tituloen;
+            $u = $user->actualizar("UPDATE titulos SET titulo = '$titulo1'  WHERE id = 5");   
+            $u = $user->actualizar("UPDATE titulos SET titulo = '$titulo2'  WHERE id = 6");
+            if($u):
+                $res['datos'] = $u;
+                $res['mensaje'] = "exito";   
+            else:
+                $res['mensaje'] = "Aun no hay registros";
+                $res['error'] = true;
+            endif;
+        break;
         
         
         

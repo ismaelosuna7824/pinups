@@ -92,24 +92,25 @@
                         <div class="card shadow mb-4">
                             <div
                                 style="padding-left: 50px; padding-right: 50px; padding-top: 60px; padding-bottom: 50px;">
-
+                                <h1>Imagenes de bandas </h1><br>
                                 <form enctype="multipart/form-data" action="../api/musicaenvivoimg.php" method="POST">
+                                <p>Tamaño (382x321)</p>
                                     <div class="divFile">
                                         <p class="filetext">Seleccionar Imagen</p>
                                         <input id="fileImg1" name="uploaded_file" class="btnenviar" type="file">
-                                        
+
                                     </div>
 
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
                                             <label for="inputEmail4">Título</label>
                                             <input type="text" class="form-control" id="inputEmail4" name="titulo"
-                                                v-bind:value="titulo">
+                                                v-bind:value="titulo" v-model="titulo">
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="inputPassword4">Descripción</label>
                                             <input type="text" class="form-control" id="inputPassword4" name="desc"
-                                                v-bind:value="desc">
+                                                v-bind:value="desc" v-model="desc">
                                         </div>
                                     </div>
 
@@ -133,6 +134,8 @@
                                                 <th>Título</th>
                                                 <th>Descripción</th>
                                                 <th>Imagen Url</th>
+                                                <th>Editar imagen</th>
+                                                <th>Editar</th>
                                                 <th>Eliminar</th>
                                             </tr>
                                         </thead>
@@ -141,7 +144,30 @@
                                             <tr v-for="dts in imagenes">
                                                 <td>{{dts.titulo}}</td>
                                                 <td>{{dts.descrip}}</td>
-                                                <td><img v-bind:src="'../' + dts.img" style="width: 100px;"/></td>
+                                              
+                                                <td><img v-bind:src="'../' + dts.img" style="width: 100px;" /></td>
+                                                <td> <form enctype="multipart/form-data"
+                                                        action="../api/editarImagenes.php" method="POST">
+                                                        <div class="divFile">
+                                                            <p class="filetext">Seleccionar Imagen</p>
+                                                            <input id="fileImg1" name="nfileImg" class="btnenviar" type="file">
+                                                            <input type="text" hidden name="tabla" value="imgeventos">
+                                                            <input type="text" hidden name="campo" value="img">
+                                                            <input type="text" hidden name="pagina" value="index">
+                                                            <input type="text" hidden name="img1" v-bind:value="dts.id">
+                                                        </div>
+ 
+                                                        <input type="submit" value="Upload"
+                                                            class="btn btn-info margen sub"></input>
+                                                    </form>
+                                                    </td>
+                                                    <td>
+                                                    <button class="btn btn-info mr-1" data-trigger="hover"
+                                                        data-toggle="tooltip" data-placement="top" data-title="Eliminar"
+                                                        @click="pasar(dts.id, dts.titulo, dts.descrip)">
+                                                        Editar
+                                                    </button>
+                                                    </td>
                                                 <td> <button class="btn btn-danger mr-1" data-trigger="hover"
                                                         data-toggle="tooltip" data-placement="top" data-title="Eliminar"
                                                         @click="eliminar(dts.id)">
@@ -229,7 +255,8 @@
             titulo: '',
             desc: '',
             img: '',
-            imagenes: []
+            imagenes: [],
+            id: 0
         },
         mounted: function() {
             this.cargarImagenes()
@@ -316,6 +343,52 @@
                     }
                 })
 
+            },
+            pasar: function(id, titulo, descripcion){
+                if(app.id == 0){
+                    
+                    app.titulo = titulo;
+                    app.desc = descripcion;
+                    app.id = 1;
+                }else{
+                    if (this.titulo != '') {
+                    axios.post("../api/eventos.php?accion=editarImg", {
+                        id: id,
+                        titulo: this.titulo,
+                        desc: this.desc,
+                      
+
+                    }).then(function(response) {
+                        //console.log(response.data);
+                        if (response.status == '200') {
+
+                            Swal.fire({
+
+                                type: 'success',
+                                title: 'Imagen Registrada Correctamente',
+                                showConfirmButton: false,
+                                timer: 3000
+                            })
+                        }
+
+                        setTimeout(function() {
+                            location.reload()
+                        }, 3000, "JavaScript");
+                    })
+                } else {
+                    Swal.fire({
+
+                        type: 'info',
+                        title: 'Faltan Campos por llenar',
+                        showConfirmButton: false,
+                        timer: 3000
+                    })
+                    
+
+                }
+                // console.log(app.titulo)
+                }
+               
             }
         }
     })

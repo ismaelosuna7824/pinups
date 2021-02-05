@@ -52,6 +52,22 @@
              $res['error'] = true; 
             endif;
         break;
+        case 'editarUrl':
+            $id = $data->id;
+            $url = $data->url;
+
+         $datos = "UPDATE imgheader SET url = '$url' WHERE id = $id;";
+         
+         $r = $user->actualizar($datos);
+     
+         if($r == true):
+             $res['mensaje'] = $r;   
+         
+         else:
+          $res['mensaje'] = "error";
+          $res['error'] = true; 
+         endif;
+        break;
         
         
         

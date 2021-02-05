@@ -11,7 +11,10 @@
         //$name = "".$basename( $_FILES['uploaded_file']['name'])."";
         $newPath = substr($path,3);
         $datos = "'$newPath'";
-        $r = $user->actualizar("UPDATE i_secciondos set img = $datos WHERE id = $idimg");
+        $mewID =  $idimg + 4;
+        $r = $user->actualizar("UPDATE i_secciondos set img = $datos WHERE id = $idimg"); 
+        $r = $user->actualizar("UPDATE i_secciondos set img = $datos WHERE id = $mewID"); 
+
         echo "The file ".  basename( $_FILES['uploaded_file']['name']). 
         " has been uploaded";
         if($r == true){

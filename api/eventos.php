@@ -123,6 +123,23 @@
           $res['error'] = true; 
          endif;
         break;
+        case 'editarImg':
+            $id = $data->id;
+            $titulo = $data->titulo;
+            $desc = $data->desc;
+
+         $datos = "UPDATE imgeventos SET titulo = '$titulo',  descrip = '$desc' WHERE id = $id;";
+         
+         $r = $user->actualizar($datos);
+     
+         if($r == true):
+             $res['mensaje'] = $r;   
+         
+         else:
+          $res['mensaje'] = "error";
+          $res['error'] = true; 
+         endif;
+        break;
         
         
         

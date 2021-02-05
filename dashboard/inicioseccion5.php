@@ -94,6 +94,7 @@
                     <!-- Page Heading -->
                     <div class="card shadow mb-4">
                         <div style="padding-left: 50px; padding-right: 50px; padding-top: 60px; padding-bottom: 50px;">
+                        <h1>Sección cinco Página de inicio</h1><br>
                                 <div class="form-row">
                                   <div class="form-group col-md-6 ">
                                     <label for="inputEmail4">Titulo</label>
@@ -101,6 +102,7 @@
                                     <label for="inputEmail4">Descripcion</label>
                                     <textarea name="mensaje" class="form-control" v-model="descripcion"></textarea>
                                     <button type="buttom" class="btn btn-primary margen"  @click="actualizarTitulo()">Guardar</button>
+                                    <p>Tamaño (4088x3766)</p>
                                   </div>
                                   <div class="form-group col-md-6 ">
                                     <label for="inputEmail4">Titulo Ingles</label>

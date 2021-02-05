@@ -91,6 +91,7 @@
                     <!-- Page Heading -->
                     <div class="card shadow mb-4">
                         <div style="padding-left: 50px; padding-right: 50px; padding-top: 60px; padding-bottom: 50px;">
+                        <h1>Sección dos Página de inicio</h1><br>
                             <div class="form-row">
                                 <div class="form-group col-md-4 ">
                                     <label for="inputEmail4">Titulo</label>
@@ -100,8 +101,11 @@
                                     <button type="buttom" class="btn btn-primary margen"
                                         @click="actualizarTitulo()">Guardar Titulo</button>
                                 </div>
+                                
                             </div>
+                            <p>Tamaño (150x158)</p>
                             <div class="form-row">
+                              
                                 <div class="form-group col-md-3">
                                     <img class="margen img-fluid rounded-circle flex-grow-0 mr-2 shadow"
                                         v-bind:src="'../' + iuno">

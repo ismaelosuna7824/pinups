@@ -365,9 +365,11 @@
         .videos {
             width: 30%
         }
+        
 
     }
     </style>
+    <div id="load"></div>
     <div id="app">
 
         <div id="myModal" class="modal" v-bind:style="{display: modal }">
@@ -442,9 +444,9 @@
                     <div class="TA_certificateOfExcellence d-inline-block mx-auto" id="TA_certificateOfExcellence705">
                         <ul class="TA_links o3yPB0dVWIoM" id="nUAWmjZ5Y8">
                             <li class="KLJ085G" id="qz7wiWNj2X"><a target="_blank"
-                                    href="https://www.tripadvisor.com.mx/Restaurant_Review-g150792-d13559561-Reviews-Pinups_Fun_N_Grill-Mazatlan_Pacific_Coast.html"><img
+                                    href=""><img
                                         class="widCOEImg" id="CDSWIDCOELOGO"
-                                        src="https://www.tripadvisor.com.mx/img/cdsi/img2/awards/CoE2017_WidgetAsset-14348-2.png"
+                                        v-bind:src="img"
                                         alt="TripAdvisor"></a></li>
                         </ul>
                     </div>
@@ -459,49 +461,14 @@
 
         <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.0193941708812!2d-106.45451078527965!3d23.242381313910027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x869f54a32ba5dcf3%3A0x32273f7b960b4a21!2sPINUPS%20FUN%20%26%20GRILL!5e0!3m2!1ses-419!2smx!4v1581452784716!5m2!1ses-419!2smx"
-            width="100%" height="300" frameborder="0" style="border:0; display: block!important;"
+            width="100%" height="550" frameborder="0" style="border:0; display: block!important;"
             allowfullscreen=""></iframe>
-        <br>
-        <link rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-        <link rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-            type="a2d9097f9f140b4865ee6feb-text/javascript"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
-            type="a2d9097f9f140b4865ee6feb-text/javascript"></script>
-        <script src="job-carousel.js" type="a2d9097f9f140b4865ee6feb-text/javascript"></script>
-        <div class="brand-carousel section-padding owl-carousel">
-            <div class="single-logo">
-                <img src="assets/images/empresa/1.jpeg" alt="">
-            </div>
-            <div class="single-logo">
-                <img src="assets/images/empresa/2.jpeg" alt="">
-            </div>
-            <div class="single-logo">
-                <img src="assets/images/empresa/3.jpeg" alt="">
-            </div>
-            <div class="single-logo">
-                <img src="assets/images/empresa/4.jpeg" alt="">
-            </div>
-            <div class="single-logo">
-                <img src="assets/images/empresa/5.jpeg" alt="">
-            </div>
-            <div class="single-logo">
-                <img src="assets/images/empresa/6.jpeg" alt="">
-            </div>
-            <div class="single-logo">
-                <img src="assets/images/empresa/7.jpeg" alt="">
-            </div>
-        </div>
+        
+        
         <pie></pie>
     </div>
-    <script src="assets/js/scripts.js?ckcachebust=78b54cdeb8b51111ac572f62e20e5cf1"
-        type="a2d9097f9f140b4865ee6feb-text/javascript"></script>
-    <script src="assets/js/main.js?ckcachebust=42a30dc6e99b80591c56e02d16fe5207"
-        type="a2d9097f9f140b4865ee6feb-text/javascript"></script>
-    <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js"
-        data-cf-settings="a2d9097f9f140b4865ee6feb-|49" defer=""></script>
+    <script src="assets/js/scripts.js?ckcachebust=5572b126555c6ee33ab1b4313f9819c8"></script>
+    <script src="assets/js/main.js?ckcachebust=589243922e884e997aab42746af042bf"></script>
     <script src="vueJs/axios.min.js"></script>
     <script src="vueJs/vue.js"></script>
     <script src="vueJs/menu.js"></script>
@@ -509,9 +476,19 @@
     <script src="vueJs/secciontres.js"></script>
     <script src="vueJs/seccioncuatro.js"></script>
     <script src="vueJs/seccioncinco.js"></script>
-    <script src="vueJs/seccionseis.js"></script>
+    <script src="vueJs/seccionseis.js"></script> 
     <script src="vueJs/seccionsiete.js"></script>
     <script src="vueJs/footer.js"></script>
+    <script>
+    
+    document.onreadystatechange = function () {
+        var state = document.readyState
+        if (state == 'complete') {
+                document.getElementById('interactive');
+                document.getElementById('load').style.visibility="hidden";
+        }
+    }
+    </script>
     <script>
     let app = new Vue({
         el: "#app",
@@ -522,13 +499,15 @@
             titulo2: '',
             titulo3: '',
             titulo4: '',
-            modal: 'none'
+            modal: 'none',
+            img: ''
         },
         mounted: function() {
             this.initIdioma()
             this.cargaTitulos()
             this.cargarDatos()
             this.cargarDatosHeader()
+            this.cargaTitulos2()
         },
         methods: {
             cargarDatos: function() {
@@ -572,7 +551,16 @@
                         app.titulo3 = response.data.datos[2].titulo;
                         app.titulo4 = response.data.datos[3].titulo;
                     })
-            }
+            },
+            cargaTitulos2: function() {
+                axios.post("api/inicio.php?accion=titulos", {
+                        ide: "es"
+                    })
+                    .then(function(response) {
+                        //console.log(response);
+                        app.img = response.data.datos[4].titulo;
+                    })
+            },
         }
     })
     </script>

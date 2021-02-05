@@ -93,12 +93,14 @@
                         <div class="card shadow mb-8">
                             <div
                                 style="padding-left: 50px; padding-right: 50px; padding-top: 60px; padding-bottom: 50px;">
+                                <h1>Sección cinco Página franquicias</h1><br>
                                 <div class="form-row">
                                     <div class="form-group col-md-8">
                                         <img class="margen img-fluid flex-grow-0 mr-2 shadow" v-bind:src="'../' + img"
                                             style="width: 200px">
                                         <form enctype="multipart/form-data" action="../api/franquiciasS5img.php"
                                             method="POST">
+                                            <p>Tamaño (882x885)</p>
                                             <div class="divFile" style="width: 200px">
                                                 <p class="filetext">Seleccionar Imagen</p>
                                                 <input id="fileImg1" name="nfileImg" class="btnenviar" type="file">

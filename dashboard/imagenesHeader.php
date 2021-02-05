@@ -90,11 +90,12 @@
                 <div class="container-fluid" >
                     <!-- Page Heading -->
                     <div class="card shadow mb-4">
+                    
                         <div style="padding-left: 50px; padding-right: 50px; padding-top: 60px; padding-bottom: 50px;">
-                            
+                        <h1>Página de inicio Imagenes Header</h1><br>
                            
                         <form enctype="multipart/form-data" action="../api/imgHeaders.php" method="POST" class="col-md-6">
-                            <p>Upload your file</p>
+                            <p>Tamaño (1912x 620)</p>
                             <input type="file" name="uploaded_file"></input><br /> <br><br>
                             <div class="form-group col-md-6">
                                     <label for="inputPassword4">Url</label>
@@ -112,8 +113,9 @@
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
+                    
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Calendario</h6>
+                            <h6 class="m-0 font-weight-bold text-primary"></h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -121,7 +123,9 @@
                                     <thead>
                                         <tr>
                                             <th>Imagen</th>
+                                            <th>Editar Imagen</th>
                                             <th>Url</th>
+                                            
                                             <th>Eliminar</th>
                                         </tr>
                                     </thead>
@@ -129,7 +133,24 @@
                                     <tbody>
                                         <tr v-for="dts in imagenes">
                                             <td><img v-bind:src="'../' + dts.img" alt="" style="width: 100px"></td>
-                                            <td>{{dts.url}}</td>
+                                            <td> <form enctype="multipart/form-data"
+                                                        action="../api/editarImagenes.php" method="POST">
+                                                        <div class="divFile">
+                                                            <p class="filetext">Seleccionar Imagen</p>
+                                                            <input id="fileImg1" name="nfileImg" class="btnenviar" type="file">
+                                                            <input type="text" hidden name="tabla" value="imgheader">
+                                                            <input type="text" hidden name="campo" value="img">
+                                                            <input type="text" hidden name="pagina" value="imagenesHeader">
+                                                            <input type="text" hidden name="img1" v-bind:value="dts.id">
+                                                        </div>
+ 
+                                                        <input type="submit" value="Upload"
+                                                            class="btn btn-info margen sub"></input>
+                                                    </form>
+                                                    </td>
+                                            <td><input type="text" class="form-control" v-model="dts.url"><br> 
+                                                <button class="btn btn-primary" @click="editar(dts.id, dts.url)">Editar</button>
+                                            </td>
                                             <td> <button class="btn btn-danger mr-1" data-trigger="hover" data-toggle="tooltip" data-placement="top" data-title="Eliminar" @click="eliminar(dts.id)">
                                                 Eliminar
                                             </button></td>
@@ -260,6 +281,28 @@
                     }
                 })
                 },
+                editar: function(id, url){
+                    axios.post("../api/imagenes.php?accion=editarUrl", {
+                            id: id,
+                            url: url
+                        }).then(function(response){
+                            //console.log(response.data);
+                            if(response.status == '200'){
+                            
+                                Swal.fire({
+                            
+                                type: 'success',
+                                title: 'Imagen Eliminada',
+                                showConfirmButton: false,
+                                timer: 3000
+                                })
+                            }
+                            
+                            setTimeout(function(){
+                                    location.reload()
+                                },3000,"JavaScript");
+                        })
+                }
         
            }
         })

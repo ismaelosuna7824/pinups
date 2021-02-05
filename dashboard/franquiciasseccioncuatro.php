@@ -90,31 +90,51 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid" >
                     <!-- Page Heading -->
-                    <div class="card shadow mb-4">
+                    <div class="card shadow mb-12">
                         <div style="padding-left: 50px; padding-right: 50px; padding-top: 60px; padding-bottom: 50px;">
+                        <h1>Sección cuatro Página franquicias</h1><br>
                             <div class="form-row">
                                 <div class="form-group col-md-4">
                                     <img class="margen img-fluid flex-grow-0 mr-2 shadow"
                                         v-bind:src="'../' + img">
                                     <form enctype="multipart/form-data" action="../api/franquiciasS4img.php" method="POST">
+                                    <p>Tamaño (599x195)</p>
                                         <div class="divFile">
                                             <p class="filetext">Seleccionar Imagen</p>
                                             <input id="fileImg1" name="nfileImg" class="btnenviar" type="file">
                                             <input type="hidden" name="img1" id="img1" value="1">
-                                            <input type="hidden" name="img1p" id="img1p" v-bind:value="img">
+                                           
                                         </div>
                                         <input type="submit" value="Modificar" class="btn btn-info margen sub"></input>
                                     </form>
 
                                     <label for="inputEmail4">Texto</label>
                                     <input type="text" class="form-control" id="inputEmail4" v-model="textoes">
-                                    <label for="inputEmail4">Texto Ingles</label>
-                                    <input type="text" class="form-control" id="inputEmail4" v-model="textoen">
-                                    <label class="margen" for="inputEmail4">Url</label>
+                        
+                                    <label class="margen" for="inputEmail4">Url (cambiar width por 100%)</label>
                                     <textarea name="mensaje" class="form-control" v-model="url" rows="5"></textarea>
                                 </div>  
+                                <div class="form-group col-md-4">
+                                    <img class="margen img-fluid flex-grow-0 mr-2 shadow"
+                                        v-bind:src="'../' + imges">
+                                    <form enctype="multipart/form-data" action="../api/franquiciasS4img.php" method="POST">
+                                    <p>Tamaño (599x195)</p>
+                                        <div class="divFile">
+                                            <p class="filetext">Seleccionar Imagen</p>
+                                            <input id="fileImg1" name="nfileImg" class="btnenviar" type="file">
+                                            <input type="hidden" name="img1" id="img1" value="2">
+                                           
+                                        </div>
+                                        <input type="submit" value="Modificar" class="btn btn-info margen sub"></input>
+                                    </form>
+
+                                    <label for="inputEmail4">Texto Ingles</label>
+                                    <input type="text" class="form-control" id="inputEmail4" v-model="textoen">
+                            
+                                </div> 
                                 
                             </div>
+                            
                             
                             <button type="buttom" class="btn btn-primary" @click="guardar()">Guardar</button>
                         </div>
@@ -194,6 +214,7 @@
         el: "#app",
         data: {
             img: '',
+            imges: '',
             textoes: '',
             ides: '',
             url: '',
@@ -259,42 +280,10 @@
                         app.textoen = response.data.datos[1].titulo;
                         app.img = response.data.datos[0].img;
                         app.url =  response.data.datos[0].url;
-                        //console.log(response);
+                        app.imges = response.data.datos[1].img;
+                        console.log(response);
                     })
             },
-            // eliminar: function(id) {
-            //     Swal.fire({
-            //         title: '¿Desea Eliminar Esta Imagen?',
-            //         type: 'warning',
-            //         showCancelButton: true,
-            //         confirmButtonColor: '#3085d6',
-            //         cancelButtonColor: '#d33',
-            //         confirmButtonText: 'Si, Eliminar!'
-            //     }).then(function(result) {
-            //         if (result.value) {
-            //             axios.post("../api/eventos.php?accion=eliminar", {
-            //                 ide: id
-            //             }).then(function(response) {
-            //                 //console.log(response.data);
-            //                 if (response.status == '200') {
-
-            //                     Swal.fire({
-
-            //                         type: 'success',
-            //                         title: 'Imagen Eliminado',
-            //                         showConfirmButton: false,
-            //                         timer: 3000
-            //                     })
-            //                 }
-
-            //                 setTimeout(function() {
-            //                     location.reload()
-            //                 }, 3000, "JavaScript");
-            //             })
-            //         }
-            //     })
-
-            // }
         }
     })
     </script>

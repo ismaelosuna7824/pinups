@@ -93,6 +93,7 @@
                         <div class="card shadow mb-8">
                             <div
                                 style="padding-left: 50px; padding-right: 50px; padding-top: 60px; padding-bottom: 50px;">
+                                <h1>Sección uno página conocenos</h1><br>
                                 <div class="form-row">
                                     <div class="form-group col-md-12">
                                         <div class="form-row">
@@ -101,6 +102,7 @@
                                                     v-bind:src="'../' + img" style="width: 200px">
                                                 <form enctype="multipart/form-data" action="../api/conocenosS1img.php"
                                                     method="POST">
+                                                    <p>Tamaño (882x885)</p>
                                                     <div class="divFile" style="width: 200px">
                                                         <p class="filetext">Seleccionar Imagen Sello</p>
                                                         <input id="fileImg1" name="nfileImg" class="btnenviar"
@@ -117,6 +119,7 @@
                                                     v-bind:src="'../' + imges" style="width: 200px">
                                                 <form enctype="multipart/form-data"
                                                     action="../api/conocenosS1imgEspa.php" method="POST">
+                                                    <p>Tamaño (882x885)</p>
                                                     <div class="divFile" style="width: 200px">
                                                         <p class="filetext">Seleccionar Imagen</p>
                                                         <input id="fileImg1" name="nfileImg" class="btnenviar"
@@ -133,7 +136,9 @@
                                                     v-bind:src="'../' + imgen" style="width: 200px">
                                                 <form enctype="multipart/form-data" action="../api/conocenosS1imgEn.php"
                                                     method="POST">
+                                                    <p>Tamaño (882x885)</p>
                                                     <div class="divFile" style="width: 200px">
+                                                    
                                                         <p class="filetext">Seleccionar Imagen</p>
                                                         <input id="fileImg1" name="nfileImg" class="btnenviar"
                                                             type="file">

@@ -9,7 +9,7 @@ Vue.component('f_seccioncuatro', {
                             <img v-bind:src="img" alt="" width="300">
                             
                         </div>
-                        <div class="text-uppercase mb-4 title_icon text-center ">
+                        <div class="mb-4 title_icon text-center ">
                             <p style="color:white;">{{titulo}}</p>
                         </div>
 

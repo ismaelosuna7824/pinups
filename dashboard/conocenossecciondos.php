@@ -93,6 +93,7 @@
                         <div class="card shadow mb-8">
                             <div
                                 style="padding-left: 50px; padding-right: 50px; padding-top: 60px; padding-bottom: 50px;">
+                                <h1>Sección dos página conocenos</h1><br>
                                 <div class="form-row">
                                     <div class="form-group col-md-12">
                                         <div class="form-row">
@@ -101,6 +102,7 @@
                                                     v-bind:src="'../' + img" style="width: 200px">
                                                 <form enctype="multipart/form-data" action="../api/conocenosS2img.php"
                                                     method="POST">
+                                                    <p>Tamaño (4178x990)</p>
                                                     <div class="divFile" style="width: 200px">
                                                         <p class="filetext">Seleccionar Imagen</p>
                                                         <input id="fileImg1" name="nfileImg" class="btnenviar"
@@ -117,6 +119,7 @@
                                                     v-bind:src="'../' + imges" style="width: 200px">
                                                 <form enctype="multipart/form-data" action="../api/conocenosS2titu.php"
                                                     method="POST">
+                                                    <p>Tamaño (636x178)</p>
                                                     <div class="divFile" style="width: 200px">
                                                         <p class="filetext">Seleccionar Imagen</p>
                                                         <input id="fileImg1" name="nfileImg" class="btnenviar"
@@ -133,6 +136,7 @@
                                                     v-bind:src="'../' + imges" style="width: 200px">
                                                 <form enctype="multipart/form-data" action="../api/conocenosS2titu.php"
                                                     method="POST">
+                                                    <p>Tamaño (636x178)</p>
                                                     <div class="divFile" style="width: 200px">
                                                         <p class="filetext">Seleccionar Imagen</p>
                                                         <input id="fileImg1" name="nfileImg" class="btnenviar"
@@ -152,6 +156,7 @@
                                                     v-bind:src="'../' + imgc1">
                                                 <form enctype="multipart/form-data" action="../api/conocenosS2imgCol.php"
                                                     method="POST">
+                                                    <p>Tamaño (87x111) </p>
                                                     <div class="divFile">
                                                         <p class="filetext">Seleccionar Imagen</p>
                                                         <input id="fileImg1" name="nfileImg" class="btnenviar"
@@ -169,6 +174,7 @@
                                                     v-bind:src="'../' + imgc2">
                                                 <form enctype="multipart/form-data" action="../api/conocenosS2imgCol.php"
                                                     method="POST">
+                                                    <p>Tamaño (87x111) </p>
                                                     <div class="divFile">
                                                         <p class="filetext">Seleccionar Imagen</p>
                                                         <input id="fileImg1" name="nfileImg" class="btnenviar"
@@ -185,6 +191,7 @@
                                                     v-bind:src="'../' + imgc3">
                                                 <form enctype="multipart/form-data" action="../api/conocenosS2imgCol.php"
                                                     method="POST">
+                                                    <p>Tamaño (89x86) </p>
                                                     <div class="divFile">
                                                         <p class="filetext">Seleccionar Imagen</p>
                                                         <input id="fileImg1" name="nfileImg" class="btnenviar"
@@ -201,6 +208,7 @@
                                                     v-bind:src="'../' + imgc4">
                                                 <form enctype="multipart/form-data" action="../api/conocenosS2imgCol.php"
                                                     method="POST">
+                                                    <p>Tamaño (89x86) </p>
                                                     <div class="divFile">
                                                         <p class="filetext">Seleccionar Imagen</p>
                                                         <input id="fileImg1" name="nfileImg" class="btnenviar"
@@ -240,7 +248,7 @@
                                                                         data-trigger="hover" data-toggle="tooltip"
                                                                         data-placement="top" data-title="Modificar"
                                                                         @click="pasar(dts.titulo, dts.texto, dts.id)">
-                                                                        Modificar
+                                                                        Editar
                                                                     </button></td>
                                                             </tr>
 

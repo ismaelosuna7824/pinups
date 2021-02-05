@@ -91,6 +91,7 @@
                     <!-- Page Heading -->
                     <div class="card shadow mb-4">
                         <div style="padding-left: 50px; padding-right: 50px; padding-top: 60px; padding-bottom: 50px;">
+                        <h1>Clendario de bandas </h1><br>
                             
                            
                                 <div class="form-row">

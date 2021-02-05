@@ -94,7 +94,9 @@
                     <!-- Page Heading -->
                         <div class="card shadow mb-4">
                             <div style="padding-left: 50px; padding-right: 50px; padding-top: 60px; padding-bottom: 50px;">
+                            <h1>Menu de Navegación</h1><br>
                                 <div class="form-row">
+                               
                                     <div class="form-group col-md-6 ">
                                         <label for="inputEmail4">Inicio</label>
                                         <input type="text" class="form-control" v-model="home">
@@ -110,6 +112,8 @@
                                         <input type="text" class="form-control" v-model="pinups">
                                         <label for="inputEmail4">Privacidad</label>
                                         <input type="text" class="form-control" v-model="privacy">
+                                        <label for="inputEmail4">Footer Español</label>
+                                        <input type="text" class="form-control" v-model="footerEs">
                                         <label for="inputEmail4">Teléfono</label>
                                         <input type="text" class="form-control" v-model="telefono">
                                         <button type="buttom" class="btn btn-primary margen"  @click="actualizar()">Guardar</button>
@@ -129,6 +133,8 @@
                                         <input type="text" class="form-control" v-model="pinupsE">
                                         <label for="inputEmail4">Privacidad</label>
                                         <input type="text" class="form-control" v-model="privacyE">
+                                        <label for="inputEmail4">Footer Español</label>
+                                        <input type="text" class="form-control" v-model="footerEn">
                                     </div>
 
                                 </div>
@@ -219,6 +225,8 @@
             pinupsE: '',
             privacyE:'',
             telefono: '',
+            footerEs: '',
+            footerEn: ''
             
 
            },
@@ -241,6 +249,8 @@
                     this.pinups = response.data.datos[5].nombre;
                     this.privacy = response.data.datos[6].nombre;
                     this.telefono = response.data.datos[7].nombre;
+                    this.telefono = response.data.datos[7].nombre;
+                    this.footerEs = response.data.datos[8].nombre;
                     //console.log(response)
                 });
             
@@ -257,6 +267,7 @@
                     this.storeE = response.data.datos[4].nombre;
                     this.pinupsE = response.data.datos[5].nombre;
                     this.privacyE = response.data.datos[6].nombre;
+                    this.footerEn = response.data.datos[8].nombre;
                     //console.log(response)
                 });
             
@@ -279,6 +290,9 @@
                     storeE: this.storeE,
                     pinupsE: this.pinupsE,
                     privacyE: this.privacyE,
+
+                    footerEs: this.footerEs,
+                    footerEn: this.footerEn,
 
                 }).then(function(response) {
                     //console.log(response.data);

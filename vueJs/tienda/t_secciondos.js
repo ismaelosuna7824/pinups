@@ -4,13 +4,25 @@ Vue.component('t_secciondos', {
         <div>
       
             <div class="containerS">
-                <ul class="slider galeria">
-                    <li id="slide1">
-                        <img v-bind:src="imgSelect" />
-                    </li>
+            <div class="hero" style="width: 100%;">
+            <div class="carousel slide" id="carousel" data-ride="carousel" data-interval="5000" data-keyboard="false"
+                data-pause="false">
+                <div class="carousel-inner">
 
-                </ul>
-                <img class="ima" v-bind:src="imgSelect" />
+                    <div v-for="(item, index) in registros" :key="item.id" :class="[ index == 0 ? 'carousel-item active' : 'carousel-item' ]">
+                        
+                        <picture>
+
+                            <img class="w-100" v-bind:src="item.img" alt="">
+                        </picture>
+                    </div>
+                </div><a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev"><span
+                        class="carousel-control-prev-icon" aria-hidden="true"></span><span
+                        class="sr-only">Anterior</span></a><a class="carousel-control-next" href="#carousel"
+                    role="button" data-slide="next"><span class="carousel-control-next-icon"
+                        aria-hidden="true"></span><span class="sr-only">Siguiente</span></a>
+            </div>
+        </div>
             </div>
             <ul class="menuS">
                 
@@ -26,7 +38,7 @@ Vue.component('t_secciondos', {
                
             </ul>
         </div>
-        
+        <br>
     </div>
    `,
     data() {

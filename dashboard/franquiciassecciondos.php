@@ -92,7 +92,7 @@
                     <!-- Page Heading -->
                     <div class="card shadow mb-4">
                         <div style="padding-left: 50px; padding-right: 50px; padding-top: 60px; padding-bottom: 50px;">
-
+                        <h1>Sección dos Página franquicias</h1><br>
 
                             <div class="form-row">
                                 <div class="form-group col-md-6">
@@ -134,6 +134,7 @@
                                     <img class="margen img-fluid rounded-circle flex-grow-0 mr-2 shadow"
                                         v-bind:src="'../' + img1">
                                     <form enctype="multipart/form-data" action="../api/franquiciaS2img1.php" method="POST">
+                                    <p>Tamaño (140x150)</p>
                                         <div class="divFile">
                                             <p class="filetext">Seleccionar Imagen</p>
                                             <input id="fileImg1" name="nfileImg" class="btnenviar" type="file">
@@ -152,6 +153,7 @@
                                     <img class="margen img-fluid rounded-circle flex-grow-0 mr-2 shadow"
                                         v-bind:src="'../' + img2">
                                     <form enctype="multipart/form-data" action="../api/franquiciaS2img1.php" method="POST">
+                                    <p>Tamaño (140x150)</p>
                                         <div class="divFile">
                                             <p class="filetext">Seleccionar Imagen</p>
                                             <input id="fileImg1" name="nfileImg" class="btnenviar" type="file">
@@ -168,6 +170,7 @@
                                 <div class="form-group col-md-4">
                                     <img class="margen img-fluid rounded-circle flex-grow-0 mr-2 shadow"
                                         v-bind:src="'../' + img3">
+                                        <p>Tamaño (140x150)</p>
                                     <form enctype="multipart/form-data" action="../api/franquiciaS2img1.php" method="POST">
                                         <div class="divFile">
                                             <p class="filetext">Seleccionar Imagen</p>

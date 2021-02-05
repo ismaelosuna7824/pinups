@@ -443,7 +443,6 @@
             titulo4: '',
         },
         mounted: function() {
-            this.initIdioma()
             this.cargaTitulos()
             this.cargarDatos()
             this.cargarDatosHeader()
@@ -462,9 +461,6 @@
                         app.imgHeader = response.data.datos;
 
                     })
-            },
-            initIdioma: function() {
-                localStorage.setItem('idioma', 'en');
             },
             cargaTitulos: function() {
                 axios.post("api/inicio.php?accion=titulos", {

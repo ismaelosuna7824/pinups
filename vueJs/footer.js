@@ -47,11 +47,7 @@ Vue.component('pie', {
                                         <use href="#icon-tripadvisor" xlink:href="#icon-tripadvisor"></use>
                                     </svg></a></li>
                         </ul>
-                        <p class="small mb-1">&copy; 2018
-                            <script type="a2d9097f9f140b4865ee6feb-text/javascript">
-                            new Date().getFullYear() > 2018 && document.write("-" + new Date().getFullYear());
-                            </script>
-                            , Pinups Fun & Grill.
+                        <p class="small mb-1">{{footer}}
                         </p>
                         <p class="small"></p>
                     </div>
@@ -68,7 +64,8 @@ Vue.component('pie', {
 		store: '',
         pinups: '',
         privacy:'',
-        telefono: ''
+        telefono: '',
+        footer: ''
     }
     },
     mounted: function(){
@@ -77,7 +74,7 @@ Vue.component('pie', {
     methods: {
        async cargaMenu(){
             await axios.post("api/menu.php?accion=menu", {
-                ide:  "es"
+                ide:  localStorage.getItem('idioma')
             })
             .then(response=>{
                 this.home =  response.data.datos[0].nombre;
@@ -88,6 +85,7 @@ Vue.component('pie', {
                 this.pinups = response.data.datos[5].nombre;
                 this.privacy = response.data.datos[6].nombre;
                 this.telefono = response.data.datos[7].nombre;
+                this.footer = response.data.datos[8].nombre;
                 //console.log(response)
             });
           

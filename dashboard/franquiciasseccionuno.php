@@ -125,7 +125,7 @@
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <label for="inputEmail4">Url Video</label>
+                                    <label for="inputEmail4">Url Video (editar width por 100%)</label>
                                     <textarea name=""  class="form-control" id="" cols="10" rows="5" v-model="url"></textarea>
                                 </div>
                             </div>

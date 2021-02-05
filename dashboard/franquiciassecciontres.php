@@ -91,7 +91,7 @@
                     <!-- Page Heading -->
                     <div class="card shadow mb-4">
                         <div style="padding-left: 50px; padding-right: 50px; padding-top: 60px; padding-bottom: 50px;">
-
+                        <h1>Sección tres Página franquicias</h1><br>
 
                             <div class="form-row">
                                 <div class="form-group col-md-6">
