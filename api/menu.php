@@ -79,7 +79,17 @@
                 $res['mensaje'] = "Aun no hay registros";
                 $res['error'] = true;
             endif;
-        break;        
+        break;
+        case 'menulogo':
+            $u = $user->cargarDatos("SELECT * FROM menulogo"); 
+            if($u):
+                $res['datos'] = $u;
+                $res['mensaje'] = "exito";   
+            else:
+                $res['mensaje'] = "Aun no hay registros";
+                $res['error'] = true;
+            endif;
+        break;       
         }
 
     echo json_encode($res);

@@ -74,6 +74,17 @@
                 $res['error'] = true;
             endif;
         break;
+        case 'bannerimg':
+            // $idioma = $data->ide;
+            $u = $user->cargarDatos("SELECT * FROM c_banner"); 
+            if($u):
+                $res['datos'] = $u;
+                $res['mensaje'] = "exito";   
+            else:
+                $res['mensaje'] = "Aun no hay registros";
+                $res['error'] = true;
+            endif;
+        break;
             //////////////////////dashboard///////////////////////////////////
         case 'dseccionuno':
             //$idioma = $data->ide;
@@ -192,6 +203,20 @@
             $newPathUnlik = substr($idpat,18);
             unlink("../dashboard/uploads/{$newPathUnlik}");
             $r = $user->eliminarPro($id, "c_seccioncuatro", "id");
+        
+            if($r == true):
+                $res['mensaje'] = $r;   
+            
+            else:
+             $res['mensaje'] = "error";
+             $res['error'] = true; 
+            endif;
+        break;
+        case 'updatebanner':
+            //$idioma = $data->ide;
+            $url = $data->url;
+            $u = $user->actualizar("UPDATE c_banner set url = '{$url}' WHERE id = 1");
+            $u = $user->actualizar("UPDATE c_banner set url = '{$url}' WHERE id = 2");
         
             if($r == true):
                 $res['mensaje'] = $r;   

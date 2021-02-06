@@ -139,7 +139,7 @@
                                                     v-bind:src="'../' + img2es" style="width: 200px">
                                                 <form enctype="multipart/form-data" action="../api/conocenosS4titu.php"
                                                     method="POST">
-                                                    <p>Tamaño (867x77)</p>
+                                                    <p>Tamaño (519x141)</p>
                                                     <div class="divFile" style="width: 200px">
                                                         <p class="filetext">Seleccionar Imagen</p>
                                                         <input id="fileImg1" name="nfileImg" class="btnenviar"
@@ -156,7 +156,7 @@
                                                     v-bind:src="'../' + img2en" style="width: 200px">
                                                 <form enctype="multipart/form-data" action="../api/conocenosS4titu.php"
                                                     method="POST">
-                                                    <p>Tamaño (867x77)</p>
+                                                    <p>Tamaño (519x141)</p>
                                                     <div class="divFile" style="width: 200px">
                                                         <p class="filetext">Seleccionar Imagen</p>
                                                         <input id="fileImg1" name="nfileImg" class="btnenviar"

@@ -305,12 +305,12 @@
     }
 
     /* end round elements style */
-    .comodidadesBackground {
+    /* .comodidadesBackground {
         background-image: url('assets/images/conocenos/background1R.png');
         width: 100%;
         height: 100%;
         padding-bottom: 3%;
-    }
+    } */
 
     .image {
         width: 100px;
@@ -328,61 +328,141 @@
             background-size: cover;
             padding-bottom: 3%;
         }
+
+        .mobile {
+            display: block;
+        }
+
+        .desk {
+            display: block;
+        }
     }
+
     div.scrollmenu {
-    background-color: #333;
-    overflow: auto;
-    white-space: nowrap;
-    padding: 10px;
+        background-color: #333;
+        overflow: auto;
+        white-space: nowrap;
+        padding: 10px;
     }
-    
-    #style-1::-webkit-scrollbar-track
-    {
-        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+
+    #style-1::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
         border-radius: 0px;
         background-color: #F5F5F5;
     }
 
-    #style-1::-webkit-scrollbar
-    {
+    #style-1::-webkit-scrollbar {
         width: 7px;
         background-color: #F5F5F5;
     }
 
-    #style-1::-webkit-scrollbar-thumb
-    {
+    #style-1::-webkit-scrollbar-thumb {
         border-radius: 10px;
-      
+
         background-color: #555;
     }
-    
 
-        
+    .mobile {
+        display: none;
+    }
+
+    .desk {
+        display: block;
+    }
+
+    .carousel {
+        position: relative;
+    }
+
+    .carousel-item img {
+        object-fit: cover;
+    }
+
+    #carousel-thumbs {
+        background: rgba(35, 35, 35, .7);
+        bottom: 0;
+        left: 0;
+        padding: 0 50px;
+        right: 0;
+    }
+
+    #carousel-thumbs img {
+        border: 5px solid transparent;
+        cursor: pointer;
+    }
+
+    #carousel-thumbs img:hover {
+        border-color: rgba(255, 255, 255, .3);
+    }
+
+    #carousel-thumbs .selected img {
+        border-color: #fff;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 50px;
+    }
+
+    @media all and (max-width: 767px) {
+        .carousel-container #carousel-thumbs img {
+            border-width: 3px;
+        }
+    }
+
+    @media all and (min-width: 576px) {
+        .carousel-container #carousel-thumbs {
+            position: absolute;
+        }
+    }
+
+    @media all and (max-width: 576px) {
+        .carousel-container #carousel-thumbs {
+            background: #ccccce;
+        }
+    }
     </style>
 
     <!-- navbar -->
 
 
     <div id="app">
+
         <menu-component></menu-component>
         <!--Calidad que debes probar-->
 
         <c_seccionuno></c_seccionuno>
-        <!-- comodidades -->
-
         <c_secciondos></c_secciondos>
-        <!--premios-->
         <c_secciontres></c_secciontres>
-        <!--galeria-->
+        <br>
+        <c_seccioncuatro></c_seccioncuatro>
+        
+        <c_seccioncinco></c_seccioncinco>
+
+        <div  >
+            <a :href="url">
+                <img v-bind:src="imgbanner" style="width: 100%; " >
+            </a>
+        </div>
+
+        <!-- comodidades -->
+        <!--
+        <c_secciondos></c_secciondos>
+        
+        <c_secciontres></c_secciontres>
+     
         <c_seccioncuatro></c_seccioncuatro>
         <c_seccioncinco></c_seccioncinco>
-       <!-- <c_seccionseis></c_seccionseis>-->
-                    <!--
+
+-->
+
+        <!-- <c_seccionseis></c_seccionseis>-->
+        <!--
                         -->
-            <!--apoyo-->
-         <!--  
+        <!--apoyo-->
+        <!--  
             </div> -->
-  
+
         <!--footer-->
         <pie></pie>
 
@@ -401,7 +481,7 @@
     <script src="vueJs/conocenos/c_seccioncinco.js"></script>
     <script src="vueJs/conocenos/c_seccionseis.js"></script>
     <script src="vueJs/footer.js"></script>
-    
+
     <script>
     let app = new Vue({
         el: "#app",
@@ -409,28 +489,31 @@
             // nombre: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample91.jpg',
             registros: [],
             imagenes: [],
+            imgbanner: '',
+            url: '',
 
         },
         mounted: function() {
-            // this.cargarDatos(),
+            this.cargarDatos()
             //     this.cargarImagenes()
         },
         methods: {
-            // cargarDatos: function() {
-            //     axios.get("api/eventos.php?accion=mostrarEventos")
-            //         .then(function(response) {
-            //             app.registros = response.data.datos;
-            //             //console.log(response);
-            //         })
-            // },
-            // cargarImagenes: function() {
-            //     axios.get("api/eventos.php?accion=imgEventos")
-            //         .then(function(response) {
-            //             app.imagenes = response.data.datos;
-
-            //             //console.log(response);
-            //         })
-            // },
+            cargarDatos: function() {
+                axios.get("api/conocenos.php?accion=bannerimg")
+                    .then(function(response) {
+                       
+                        var a = localStorage.getItem('idioma');
+                        if(a == 'es'){
+                            app.imgbanner = response.data.datos[0].img;
+                            app.url = response.data.datos[0].url;
+                        }else{
+                            app.imgbanner = response.data.datos[1].img;
+                            app.url = response.data.datos[1].url;
+                        }
+                        console.log(a);
+                    })
+            },
+            
         }
     })
     </script>

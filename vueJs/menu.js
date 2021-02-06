@@ -41,14 +41,14 @@ Vue.component('menu-component', {
 		</div>
 		<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 			<div class="container navbar-desktop"><a class="navbar-brand" href="index"><img class="float-left"
-						src="assets/images/logo-pinups-new.png"></a>
+						v-bind:src="logo"></a>
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item"><a class="nav-link active" href="index">{{home}}</a></li>
 					<li class="nav-item"><a class="nav-link" href="menu">{{menu}}</a></li>
 					<li class="nav-item"><a class="nav-link" href="conocenos">{{about}}</a></li>
 					<li class="nav-item"><a class="nav-link" href="musica-en-vivo">{{music}}</a></li>
 					<li class="nav-item"><a class="nav-link" href="tienda">{{store}}</a></li>
-					<li class="nav-item"><a class="nav-link" href="franquicias" style="background-color: black; border-radius: 7px;">{{pinups}}</a></li>
+					<li class="nav-item"><a class="nav-link" href="franquicias" style="background-color: black; border-radius: 7px; ">{{pinups}}</a></li>
 				</ul>
 				<ul class="navbar-nav">
 				<div class="dropdown show" >
@@ -58,7 +58,7 @@ Vue.component('menu-component', {
 			  
 				<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
 				  <a class="dropdown-item" href="" @click="changeIdioma(1)">Español</a>
-				  <a class="dropdown-item" href="" @click="changeIdioma(2)">English</a>
+				<!--  <a class="dropdown-item" href="" @click="changeIdioma(2)">English</a> -->
 				</div>
 			  </div>
 					
@@ -110,11 +110,13 @@ Vue.component('menu-component', {
         music: '',
 		store: '',
 		pinups: '',
-		telefono: ''
+		telefono: '',
+		logo: ''
     }
     },
     mounted: function(){
         this.cargaMenu()
+		this.cargaLogo()
     },
     methods: {
        async cargaMenu(){
@@ -141,6 +143,16 @@ Vue.component('menu-component', {
 				localStorage.setItem('idioma', 'en');
 				location.reload();
 			}
-		}
+		},
+		async cargaLogo(){
+            await axios.post("api/menu.php?accion=menulogo", {
+                // ide:  localStorage.getItem('idioma')
+            })
+            .then(response=>{
+                this.logo =  response.data.datos[0].img;
+                //console.log(response)
+            });
+          
+		},
     },
 });

@@ -109,7 +109,9 @@
                                         <div class="divFile">
                                             <p class="filetext">Seleccionar Imagen</p>
                                             <input id="fileImg1" name="nfileImg" class="btnenviar" type="file">
+                                            <br>
                                             <input type="hidden" name="img1" id="img1" value="1">
+                                            <br>
                                         </div>
                                         <input type="submit" value="Modificar" class="btn btn-info sub"></input>
                                     </form> 

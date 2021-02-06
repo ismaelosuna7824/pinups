@@ -1,20 +1,17 @@
 Vue.component('f_seccionuno', {
     template: `
-    
     <div class="row">
-                <div class="col-md-4 padre" style="width: 100%; height: 500px; background-color: #212529;">
+    <div class="col-md-4 padre" style="width: 100%; height: 500px; background-color: #212529;">
 
                     <div class="hijo">
                         <div class="text-uppercase mb-4 title_icon text-center ">
-                            <span class=" section-title" style="font-size: 25px;" > <span v-html="titulo"></span>  <br>
-                                <p style="font-size: 15px; font-family: Arial, Helvetica, sans-serif;" v-html="texto"></p></span>
+                            <img v-bind:src="titulo" alt="" width="300">
+                        </div>
+                        <div class="mb-4 title_icon text-center ">
+                            <p style="color:white;" v-html="texto"></p>
                         </div>
 
-                        <div class="text-center">
-                            <button class="button button2">{{boton}}</button>
-                        </div>
                     </div>
-
                 </div>
                 <div class="col-md-8"
                     style="width: 100%; height: 500px; background-color: blue; padding-left: 0px; padding-right: 0px;">
@@ -24,7 +21,7 @@ Vue.component('f_seccionuno', {
                     </div>
 
                 </div>
-            </div>
+    </div>
        
    `,
     data() {

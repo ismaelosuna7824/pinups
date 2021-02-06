@@ -95,6 +95,26 @@
                         <div class="card shadow mb-4">
                             <div style="padding-left: 50px; padding-right: 50px; padding-top: 60px; padding-bottom: 50px;">
                             <h1>Menu de Navegación</h1><br>
+                            
+                            <div class="form-group col-md-4">
+                                                <img class="margen img-fluid flex-grow-0 mr-2 shadow"
+                                                    v-bind:src="'../' + logo" style="width: 200px">
+                                                    <form enctype="multipart/form-data" action="../api/editarImagenes.php"
+                                            method="POST">
+                                            <div class="">
+                                                <p >Titulo Imagen (219x93)</p>
+                                                <input id="fileImg1" name="nfileImg" class="" type="file">
+                                                <input type="text" hidden name="tabla" value="menulogo">
+                                                <input type="text" hidden name="campo" value="img">
+                                                <input type="text" hidden name="pagina" value="menus">
+                                                <input type="text" hidden name="img1" value="1">
+                                            </div>
+                                            <br>
+                                            <input type="submit" value="Upload" class="btn btn-info margen sub"
+                                                style="width: 100px"></input>
+                                        </form>
+                                            </div>
+
                                 <div class="form-row">
                                
                                     <div class="form-group col-md-6 ">
@@ -226,13 +246,14 @@
             privacyE:'',
             telefono: '',
             footerEs: '',
-            footerEn: ''
-            
+            footerEn: '',
+            logo: ''
 
            },
            mounted: function(){
             this.cargaMenu()
             this.cargaMenuE()
+            this.cargaLogo()
            
            },
            methods: {
@@ -309,7 +330,16 @@
                         }, 3000, "JavaScript");
                 })
             },
-            
+            cargaLogo(){
+             axios.post("../api/menu.php?accion=menulogo", {
+                // ide:  localStorage.getItem('idioma')
+            })
+            .then(response=>{
+                this.logo =  response.data.datos[0].img;
+                //console.log(response)
+            });
+          
+		},
 
                
         }

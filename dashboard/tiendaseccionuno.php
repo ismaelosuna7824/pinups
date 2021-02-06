@@ -131,9 +131,9 @@
                                         <form enctype="multipart/form-data" action="../api/tiendaS1Col.php"
                                             method="POST" class="col-md-6">
                                             <p>Tamaño (382x321)</p>
-                                            <div class="divFile" style="width: 200px">
+                                            <div class="" style="width: 200px">
                                                 <p class="filetext">Seleccionar Imagen</p>
-                                                <input id="fileImg1" name="uploaded_file" class="btnenviar" type="file">
+                                                <input id="fileImg1" name="uploaded_file" class="" type="file">
                                                 <input type="hidden" name="img1" id="img1" >
 
                                             </div>

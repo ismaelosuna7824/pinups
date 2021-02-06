@@ -112,47 +112,73 @@
     	   font-size: 15px;
     	   font-weight: 300;
     	}
-    	/* end round elements style */
-    	/* other styles */
-    	.padding-bottom-5px{padding-bottom:5px!important;}
-        div.scrollmenu {
-    background-color: #333;
-    overflow: auto;
-    white-space: nowrap;
-    padding: 10px;
-    }
     
-    #style-1::-webkit-scrollbar-track
-    {
-        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-        border-radius: 0px;
-        background-color: #F5F5F5;
-    }
-
-    #style-1::-webkit-scrollbar
-    {
-        width: 7px;
-        background-color: #F5F5F5;
-    }
-
-    #style-1::-webkit-scrollbar-thumb
-    {
-        border-radius: 10px;
-      
-        background-color: #555;
-    }
     	/* end other styles */
+    .carousel {
+        position: relative;
+    }
+
+    .carousel-item img {
+        object-fit: cover;
+    }
+
+    #carousel-thumbs {
+        background: rgba(35, 35, 35, .7);
+        bottom: 0;
+        left: 0;
+        padding: 0 50px;
+        right: 0;
+    }
+
+    #carousel-thumbs img {
+        border: 5px solid transparent;
+        cursor: pointer;
+    }
+
+    #carousel-thumbs img:hover {
+        border-color: rgba(255, 255, 255, .3);
+    }
+
+    #carousel-thumbs .selected img {
+        border-color: #fff;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 60px;
+    }
+
+    @media all and (max-width: 767px) {
+        .carousel-container #carousel-thumbs img {
+            border-width: 3px;
+        }
+    }
+
+    @media all and (min-width: 576px) {
+        .carousel-container #carousel-thumbs {
+            position: absolute;
+        }
+    }
+
+    @media all and (max-width: 576px) {
+        .carousel-container #carousel-thumbs {
+            background: #ccccce;
+        }
+    } 
     </style>
     
 <div id="app">  
     <!-- navbar -->
     <menu-component></menu-component>
     
+    <div class="container">
     <t_seccionuno></t_seccionuno>
-    
-    <br><br><br>
+
+    <center>
     <t_secciondos></t_secciondos>
-    
+    </center>
+    </div>
+    <br><br><br>
     <pie></pie>
     
     <!-- footer -->

@@ -1,13 +1,15 @@
 Vue.component('c_seccioncinco', {
     template: `
-    <div class="galeriaBackground" style="height: 700px;">
-        <div>
-            <div class="containerS">
-            <div class="elfsight-app-3f9d8111-b0fc-4ac7-ab07-8206b3fa35a1" ></div>
 
-            </div>
-        </div>
-    </div>
+    <div class="container mt-5" style="width: 80%">
+    
+    <div class="carousel-container position-relative row">
+      
+    <div class="elfsight-app-3f9d8111-b0fc-4ac7-ab07-8206b3fa35a1" ></div>
+    
+    
+    </div> <!-- /row -->
+    </div> <!-- /container -->
    `,
     data() {
     return {

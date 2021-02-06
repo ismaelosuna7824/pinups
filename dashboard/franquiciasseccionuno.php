@@ -24,166 +24,194 @@
 
 <body id="page-top">
 
-<div id="app">
-    <!-- Page Wrapper -->
-    <div id="wrapper">
+    <div id="app">
+        <!-- Page Wrapper -->
+        <div id="wrapper">
 
-        <!-- Sidebar -->
-        <menu-component></menu-component>
-        <!-- End of Sidebar -->
+            <!-- Sidebar -->
+            <menu-component></menu-component>
+            <!-- End of Sidebar -->
 
-        <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
+            <!-- Content Wrapper -->
+            <div id="content-wrapper" class="d-flex flex-column">
 
-            <!-- Main Content -->
-            <div id="content">
+                <!-- Main Content -->
+                <div id="content">
 
-                <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                    <!-- Topbar -->
+                    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-                    <!-- Sidebar Toggle (Topbar) -->
-                    <form class="form-inline">
-                        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                            <i class="fa fa-bars"></i>
-                        </button>
-                    </form>
+                        <!-- Sidebar Toggle (Topbar) -->
+                        <form class="form-inline">
+                            <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                        </form>
 
-                    <!-- Topbar Search -->
-
-
-                    <!-- Topbar Navbar -->
-                    <ul class="navbar-nav ml-auto">
-
-                        <!-- Nav Item - Alerts -->
+                        <!-- Topbar Search -->
 
 
-                        <!-- Nav Item - Messages -->
+                        <!-- Topbar Navbar -->
+                        <ul class="navbar-nav ml-auto">
+
+                            <!-- Nav Item - Alerts -->
 
 
-                        <div class="topbar-divider d-none d-sm-block"></div>
-
-                        <!-- Nav Item - User Information -->
-                        <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Administrador</span>
-                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
-                            </a>
-                            <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="userDropdown">
+                            <!-- Nav Item - Messages -->
 
 
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Cerrar Sesión
+                            <div class="topbar-divider d-none d-sm-block"></div>
+
+                            <!-- Nav Item - User Information -->
+                            <li class="nav-item dropdown no-arrow">
+                                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">Administrador</span>
+                                    <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
                                 </a>
+                                <!-- Dropdown - User Information -->
+                                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                    aria-labelledby="userDropdown">
+
+
+                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        Cerrar Sesión
+                                    </a>
+                                </div>
+                            </li>
+
+                        </ul>
+
+                    </nav>
+                    <!-- End of Topbar -->
+
+                    <!-- Begin Page Content -->
+                    <div class="container-fluid">
+                        <!-- Page Heading -->
+                        <div class="card shadow mb-4">
+                            <div
+                                style="padding-left: 50px; padding-right: 50px; padding-top: 60px; padding-bottom: 50px;">
+
+
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <img v-bind:src="'../' + tituloes" width="300">
+                                        <form enctype="multipart/form-data" action="../api/editarImagenes.php"
+                                            method="POST">
+                                            <div class="">
+                                                <p class="filetext">Titulo Imagen (519x195)</p>
+                                                <input id="fileImg1" name="nfileImg" class="" type="file">
+                                                <input type="text" hidden name="tabla" value="f_seccionuno">
+                                                <input type="text" hidden name="campo" value="titulo">
+                                                <input type="text" hidden name="pagina" value="franquiciasseccionuno">
+                                                <input type="text" hidden name="img1" value="1">
+                                            </div>
+                                            <br>
+                                            <input type="submit" value="Upload" class="btn btn-info margen sub"
+                                                style="width: 100px"></input>
+                                        </form>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                    <img v-bind:src="'../' + tituloen" width="300">
+                                        <form enctype="multipart/form-data" action="../api/editarImagenes.php"
+                                            method="POST">
+                                            <div class="">
+                                                <p class="filetext">Titulo Imagen (519x195)</p>
+                                                <input id="fileImg1" name="nfileImg" class="" type="file">
+                                                <input type="text" hidden name="tabla" value="f_seccionuno">
+                                                <input type="text" hidden name="campo" value="titulo">
+                                                <input type="text" hidden name="pagina" value="franquiciasseccionuno">
+                                                <input type="text" hidden name="img1" value="2">
+                                            </div>
+                                            <br>
+                                            <input type="submit" value="Upload" class="btn btn-info margen sub"
+                                                style="width: 100px"></input>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="inputEmail4">Texto</label>
+                                        <input type="text" class="form-control" id="inputEmail4" v-model="textoes">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="inputPassword4">Texto Ingles</label>
+                                        <input type="text" class="form-control" id="inputPassword4" v-model="textoen">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="inputEmail4">Texto Botón</label>
+                                        <input type="text" class="form-control" id="inputEmail4" v-model="botones">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="inputPassword4">Texto Botón Ingles</label>
+                                        <input type="text" class="form-control" id="inputPassword4" v-model="botonen">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="inputEmail4">Url Video (editar width por 100%)</label>
+                                        <textarea name="" class="form-control" id="" cols="10" rows="5"
+                                            v-model="url"></textarea>
+                                    </div>
+                                </div>
+                                <button type="buttom" class="btn btn-primary" @click="guardar()">Guardar</button>
+
                             </div>
-                        </li>
+                        </div>
 
-                    </ul>
-
-                </nav>
-                <!-- End of Topbar -->
-
-                <!-- Begin Page Content -->
-                <div class="container-fluid" >
-                    <!-- Page Heading -->
-                    <div class="card shadow mb-4">
-                        <div style="padding-left: 50px; padding-right: 50px; padding-top: 60px; padding-bottom: 50px;">
+                        <!-- DataTales Example -->
 
 
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <label for="inputEmail4">Título</label>
-                                    <input type="text" class="form-control" id="inputEmail4" v-model="tituloes" >
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="inputPassword4">Título Ingles</label>
-                                    <input type="text" class="form-control" id="inputPassword4" v-model="tituloen" >
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <label for="inputEmail4">Texto</label>
-                                    <input type="text" class="form-control" id="inputEmail4" v-model="textoes">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="inputPassword4">Texto Ingles</label>
-                                    <input type="text" class="form-control" id="inputPassword4" v-model="textoen" >
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <label for="inputEmail4">Texto Botón</label>
-                                    <input type="text" class="form-control" id="inputEmail4" v-model="botones" >
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="inputPassword4">Texto Botón Ingles</label>
-                                    <input type="text" class="form-control" id="inputPassword4" v-model="botonen">
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <label for="inputEmail4">Url Video (editar width por 100%)</label>
-                                    <textarea name=""  class="form-control" id="" cols="10" rows="5" v-model="url"></textarea>
-                                </div>
-                            </div>
-                            <button type="buttom" class="btn btn-primary" @click="guardar()">Guardar</button>
+                    </div>
+                    <!-- /.container-fluid -->
 
+                </div>
+                <!-- End of Main Content -->
+
+                <!-- Footer -->
+                <footer class="sticky-footer bg-white">
+                    <div class="container my-auto">
+                        <div class="copyright text-center my-auto">
+                            <span>Copyright &copy; Your Website 2020</span>
                         </div>
                     </div>
-
-                    <!-- DataTales Example -->
-                    
-
-                </div>
-                <!-- /.container-fluid -->
+                </footer>
+                <!-- End of Footer -->
 
             </div>
-            <!-- End of Main Content -->
+            <!-- End of Content Wrapper -->
 
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2020</span>
+        </div>
+        <!-- End of Page Wrapper -->
+
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
+
+        <!-- Logout Modal-->
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                        <a class="btn btn-primary" href="login.html">Logout</a>
                     </div>
                 </div>
-            </footer>
-            <!-- End of Footer -->
-
-        </div>
-        <!-- End of Content Wrapper -->
-
-    </div>
-    <!-- End of Page Wrapper -->
-
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
-
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
-                </div>
             </div>
         </div>
     </div>
-</div>
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -218,7 +246,7 @@
             url: ''
         },
         mounted: function() {
-         this.cargarDatos()
+            this.cargarDatos()
         },
         methods: {
             guardar: function() {
@@ -227,12 +255,12 @@
                     //console.log(app.iden)
                     axios.post("../api/franquicias.php?accion=updateuno", {
                         tituloes: this.tituloes,
-                        textoes:  this.textoes,
-                        botones:  this.botones,
+                        textoes: this.textoes,
+                        botones: this.botones,
                         ides: this.ides,
                         tituloen: this.tituloen,
-                        textoen:  this.textoen,
-                        botonen:  this.botonen,
+                        textoen: this.textoen,
+                        botonen: this.botonen,
                         iden: this.iden,
                         url: this.url
 
@@ -277,11 +305,11 @@
                         app.iden = response.data.datos[1].id;
                         app.tituloes = response.data.datos[0].titulo;
                         app.tituloen = response.data.datos[1].titulo;
-                        app.textoes =  response.data.datos[0].texto;
-                        app.textoen =  response.data.datos[1].texto;
-                        app.botones =  response.data.datos[0].boton;
-                        app.botonen =  response.data.datos[1].boton;
-                        app.url =  response.data.datos[0].url;
+                        app.textoes = response.data.datos[0].texto;
+                        app.textoen = response.data.datos[1].texto;
+                        app.botones = response.data.datos[0].boton;
+                        app.botonen = response.data.datos[1].boton;
+                        app.url = response.data.datos[0].url;
                         //console.log(response);
                     })
             },

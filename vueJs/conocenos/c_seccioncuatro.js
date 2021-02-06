@@ -1,56 +1,56 @@
 Vue.component('c_seccioncuatro', {
     template: `
-    <div class="galeriaBackground">
-        <div>
-        <div class="row">
-                    <img class=" img-fluid tituloGaleria" v-bind:src="img1">
+    <div class="container mt-5" style="width: 80%">
+    <div class="row">
+                    <img class=" img-fluid tituloGaleria" v-bind:src="img1" width="100%">
         </div>
-            <div class="containerS">
-            <div class="hero" style="width: 100%;">
-            <div class="carousel slide" id="carousel" data-ride="carousel" data-interval="5000" data-keyboard="false"
-                data-pause="false">
-                <div class="carousel-inner">
-
-                    <div v-for="(item, index) in registros" :key="item.id" :class="[ index == 0 ? 'carousel-item active' : 'carousel-item' ]">
-                        
-                        <picture>
-
-                            <img class="w-100" v-bind:src="item.img" alt="">
-                        </picture>
-                    </div>
-                </div><a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev"><span
-                        class="carousel-control-prev-icon" aria-hidden="true"></span><span
-                        class="sr-only">Anterior</span></a><a class="carousel-control-next" href="#carousel"
-                    role="button" data-slide="next" style="color: black"><span class="carousel-control-next-icon"
-                        aria-hidden="true" ></span><span class="sr-only">Siguiente</span></a>
-            </div>
+    <div class="carousel-container position-relative row">
+      
+    <!-- Sorry! Lightbox doesn't work - yet. -->
+      
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+      <div class="carousel-inner">
+        <div   v-for="(item, index) in registros" :key="item.id" :class="[ index == 0 ? 'carousel-item active' : 'carousel-item' ]"  :data-slide-number="index" >
+          <img v-bind:src="item.item.img" class="d-block w-100" alt="..." data-remote="https://source.unsplash.com/Pn6iimgM-wo/" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
         </div>
-            </div>
-            <ul class="menuS">
-                
-                <center>
-                <div class="scrollmenu" style="width: 60%; height: auto;" id="style-1">
-                    <li v-for="(item, index) in registros" >
-                        <a id="p1" @click="cambio(item.img)">
-                        <img class="previews" v-bind:src="item.img" style="width: 100px; height:70px;"/></a>
-                    </li>
-                </div>
-                </center>
-
-               
-            </ul>
-        </div>
-        <div class="row">
-            <img class="img-fluid tituloVideos" v-bind:src="img2">
-        </div>
+      </div>
     </div>
+    
+    <!-- Carousel Navigation -->
+    <div id="carousel-thumbs" class="carousel slide" data-ride="carousel" data-interval="false">
+      <div class="carousel-inner">
+        <div v-for="(item, index) in n" :key="item.id" :class="[ index == 0 ? 'carousel-item active' : 'carousel-item' ]" >
+          <div class="row mx-0" >
+            <div  v-for="(dts, ind) in n[index]" class="thumb col-4 col-sm-2 px-1 py-2 selected" data-target="#myCarousel" :id="'carousel-selector-' + dts.n " :data-slide-to="dts.n">
+              <img v-bind:src="dts.item.img" class="img-fluid" alt="...">
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carousel-thumbs" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carousel-thumbs" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    
+    </div> <!-- /row -->
+    <div class="row">
+                    <img class=" img-fluid tituloGaleria" v-bind:src="img2">
+        </div>
+    </div> <!-- /container -->
+   
    `,
-    data() {
+    data() { 
     return {
         img1: '',
         img2: '',
         registros: [],
-        imgSelect: ''
+        imgSelect: '',
+        n: []
     }
     },
     mounted: function(){
@@ -62,7 +62,7 @@ Vue.component('c_seccioncuatro', {
                 ide:  "es"
             })
             .then(response=>{
-                console.log(response);
+                //console.log(response);
                 var cat = localStorage.getItem('idioma');
                 if(cat == "es"){
                     this.img1 = response.data.datos[0].img;
@@ -72,16 +72,26 @@ Vue.component('c_seccioncuatro', {
                     this.img2 = response.data.datos[3].img; 
                 }
                 
-                response.data.datos.forEach((item) => {
+                response.data.datos.forEach((item, i) => {
                     if(item.id == 1 || item.id == 2 || item.id == 3 || item.id == 4){
      
                     }else{
                          
-                         this.registros.push(item);
-                         this.imgSelect = this.registros[0].img;
+                         this.registros.push({item, n: i - 4});
+                         //this.imgSelect = this.registros[0].img;
                         //console.log(item.img);
+                       
                     }
                  }); 
+                //  const newArr = [];
+                //  while(this.registros) newArr.push(this.registros.splice(0,3));
+                 console.log(this.registros)
+                    // var n = [];
+                    // var i = 0;
+                    // for (l = this.registros.length + 1; (i + 3) < l; i += 3) {
+                    //     this.n.push(this.registros.slice(i, i + 3));
+                    // }
+                   this.n = listToMatrix(this.registros, 3)
             });
           
         },
@@ -90,3 +100,15 @@ Vue.component('c_seccioncuatro', {
         }
     },
 });
+
+function listToMatrix(list, elementsPerSubArray) {
+    var matrix = [], i, k;
+    for (i = 0, k = -1; i < list.length; i++) {
+      if (i % elementsPerSubArray === 0) {
+        k++;
+        matrix[k] = [];
+      }
+      matrix[k].push(list[i]);
+    }
+    return matrix;
+}

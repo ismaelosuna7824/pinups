@@ -92,7 +92,7 @@
 .tituloGaleria{
     margin-top: 5%;
     margin-bottom: 10%;
-    width: 25%;
+    width: 30%;
     margin-left: auto;
     margin-right: auto;  
 }
@@ -101,7 +101,7 @@
 }
 .galeriaBackground{
     background-color: #e7e7e7;
-    background-image: url('../images/conocenos/galeriaBackground.png'); width: 100; height: 100;  
+    /* background-image: url('../images/conocenos/galeriaBackground.png'); width: 100; height: 100;   */
 }
 
 /*galeria*/
@@ -114,7 +114,7 @@
     background-color: #f5f5f5;
     width: 58%;
     padding: 1%;
-}
+    }
   
   ul, li {
       padding: 0;
